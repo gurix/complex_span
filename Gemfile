@@ -38,9 +38,6 @@ gem 'ffaker'
 # Cleans your database before testing and seeding
 gem 'database_cleaner'
 
-# Forms made easy, a simple DSL, with no opinion on markup.
-gem 'simple_form', '~> 3.1.0.rc2'
-
 # Collecting Locale data for Ruby on Rails
 gem 'rails-i18n'
 
@@ -57,7 +54,16 @@ gem 'quiet_assets' , group: [:development, :test]
 gem 'simplecov', group: :test
 
 # RSpec matches for Mongoid models, including association and validation matchers
-gem 'mongoid-rspec', group: [:development, :test]
+gem 'mongoid-rspec', '~> 2.0.0.rc1', group: [:development, :test]
+
+# Adds step, next, finish and continue commands and breakpoints to Pry using byebug.
+gem 'pry-byebug', group: [:development, :test]
+
+# Binding navigation commands for Pry
+gem 'pry-nav', group: [:development, :test]
+
+# A PhantomJS driver for Capybara
+gem 'poltergeist', group: [:development, :test]
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
