@@ -7,5 +7,5 @@ class Session
   field :educational_achievement
   field :system_information, type: Hash
 
-  validates :age, :gender, :educational_achievement, :system_information, :sincerity, presence: true 
+  validates :age, :gender, :educational_achievement, :system_information, :sincerity, presence: true
 end
