@@ -65,6 +65,9 @@ gem 'pry-nav', group: [:development, :test]
 # A PhantomJS driver for Capybara
 gem 'poltergeist', group: [:development, :test]
 
+# Manage front-end assets
+gem 'bower-rails'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
