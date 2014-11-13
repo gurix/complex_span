@@ -1,2 +1,5 @@
-cspan = angular.module('cspan',[
+@cspan = angular.module('cspan',[
+  'templates',
+  'ngRoute',
+  'controllers'
 ])

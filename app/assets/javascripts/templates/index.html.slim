@@ -1,0 +1,19 @@
+header
+  .pull-right
+    = image_tag("uzh_logo.#{I18n.locale}.jpg")
+  h1 Experiment title here
+p.clearfix = Faker::Lorem.sentence 30
+
+.alert.alert-danger ng-hide="canGoBigscreen"
+  | Your Browser does not support Fullscreen, please use a modern broser to participate. Read more
+  a.alert-link href="http://browsehappy.com/" target="_blank" here.
+
+div ng-show="canGoBigscreen"
+  .alert.alert-warning
+    | To run this experiment wee need to take you in fullscreen mode. Please close all other running applications and turn off all notifications.
+    p Don't leave the fullscreen mode otherwise we cannot proceed the experiment.
+    p Click next when you done.
+
+
+  .pull-right
+    button.btn.btn-primary ng-click="startSession()" Next...
