@@ -1,1 +1,9 @@
-| TEST
+form name="newSessionForm" novalidate="novalidate" ng-submit="newSessionForm.$valid && startSession()"
+  fieldset
+    .form-group
+      label for="session_age" How old are you?
+      input#session_age.form-control.input-lg max="100" min="10" name="age" ng-model="age" required="" type="number" /
+      .text-danger ng-show="newSessionForm.age.$dirty && newSessionForm.age.$invalid"
+        | Please provide a numerically age between 10 to 100
+    .form-group
+      input.btn.btn-lg.btn-primary type="submit" value="Next..."
