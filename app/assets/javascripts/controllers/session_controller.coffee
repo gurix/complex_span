@@ -4,5 +4,6 @@ controllers.controller("SessionsController", [ '$scope',
     $scope.canGoBigscreen = BigScreen.enabled
 
     $scope.startSession = () ->
-      BigScreen.toggle()
+      #BigScreen.toggle()
+      location.href='#/session/new'
 ])
