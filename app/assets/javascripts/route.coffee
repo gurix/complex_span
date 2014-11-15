@@ -9,4 +9,9 @@
         templateUrl: "session/new.html",
         controller: 'SessionsController'
       )
+
+      .when('/session/fullscreendisabled',
+        templateUrl: "session/fullscreendisabled.html",
+        controller: 'SessionsController'
+      )
 ])

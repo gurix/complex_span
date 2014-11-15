@@ -5,8 +5,12 @@ controllers.controller("SessionsController", [ '$scope',
     $scope.age = null
 
     $scope.newSession = () ->
-      #BigScreen.toggle()
+      BigScreen.toggle()
       location.href='#/session/new'
+
+      BigScreen.onexit = () ->
+        location.href='#/session/fullscreendisabled'
+
 
     $scope.startSession = () ->
       alert('start Session now')
