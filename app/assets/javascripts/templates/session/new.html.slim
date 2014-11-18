@@ -6,4 +6,12 @@ form name="newSessionForm" novalidate="novalidate" ng-submit="newSessionForm.$va
       .text-danger ng-show="newSessionForm.age.$dirty && newSessionForm.age.$invalid"
         | Please provide a numerically age between 10 to 100
     .form-group
-      input.btn.btn-lg.btn-primary type="submit" value="Next..." ng-show="newSessionForm.$valid"
+      label Gender
+      .radio
+        label
+          input type="radio" name="gender" ng-model="session.gender" value="f" ng-required="!color" Female
+      .radio
+        label
+          input type="radio" name="gender" ng-model="session.gender" value="m" ng-required="!color" Male
+    .form-group
+      input.btn.btn-lg.btn-primary type="submit" value="Next..." ng-disabled="!newSessionForm.$valid"

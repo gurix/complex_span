@@ -18,6 +18,8 @@ describe 'Experiment', js: true do
 
     expect(page).not_to have_content 'Please provide a numerically age between 10 to 100'
 
+    choose 'Female'
+
     click_button 'Next'
 
     expect(page.execute_script 'return logger.log[2].message').to eq 'startSession'
