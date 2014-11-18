@@ -1,5 +1,6 @@
 @cspan = angular.module('cspan',[
   'templates',
   'ngRoute',
-  'controllers'
+  'controllers',
+  'LocalStorageModule'
 ])

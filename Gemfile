@@ -62,8 +62,8 @@ gem 'pry-byebug', group: [:development, :test]
 # Binding navigation commands for Pry
 gem 'pry-nav', group: [:development, :test]
 
-# A PhantomJS driver for Capybara
-gem 'poltergeist', group: [:development, :test]
+# Using selenium driver for feature js tests
+gem 'selenium-webdriver', '~> 2.44.0', group: [:development, :test]
 
 # Manage front-end assets
 gem 'bower-rails'
