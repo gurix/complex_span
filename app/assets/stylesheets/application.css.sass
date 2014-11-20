@@ -4,7 +4,29 @@
 body
   padding-top: 20px
 
+html, body
+  height: 100%
+  margin: 0
+  padding: 0
+
+.container, .view-container
+  height: 100%
+  display: table
+  width: 100%
+  max-width: 1000px
+
+.view-frame
+  height: 100%
+  display: table-cell
+  vertical-align: middle
+  float: none
+  margin: 0 auto
+
+
 form
+  width: 400px
+  margin: 0 auto
+
   .ng-invalid.ng-dirty
     border: 1px solid red
 
