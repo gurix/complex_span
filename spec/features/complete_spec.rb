@@ -20,6 +20,8 @@ describe 'Experiment', js: true do
 
     choose 'Female'
 
+    select 'high school degree', from: 'session_education'
+
     click_button 'Next'
 
     expect(page.execute_script 'return logger.log[2].message').to eq 'startSession'

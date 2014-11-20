@@ -9,9 +9,17 @@ form name="newSessionForm" novalidate="novalidate" ng-submit="newSessionForm.$va
       label Gender
       .radio
         label
-          input type="radio" name="gender" ng-model="session.gender" value="f" ng-required="!color" Female
+          input type="radio" name="gender" ng-model="session.gender" value="f" ng-required="!session.gender" Female
       .radio
         label
-          input type="radio" name="gender" ng-model="session.gender" value="m" ng-required="!color" Male
+          input type="radio" name="gender" ng-model="session.gender" value="m" ng-required="!session.gender" Male
+    .form-group
+      label for="education" Highest educational qualification
+      select.form-control name="eductaion" ng-model="session.education" required="required" id="session_education"
+        option
+        option value="0" No high school degree
+        option value="1" high school degree
+        option value="2" University degree
+        option value="3" Doctoral degree
     .form-group
       input.btn.btn-lg.btn-primary type="submit" value="Next..." ng-disabled="!newSessionForm.$valid"
