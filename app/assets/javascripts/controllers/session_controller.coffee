@@ -6,15 +6,32 @@ controllers.controller("SessionsController", [ '$scope','localStorageService',
     $scope.session = {}
     localStorageService.bind($scope, 'session')
 
-    $scope.newSession = () ->
-      BigScreen.toggle()
+    $scope.goToInstruction1 = () ->
+
+      #unless BigScreen.element
+      #  BigScreen.toggle()
+
       logger.push 'toggleFullScreen'
-      location.href='#/session/new'
+      location.href='#/session/instruction_1'
+      logger.push 'Show instruction 1'
 
-      BigScreen.onexit = () ->
-        location.href='#/session/fullscreendisabled'
-        logger.push 'exitFullScreen'
+      $(document).unbind('keydown')
+      $(document).keydown (e) ->
+        if e.keyCode is 39
+          $scope.gotToInstruction_1_1()
+        e.preventDefault()
+      true
 
+    $scope.gotToInstruction_1_1 = () ->
+      location.href='#/session/instruction_1_1'
+      logger.push 'Show instruction 1_1'
+
+      $(document).unbind('keydown')
+      $(document).keydown (e) ->
+        if e.keyCode is 37
+          $scope.goToInstruction1()
+        e.preventDefault()
+      true
 
     $scope.startSession = () ->
       logger.push 'startSession'
