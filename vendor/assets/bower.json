@@ -6,6 +6,8 @@
     "bigscreen": "latest",
     "bootstrap-sass-official": "latest",
     "angular-local-storage": "latest",
-    "angular-translate": "latest"
+    "angular-cookies": "latest",
+    "angular-translate": "latest",
+    "angular-translate-storage-local": "latest"
   }
 }

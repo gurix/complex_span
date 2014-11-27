@@ -3,14 +3,13 @@
   'ngRoute',
   'controllers',
   'LocalStorageModule',
-  'pascalprecht.translate'
+  'pascalprecht.translate',
+  'ngCookies'
 ])
 
 @cspan.config(['$translateProvider', ($translateProvider) ->
-  $translateProvider
-  .translations('en', @translations_en)
-  .translations('de', @translations_de)
-  .preferredLanguage('en')
+  $translateProvider.translations('en', @translations_en).translations('de', @translations_de).preferredLanguage('en')
+  $translateProvider.useLocalStorage()
 ])
 
 BigScreen.onexit = () ->

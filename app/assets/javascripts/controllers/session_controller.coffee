@@ -1,11 +1,11 @@
 controllers = angular.module('controllers',[])
-controllers.controller("SessionsController", [ '$scope','localStorageService',
-  ($scope, localStorageService) ->
+controllers.controller("SessionsController", ['$translate','$scope','localStorageService',
+  ($translate, $scope, localStorageService) ->
 
     $scope.canGoBigscreen = BigScreen.enabled
     $scope.session = {}
     localStorageService.bind($scope, 'session')
-
+    $scope.language = $translate.lang
     $scope.goToInstruction1 = () ->
 
       #unless BigScreen.element
@@ -35,4 +35,11 @@ controllers.controller("SessionsController", [ '$scope','localStorageService',
 
     $scope.startSession = () ->
       logger.push 'startSession'
+
+    $scope.changeLanguage = () ->
+      if $translate.use() == 'de'
+        $translate.use 'en'
+      else
+        $translate.use 'de'
+      logger.push 'Switch language to ' + $translate.use()
 ])
