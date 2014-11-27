@@ -1,21 +1,14 @@
 header
   .pull-right
-    = image_tag("uzh_logo.#{I18n.locale}.jpg")
-  h1
-    | {{'EXPERIMENT_TITLE' | translate}}
-p.clearfix = Faker::Lorem.sentence 30
+    = image_tag("uzh_logo.en.jpg")
 
-.alert.alert-danger ng-hide="canGoBigscreen"
-  | Your Browser does not support Fullscreen, please use a modern broser to participate. Read more
-  a.alert-link href="http://browsehappy.com/" target="_blank" here.
+  h1 translate="HOME.EXPERIMENT_TITLE"
+
+.alert.alert-danger ng-hide="canGoBigscreen" translate="ERROR.NO_FULLSCREEN_SUPPORT"
 
 div ng-show="canGoBigscreen"
-  .alert.alert-warning
-    | To run this experiment wee need to take you in fullscreen mode. Please close all other running applications and turn off all notifications.
-    p Don't leave the fullscreen mode otherwise we cannot proceed the experiment.
-    p Click next when you done.
-
-  button.btn.btn-default ng-click="changeLanguage()" translate="SWITCH_LANGUAGE"
+  .alert.alert-warning translate="HOME.WARNING"
+  button.btn.btn-default ng-click="changeLanguage()" translate="HOME.SWITCH_LANGUAGE"
 
   .pull-right
-    button.btn.btn-primary ng-click="goToInstruction1()" translate="NEXT"
+    button.btn.btn-primary ng-click="goToInstruction1()" translate="HOME.NEXT"
