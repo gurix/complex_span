@@ -1,7 +1,8 @@
 header
   .pull-right
     = image_tag("uzh_logo.#{I18n.locale}.jpg")
-  h1 Experiment title here
+  h1
+    | {{'EXPERIMENT_TITLE' | translate}}
 p.clearfix = Faker::Lorem.sentence 30
 
 .alert.alert-danger ng-hide="canGoBigscreen"

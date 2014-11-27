@@ -2,7 +2,15 @@
   'templates',
   'ngRoute',
   'controllers',
-  'LocalStorageModule'
+  'LocalStorageModule',
+  'pascalprecht.translate'
+])
+
+@cspan.config(['$translateProvider', ($translateProvider) ->
+  $translateProvider
+  .translations('en', @translations_en)
+  .translations('de', @translations_de)
+  .preferredLanguage('en')
 ])
 
 BigScreen.onexit = () ->

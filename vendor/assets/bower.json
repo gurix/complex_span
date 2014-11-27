@@ -5,6 +5,7 @@
     "angular-route": "latest",
     "bigscreen": "latest",
     "bootstrap-sass-official": "latest",
-    "angular-local-storage": "latest"
+    "angular-local-storage": "latest",
+    "angular-translate": "latest"
   }
 }
