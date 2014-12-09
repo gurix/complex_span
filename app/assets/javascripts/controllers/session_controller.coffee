@@ -5,8 +5,7 @@ controllers.controller("SessionsController", ['$translate','$scope','localStorag
     $scope.canGoBigscreen = BigScreen.enabled
     $scope.session = {}
     localStorageService.bind($scope, 'session')
-
-    $scope.language = $translate.lang
+    $scope.session.language = $translate.use()
 
     $scope.goToInstruction1 = () ->
 
@@ -43,5 +42,6 @@ controllers.controller("SessionsController", ['$translate','$scope','localStorag
         $translate.use 'en'
       else
         $translate.use 'de'
+      $scope.session.language = $translate.use()
       logger.push 'Switch language to ' + $translate.use()
 ])
