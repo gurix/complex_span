@@ -5,7 +5,9 @@ controllers.controller("SessionsController", ['$translate','$scope','localStorag
     $scope.canGoBigscreen = BigScreen.enabled
     $scope.session = {}
     localStorageService.bind($scope, 'session')
+
     $scope.language = $translate.lang
+
     $scope.goToInstruction1 = () ->
 
       #unless BigScreen.element

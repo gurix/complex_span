@@ -7,7 +7,7 @@ class window.Logger
 
   push: (message) ->
     @getFromLocalStroage()
-    @log.push({time: Date.now(), message: message})
+    @log.push({time: (new Date()), message: message})
     console.log message
     @saveLocalStorage()
 
