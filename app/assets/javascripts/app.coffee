@@ -12,6 +12,8 @@
   $translateProvider.useLocalStorage()
 ])
 
+@controllers = angular.module('controllers',[])
+
 BigScreen.onexit = () ->
   location.href='#/session/fullscreendisabled'
   logger.push 'exitFullScreen'

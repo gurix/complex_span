@@ -1,5 +1,4 @@
-controllers = angular.module('controllers',[])
-controllers.controller("SessionsController", ['$translate','$scope','localStorageService',
+@controllers.controller("SessionsController", ['$translate','$scope','localStorageService',
   ($translate, $scope, localStorageService) ->
 
     $scope.canGoBigscreen = BigScreen.enabled
