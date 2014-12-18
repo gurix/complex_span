@@ -1,4 +1,6 @@
-#fixating_point
-  x
-#word
-  | {{word.word}}
+#word.text-center ng-show='show_word'
+  | {{word.word.text}}
+
+#fixating_point.text-center ng-hide='show_word'
+  svg width='100' heigth='100'
+    path d='M0,50 L100,50 M50,0 L50,100' stroke='black' stroke-width='4'/
