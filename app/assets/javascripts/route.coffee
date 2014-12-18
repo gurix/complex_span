@@ -16,5 +16,8 @@
       .when('/session/fullscreendisabled',
         templateUrl: "session/fullscreendisabled.html",
         controller: 'SessionsController'
+      ).when('/test',
+        templateUrl: "test/index.html",
+        controller: 'TrialsController'
       )
 ])
