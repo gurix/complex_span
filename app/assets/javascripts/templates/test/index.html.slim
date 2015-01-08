@@ -1,6 +1,6 @@
-#word.text-center ng-show='show_word'
-  | {{word.word.text}}
+#word.text-center ng-show='ShowWord()'
+  | {{CurrentWord().text}}
 
-#fixating_point.text-center ng-hide='show_word'
+#fixating_point.text-center ng-show='ShowFixationPoint()'
   svg width='100' heigth='100'
     path d='M0,50 L100,50 M50,0 L50,100' stroke='black' stroke-width='4'/
