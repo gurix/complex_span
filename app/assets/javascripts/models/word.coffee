@@ -1,6 +1,6 @@
 class window.Word
 
-  constructor: (@trial_number, @word_position, @word, @word_color) ->
+  constructor: (@trial_number, @position, @word, @color, @delay) ->
     @is_tutorial = @trial_number < 3 # Mark word as practice for the first two trial numbers
 
   start: () ->

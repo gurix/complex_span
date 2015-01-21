@@ -17,7 +17,7 @@
       $scope.session.trials[$scope.session.trial_counter].words[$scope.session.word_counter]
 
     $scope.WordColor = () ->
-      'wordcolor' + $scope.CurrentWord().word_color
+      'wordcolor' + $scope.CurrentWord().color
 
     $scope.ShowWord = () ->
       $scope.show_word
@@ -27,17 +27,20 @@
       word_stack = window['words_' + $translate.use()]
       word_stack.shuffle()
 
-      # We have two collors
-      word_colors = [1, 1, 1, 1, 1, 2, 2, 2, 2, 2]
+      # We have two shuffled colors
+      word_colors = [1, 1, 1, 1, 1, 2, 2, 2, 2, 2].shuffle()
+
+      # We have two conditions for the delay before showing next word
+      word_delays = [200, 200, 200, 200, 200, 1500, 1500, 1500, 1500, 1500].shuffle()
 
       # Generate an array of trials containing the words that we complete later during the test
       $scope.session.trials = []
       i = 0
       for number_of_trials in [1..$scope.number_of_trials]
-        word_colors.shuffle() # Shuffle word colors for each trial
+
         words = []
         for number_of_words in [1..$scope.number_of_words_per_trial]
-          words.push new window.Word(number_of_trials, number_of_words, word_stack[i], word_colors[number_of_words - 1])
+          words.push new window.Word(number_of_trials, number_of_words, word_stack[i], word_colors[number_of_words - 1],  word_delays[number_of_words - 1])
           i++
         $scope.session.trials.push { words: words, selections: [] } # implement selections later here
 
@@ -83,29 +86,30 @@
           # The timeout has to be canceled because we move on to the next word manually
           $timeout.cancel next_word
 
+          # Set the time on the current word when we move on
+          $scope.CurrentWord().stop()
+
           # We emidiatly move on to the next word once left or right was pressed
-          $scope.NextWord()
+          if $scope.CurrentWord().reaction_time < 2000
+            $scope.NextWord()
+          else
+            logger.push 'Key pressed after 2000ms! (' + $scope.CurrentWord().reaction_time + 'ms)'
         else
           logger.push 'Pressed key ' + e.keyCode + ' instead of left or right!'
 
     $scope.NextWord = () ->
-      console.log $scope.CurrentWord()
-      # Set the time on the current word when we move on
-      $scope.CurrentWord().stop()
-
       # Ensure the current word is hidden until next will show up
       # Caution: Needs a timer here otherwise it will not hide the word properly!
       $timeout (-> $scope.show_word = false), 0
 
-      console.log ($scope.CurrentWord().reaction_time)
-
       if $scope.session.word_counter < $scope.number_of_words_per_trial - 1
-
-        # Increase the word counter to get a new current word
-        $scope.session.word_counter++
-
-        # Redisplay the new word depending on the timeout set for the word
-        $timeout (-> $scope.DisplayWord()), 2000
+        logger.push 'Wait for ' + $scope.CurrentWord().delay + 'ms'
+        $timeout (->
+          # Increase the word counter to get a new current word
+          $scope.session.word_counter++
+          # Redisplay the new word depending on the timeout set for the word
+          $scope.DisplayWord()
+        ), $scope.CurrentWord().delay
 
       else
 
