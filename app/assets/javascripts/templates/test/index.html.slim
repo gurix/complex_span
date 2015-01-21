@@ -1,5 +1,5 @@
-#word.text-center ng-show='ShowWord()'
-  | {{CurrentWord().text}}
+#word.text-center ng-show='ShowWord()' ng-class='WordColor()'
+  | {{CurrentWord().word.text}}
 
 #fixating_point.text-center ng-show='ShowFixationPoint()'
   svg width='100' heigth='100'
