@@ -80,6 +80,9 @@
         if (e.keyCode == 39 || e.keyCode == 37)
           logger.push 'Pressed key ' + e.keyCode
 
+          # Record which key was pressed for this word
+          $scope.CurrentWord().pressed_key = e.keyCode
+
           # Ensure no more keydowns are accepted now
           $(document).unbind('keydown')
 
