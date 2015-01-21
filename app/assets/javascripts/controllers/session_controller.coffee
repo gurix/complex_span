@@ -2,8 +2,8 @@
   ($translate, $scope, localStorageService) ->
 
     $scope.canGoBigscreen = BigScreen.enabled
-    $scope.session = {}
     localStorageService.bind($scope, 'session')
+    $scope.session = {}
     $scope.session.language = $translate.use()
 
     $scope.goToInstruction1 = () ->
