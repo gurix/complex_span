@@ -14,7 +14,10 @@
       $scope.show_fixation_point
 
     $scope.CurrentWord = () ->
-      $scope.session.trials[$scope.session.trial_counter].words[$scope.session.word_counter].word
+      $scope.session.trials[$scope.session.trial_counter].words[$scope.session.word_counter]
+
+    $scope.WordColor = () ->
+      'wordcolor' + $scope.CurrentWord().word_color
 
     $scope.ShowWord = () ->
       $scope.show_word
@@ -60,7 +63,7 @@
       $scope.show_word = true
 
       # Remember the time when the current word is displayed
-      $scope.CurrentWord().start_time = new Date()
+      $scope.CurrentWord().start()
 
       # Display the word for 2000ms, otherwise it will move to the next word
       next_word = $timeout (-> $scope.NextWord()), 2000
@@ -74,6 +77,9 @@
         if (e.keyCode == 39 || e.keyCode == 37)
           logger.push 'Pressed key ' + e.keyCode
 
+          # Ensure no more keydowns are accepted now
+          $(document).unbind('keydown')
+
           # The timeout has to be canceled because we move on to the next word manually
           $timeout.cancel next_word
 
@@ -83,15 +89,15 @@
           logger.push 'Pressed key ' + e.keyCode + ' instead of left or right!'
 
     $scope.NextWord = () ->
-
+      console.log $scope.CurrentWord()
       # Set the time on the current word when we move on
-      $scope.CurrentWord().stop_time = new Date()
+      $scope.CurrentWord().stop()
 
       # Ensure the current word is hidden until next will show up
       # Caution: Needs a timer here otherwise it will not hide the word properly!
       $timeout (-> $scope.show_word = false), 0
 
-      console.log ($scope.CurrentWord().stop_time - $scope.CurrentWord().start_time)
+      console.log ($scope.CurrentWord().reaction_time)
 
       if $scope.session.word_counter < $scope.number_of_words_per_trial - 1
 
