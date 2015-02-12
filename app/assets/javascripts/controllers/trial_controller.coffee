@@ -157,12 +157,14 @@
 
     # Displays with all words to retrieve after each trial
     $scope.DisplayMatrix = () ->
+      logger.push 'Start with retrieval of session ' + $scope.session.trial_counter
       $scope.show_retrieval_matrix = true
       $scope.clicked_retrieval_counter = 1
 
     # Triggers some actions when a user clicked on a word he remembers
     $scope.clickRetrieval = (index) ->
       unless $scope.CurrentRetrievals()[index].clicked
+        logger.push 'Clicked ' +  $scope.clicked_retrieval_counter + ' on word ' + $scope.session.trial_counter
         $scope.CurrentRetrievals()[index].click($scope.clicked_retrieval_counter)
         $scope.clicked_retrieval_counter++
 
