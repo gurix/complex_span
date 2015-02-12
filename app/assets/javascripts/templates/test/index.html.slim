@@ -4,3 +4,12 @@
 #fixating_point.text-center ng-show='ShowFixationPoint()'
   svg width='100' heigth='100'
     path d='M0,50 L100,50 M50,0 L50,100' stroke='black' stroke-width='4'/
+
+#retrieval_matrix ng-show='ShowRetrievalMatrix()'
+  .text-center
+    h1.intruction.text-danger translate="RETRIEVE.INSTRUCTION"
+
+  .row
+    .col-xs-1.retrieval_word ng-repeat="(index, retrieval) in CurrentRetrievals()"
+      div ng-click="clickedRetrieval(index)" ng-class='RetrievalClickedClass(index)'
+        | {{retrieval.word.text}}

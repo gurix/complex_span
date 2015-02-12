@@ -24,6 +24,9 @@
     TEXT: 'Wenn Sie bereit sind für die Übungsaufgaben, drücken Sie die rechte Pfeiltaste. Wenn Sie die Instruktion noch einmal sehen möchten,
            drücken Sie die linke Pfeiltaste.'
 
+  RETRIEVE:
+    INSTRUCTION: 'Wählen Sie die 5 roten Wörter mit der Maus aus'
+
   ERROR:
     NO_FULLSCREEN_SUPPORT: 'Ihr Browser unterstützt keinen Vollbild-Modus, bitte verwenden Sie einen moderneren Browser um teilzunehmen.
                             <br/>Lesen Sie mehr <a class="alert-link" href="http://browsehappy.com/">hier</a>.'
