@@ -7,6 +7,8 @@
     $scope.session.language = $translate.use()
 
     $scope.goToInstruction1 = () ->
+      # Trying to hide the cursor for now
+      $('body').addClass('no-cursor')
 
       #unless BigScreen.element
       #  BigScreen.toggle()
