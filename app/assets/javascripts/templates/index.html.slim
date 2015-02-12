@@ -4,11 +4,12 @@ header
 
   h1 translate="HOME.EXPERIMENT_TITLE"
 
-.alert.alert-danger ng-hide="canGoBigscreen" translate="ERROR.NO_FULLSCREEN_SUPPORT"
+div.clear-both
+  .alert.alert-danger ng-hide="canGoBigscreen" translate="ERROR.NO_FULLSCREEN_SUPPORT"
 
-div ng-show="canGoBigscreen"
-  .alert.alert-warning translate="HOME.WARNING"
-  button.btn.btn-default ng-click="changeLanguage()" translate="HOME.SWITCH_LANGUAGE"
+  div ng-show="canGoBigscreen"
+    .alert.alert-warning translate="HOME.WARNING"
+    button.btn.btn-default ng-click="changeLanguage()" translate="HOME.SWITCH_LANGUAGE"
 
-  .pull-right
-    button.btn.btn-primary ng-click="goToInstruction1()" translate="HOME.NEXT"
+    .pull-right
+      button.btn.btn-primary ng-click="goToInstruction1()" translate="HOME.NEXT"
