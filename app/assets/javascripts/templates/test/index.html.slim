@@ -11,5 +11,5 @@
 
   .row
     .col-xs-1.retrieval_word ng-repeat="(index, retrieval) in CurrentRetrievals()"
-      div ng-click="clickedRetrieval(index)" ng-class='RetrievalClickedClass(index)'
+      div ng-click="clickRetrieval(index)" ng-class='RetrievalClickedClass(index)'
         | {{retrieval.word.text}}

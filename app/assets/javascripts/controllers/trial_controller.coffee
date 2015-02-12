@@ -53,7 +53,6 @@
         # Shuffle the conditions for each trial
         word_delays = [200, 200, 200, 200, 200, 1500, 1500, 1500, 1500, 1500].shuffle()
 
-
         for number_of_words in [1..$scope.number_of_words_per_trial]
           word_text = word_stack[word_counter]
           word_color = word_colors[number_of_words - 1]
@@ -81,9 +80,10 @@
       $scope.StartTrial()
       #$scope.DisplayMatrix()
 
+    # (Re)Starts a trial by displaying the first word
     $scope.StartTrial = () ->
       $scope.session.word_counter = 0
-      
+
       logger.push 'Start with trial ' + $scope.session.trial_counter
 
       # Show fixation point
@@ -92,6 +92,7 @@
       # Start with the first word, delay of 500ms
       $timeout (-> $scope.DisplayWord()), 500
 
+    # Displays the word for presentation
     $scope.DisplayWord = () ->
       logger.push 'Display word ' + $scope.session.word_counter + ' in trial ' + $scope.session.trial_counter
 
@@ -154,11 +155,13 @@
         # Display the decision matrix
         $scope.DisplayMatrix()
 
+    # Displays with all words to retrieve after each trial
     $scope.DisplayMatrix = () ->
       $scope.show_retrieval_matrix = true
       $scope.clicked_retrieval_counter = 1
 
-    $scope.clickedRetrieval = (index) ->
+    # Triggers some actions when a user clicked on a word he remembers
+    $scope.clickRetrieval = (index) ->
       unless $scope.CurrentRetrievals()[index].clicked
         $scope.CurrentRetrievals()[index].click($scope.clicked_retrieval_counter)
         $scope.clicked_retrieval_counter++
@@ -168,8 +171,10 @@
           $scope.session.trial_counter++
           $timeout (-> $scope.StartTrial()), 2000
 
+    # sets class of a clicked retrieval word to .clicked
     $scope.RetrievalClickedClass = (index) ->
       return 'clicked' if $scope.CurrentRetrievals()[index].clicked
 
-    $scope.PrepareTest()
+    # Prepare test data if no trial started
+    $scope.PrepareTest() if $scope.session.trial_counter == 0
   ])
