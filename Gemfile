@@ -36,7 +36,7 @@ gem 'factory_girl'
 gem 'ffaker'
 
 # Cleans your database before testing and seeding
-gem 'database_cleaner'
+gem 'database_cleaner', '1.3.0'
 
 # Collecting Locale data for Ruby on Rails
 gem 'rails-i18n'

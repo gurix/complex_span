@@ -20,3 +20,6 @@ class window.Logger
 
   saveLocalStorage: () ->
     localStorage.setItem('log', JSON.stringify(@log))
+
+  getMessage: (n) ->
+    @log[n].message

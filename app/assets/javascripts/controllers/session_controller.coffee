@@ -6,14 +6,15 @@
     $scope.session = {}
     $scope.session.language = $translate.use()
 
-    $scope.goToInstruction1 = () ->
+    $scope.ToggleBigScreen = () ->
+      BigScreen.toggle()
+      logger.push 'toggleFullScreen'
+      $scope.GoToInstruction1()
+
+    $scope.GoToInstruction1 = () ->
       # Trying to hide the cursor for now
       $('body').addClass('no-cursor')
 
-      #unless BigScreen.element
-      #  BigScreen.toggle()
-
-      logger.push 'toggleFullScreen'
       location.href='#/session/instruction_1'
       logger.push 'Show instruction 1'
 
@@ -21,11 +22,11 @@
       $(document).keydown (e) ->
         # Right arrow pressed
         if e.keyCode is 39
-          $scope.gotToInstruction_1_1()
+          $scope.GotToInstruction_1_1()
         e.preventDefault()
       true
 
-    $scope.gotToInstruction_1_1 = () ->
+    $scope.GotToInstruction_1_1 = () ->
       location.href='#/session/instruction_1_1'
       logger.push 'Show instruction 1_1'
 
@@ -33,14 +34,11 @@
       $(document).keydown (e) ->
         # Left arrow pressed
         if e.keyCode is 37
-          $scope.goToInstruction1()
+          $scope.GoToInstruction1()
         e.preventDefault()
       true
 
-    $scope.startSession = () ->
-      logger.push 'startSession'
-
-    $scope.changeLanguage = () ->
+    $scope.ChangeLanguage = () ->
       if $translate.use() == 'de'
         $translate.use 'en'
       else
