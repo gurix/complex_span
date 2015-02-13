@@ -12,6 +12,9 @@
   $translateProvider.useLocalStorage()
 ])
 
+@SessionData= () ->
+  JSON.parse(localStorage['ls.session'])
+
 @controllers = angular.module('controllers',[])
 
 BigScreen.onexit = () ->
