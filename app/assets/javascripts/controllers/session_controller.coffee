@@ -6,10 +6,13 @@
     $scope.session = {}
     $scope.session.language = $translate.use()
 
+    $scope.session.trial_counter = 0
+
     $scope.ToggleBigScreen = () ->
-      BigScreen.toggle()
+      #BigScreen.toggle()
       logger.push 'toggleFullScreen'
       $scope.GoToInstruction1()
+      true
 
     $scope.GoToInstruction1 = () ->
       # Trying to hide the cursor for now
@@ -24,7 +27,6 @@
         if e.keyCode is 39
           $scope.GotToInstruction_1_1()
         e.preventDefault()
-      true
 
     $scope.GotToInstruction_1_1 = () ->
       location.href='#/session/instruction_1_1'
@@ -35,8 +37,9 @@
         # Left arrow pressed
         if e.keyCode is 37
           $scope.GoToInstruction1()
+        if e.keyCode is 39
+          location.href='#/test'
         e.preventDefault()
-      true
 
     $scope.ChangeLanguage = () ->
       if $translate.use() == 'de'
@@ -45,4 +48,51 @@
         $translate.use 'de'
       $scope.session.language = $translate.use()
       logger.push 'Switch language to ' + $translate.use()
+
+    $scope.PrepareTest = () ->
+      # Let's get a shuffled stack of words
+      word_stack = window['words_' + $translate.use()]
+      word_stack.shuffle()
+
+      # Generate an array of trials containing the words that we complete later during the test
+      $scope.session.trials = []
+      word_counter = 0
+
+      for number_of_trials in [1..14]
+        words = []
+        retrievals = []
+
+        # Shuffle the color for each trial
+        word_colors = [1, 1, 1, 1, 1, 2, 2, 2, 2, 2].shuffle()
+
+        # Shuffle the conditions for each trial
+        word_delays = [200, 200, 200, 200, 200, 1500, 1500, 1500, 1500, 1500].shuffle()
+
+        for number_of_words in [1..10]
+          word =  word_stack[word_counter]
+          word.color = word_colors[number_of_words - 1]
+          word.delay = word_delays[number_of_words - 1]
+          word.trial = number_of_trials
+          word.word_position = number_of_words
+          # Add words for each trial
+          words.push word
+
+          # Push cloned words also to the retrievals
+          retrievals.push jQuery.extend({}, word)
+          word_counter++
+
+        # Add some additional words in the retrievals not presented before
+        for number_of_words_not_presented in [1..5]
+          retrievals.push word_stack[word_counter]
+          word_counter++
+
+        # Shuffle the retrievals and update the position
+        retrievals.shuffle()
+
+        for number_of_retrievals in [1..retrievals.length]
+          retrievals[number_of_retrievals - 1 ].retrieval_position = number_of_retrievals
+
+        $scope.session.trials.push { words: words, retrievals: retrievals }
+
+    $scope.PrepareTest()
 ])

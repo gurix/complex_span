@@ -6,11 +6,9 @@
     $scope.show_word = false
     $scope.show_retrieval_matrix = false
     $scope.show_fixation_point = false
-    $scope.session.trial_counter = 0
+
+    $scope.session.word_counter = 0
     $scope.clicked_retrieval_counter = 1
-    $scope.number_of_trials = 14
-    $scope.number_of_words_per_trial = 10
-    $scope.number_of_new_words_per_retrieval = 5
     $scope.number_of_trials_to_practice = 2
     $scope.number_of_selectable_words_per_retrieval = 5
     $scope.show_instruction = false
@@ -43,51 +41,6 @@
     $scope.ShowInstruction_1_2 = () ->
       $scope.show_instruction_1_2
 
-    $scope.PrepareTest = () ->
-      # Let's get a shuffled stack of words
-      word_stack = window['words_' + $translate.use()]
-      word_stack.shuffle()
-
-      # Generate an array of trials containing the words that we complete later during the test
-      $scope.session.trials = []
-      word_counter = 0
-
-      for number_of_trials in [1..$scope.number_of_trials]
-        words = []
-        retrievals = []
-
-        # Shuffle the color for each trial
-        word_colors = [1, 1, 1, 1, 1, 2, 2, 2, 2, 2].shuffle()
-
-        # Shuffle the conditions for each trial
-        word_delays = [200, 200, 200, 200, 200, 1500, 1500, 1500, 1500, 1500].shuffle()
-
-        for number_of_words in [1..$scope.number_of_words_per_trial]
-          word_text = word_stack[word_counter]
-          word_color = word_colors[number_of_words - 1]
-          delay = word_delays[number_of_words - 1]
-          # Add words for each trial
-          words.push new window.Word(number_of_trials, number_of_words, word_text, word_color, delay)
-          # Push words also to the retrievals
-          retrievals.push new window.Retrieval(number_of_trials, number_of_words, word_text, word_color, delay)
-          word_counter++
-
-        # Add some additional words in the retrievals not presented before
-        for number_of_words_not_presented in [1..$scope.number_of_new_words_per_retrieval]
-          word_text = word_stack[word_counter]
-          retrievals.push new window.Retrieval(number_of_trials, null, word_text, null, null)
-          word_counter++
-
-        # Shuffle the retrievals and update the position
-        retrievals.shuffle()
-        for number_of_retrievals in [1..retrievals.length]
-          retrievals[number_of_retrievals - 1 ].position = number_of_retrievals
-
-        $scope.session.trials.push { words: words, retrievals: retrievals }
-
-      # Start the first trials
-      $scope.StartTrial()
-
     # (Re)Starts a trial by displaying the first word
     $scope.StartTrial = () ->
       # Ensure the cursor is hidden in this view
@@ -115,7 +68,7 @@
       $scope.show_word = true
 
       # Remember the time when the current word is displayed
-      $scope.CurrentWord().start()
+      $scope.CurrentWord().start_time = new Date()
 
       # Display the word for 2000ms, otherwise it will move to the next word
       next_word = $timeout (-> $scope.NextWord()), 2000
@@ -139,7 +92,8 @@
           $timeout.cancel next_word
 
           # Set the time on the current word when we move on
-          $scope.CurrentWord().stop()
+          $scope.CurrentWord().stop_time = new Date()
+          $scope.CurrentWord().reaction_time = $scope.CurrentWord().stop_time - $scope.CurrentWord().start_time
 
           # We emidiatly move on to the next word once left or right was pressed
           if $scope.CurrentWord().reaction_time < 2000
@@ -154,7 +108,7 @@
       # Caution: Needs a timer here otherwise it will not hide the word properly!
       $timeout (-> $scope.show_word = false), 0
 
-      if $scope.session.word_counter < $scope.number_of_words_per_trial - 1
+      if $scope.session.word_counter < 9
         logger.push 'Wait for ' + $scope.CurrentWord().delay + 'ms'
         $timeout (->
           # Increase the word counter to get a new current word
@@ -182,8 +136,10 @@
       unless $scope.CurrentRetrievals()[index].clicked
         logger.push 'Clicked ' +  $scope.clicked_retrieval_counter + ' on word ' + $scope.session.trial_counter
 
-        # Register the click event on the retrieval object that was clicked
-        $scope.CurrentRetrievals()[index].click($scope.clicked_retrieval_counter)
+        # Save properties of the click
+        $scope.CurrentRetrievals()[index].clicked = true
+        $scope.CurrentRetrievals()[index].clicked_at = new Date()
+        $scope.CurrentRetrievals()[index].click_order = $scope.clicked_retrieval_counter
 
         $scope.clicked_retrieval_counter++
 
@@ -236,6 +192,6 @@
     $scope.RetrievalClickedClass = (index) ->
       return 'clicked' if $scope.CurrentRetrievals()[index].clicked
 
-    # Prepare test data if no trial started
-    $scope.PrepareTest() if $scope.session.trial_counter == 0
+    # Start the first trials
+    $scope.StartTrial()
   ])

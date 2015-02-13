@@ -1,5 +1,5 @@
 #word.text-center ng-show='ShowWord()' ng-class='WordColor()'
-  | {{CurrentWord().word.text}}
+  | {{CurrentWord().text}}
 
 #fixating_point.text-center ng-show='ShowFixationPoint()'
   svg width='100' heigth='100'
@@ -12,7 +12,7 @@
   .row
     .col-xs-1.retrieval_word ng-repeat="(index, retrieval) in CurrentRetrievals()"
       div ng-click="ClickRetrieval(index)" ng-class='RetrievalClickedClass(index)'
-        | {{retrieval.word.text}}
+        | {{retrieval.text}}
 
 div ng-show='ShowInstruction_1_2()'
   p translate="INSTRUCTION_1_2.TEXT"
