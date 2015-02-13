@@ -24,6 +24,10 @@
     TEXT: 'Wenn Sie bereit sind für die Übungsaufgaben, drücken Sie die rechte Pfeiltaste. Wenn Sie die Instruktion noch einmal sehen möchten,
            drücken Sie die linke Pfeiltaste.'
 
+  INSTRUCTION_1_2 :
+    TEXT: 'Wenn Sie bereit sind für die Übungsaufgaben, drücken Sie die rechte Pfeiltaste. Wenn Sie die Instruktion noch einmal sehen möchten,
+           drücken Sie die linke Pfeiltaste.'
+
   RETRIEVE:
     INSTRUCTION: 'Wählen Sie die 5 roten Wörter mit der Maus aus'
 

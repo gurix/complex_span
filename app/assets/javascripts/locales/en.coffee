@@ -22,6 +22,11 @@
   INSTRUCTION_1_1:
     TEXT: 'When you are ready for the practice trials, please press the right arrow key. If you want to re-read the instructions,
            press the left arrow key.'
+
+  INSTRUCTION_1_2:
+    TEXT: 'When you are ready for the test trials, please press the right arrow key. If you want to re-read the instructions,
+           press the left arrow key. '
+
   RETRIEVE:
     INSTRUCTION: 'Please select the 5 red words with the mouse'
 

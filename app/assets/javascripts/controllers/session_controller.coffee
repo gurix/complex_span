@@ -19,6 +19,7 @@
 
       $(document).unbind('keydown')
       $(document).keydown (e) ->
+        # Right arrow pressed
         if e.keyCode is 39
           $scope.gotToInstruction_1_1()
         e.preventDefault()
@@ -30,6 +31,7 @@
 
       $(document).unbind('keydown')
       $(document).keydown (e) ->
+        # Left arrow pressed
         if e.keyCode is 37
           $scope.goToInstruction1()
         e.preventDefault()

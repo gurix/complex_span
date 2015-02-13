@@ -5,13 +5,16 @@
     localStorageService.bind($scope, 'session')
     $scope.show_word = false
     $scope.show_retrieval_matrix = false
-    $scope.show_fixation_point = true
+    $scope.show_fixation_point = false
     $scope.session.trial_counter = 0
     $scope.clicked_retrieval_counter = 1
     $scope.number_of_trials = 14
     $scope.number_of_words_per_trial = 10
     $scope.number_of_new_words_per_retrieval = 5
+    $scope.number_of_trials_to_practice = 2
     $scope.number_of_selectable_words_per_retrieval = 5
+    $scope.show_instruction = false
+    $scope.show_instruction_1_2 = false
 
     $scope.ShowFixationPoint = () ->
       $scope.show_fixation_point
@@ -33,6 +36,12 @@
 
     $scope.ShowRetrievalMatrix = () ->
       $scope.show_retrieval_matrix
+
+    $scope.ShowInstruction = () ->
+      $scope.show_instruction
+
+    $scope.ShowInstruction_1_2 = () ->
+      $scope.show_instruction_1_2
 
     $scope.PrepareTest = () ->
       # Let's get a shuffled stack of words
@@ -78,10 +87,13 @@
 
       # Start the first trials
       $scope.StartTrial()
-      #$scope.DisplayMatrix()
 
     # (Re)Starts a trial by displaying the first word
     $scope.StartTrial = () ->
+      # Ensure the cursor is hidden in this view
+      $('body').addClass('no-cursor')
+
+      # Reset word counter
       $scope.session.word_counter = 0
 
       logger.push 'Start with trial ' + $scope.session.trial_counter
@@ -157,21 +169,68 @@
 
     # Displays with all words to retrieve after each trial
     $scope.DisplayMatrix = () ->
+
+      # Enable the cursor, we need it to select the word
+      $('body').removeClass('no-cursor')
+
       logger.push 'Start with retrieval of session ' + $scope.session.trial_counter
       $scope.show_retrieval_matrix = true
       $scope.clicked_retrieval_counter = 1
 
     # Triggers some actions when a user clicked on a word he remembers
-    $scope.clickRetrieval = (index) ->
+    $scope.ClickRetrieval = (index) ->
       unless $scope.CurrentRetrievals()[index].clicked
         logger.push 'Clicked ' +  $scope.clicked_retrieval_counter + ' on word ' + $scope.session.trial_counter
+
+        # Register the click event on the retrieval object that was clicked
         $scope.CurrentRetrievals()[index].click($scope.clicked_retrieval_counter)
+
         $scope.clicked_retrieval_counter++
 
         if $scope.clicked_retrieval_counter > $scope.number_of_selectable_words_per_retrieval
-          $scope.show_retrieval_matrix = false
+          # Hide the cursor immediately
+          $('body').addClass('no-cursor')
+
+          # Hide Matrix
+          $timeout (-> $scope.show_retrieval_matrix = false), 0
+
           $scope.session.trial_counter++
+
+          if $scope.session.trial_counter != $scope.number_of_trials_to_practice
+            $timeout (-> $scope.StartTrial()), 2000
+          else
+            # Redisplay instruction before the real test starts
+            $scope.DisplayInstruction_1_2()
+
+
+    $scope.DisplayInstruction_1_2 = () ->
+      $timeout (-> $scope.show_instruction_1_2 = true), 0
+      logger.push 'Show instruction 1_2'
+
+      $(document).unbind('keydown')
+      $(document).keydown (e) ->
+        # Left arrow pressed redisplay the instruction
+        if e.keyCode is 37
+          $timeout (-> $scope.show_instruction_1_2 = false), 0
+          $scope.DisplayInstruction()
+        # Right arrow pressed preceed with the real test
+        if e.keyCode is 39
+          $timeout (-> $scope.show_instruction_1_2 = false), 0
           $timeout (-> $scope.StartTrial()), 2000
+        e.preventDefault()
+
+    #
+    $scope.DisplayInstruction = () ->
+      $timeout (-> $scope.show_instruction = true), 0
+      logger.push 'Show instruction'
+
+      $(document).unbind('keydown')
+      $(document).keydown (e) ->
+        # Left arrow pressed, redisplay the insturction 1.2
+        if e.keyCode is 39
+          $timeout (-> $scope.show_instruction = false), 0
+          $scope.DisplayInstruction_1_2()
+        e.preventDefault()
 
     # sets class of a clicked retrieval word to .clicked
     $scope.RetrievalClickedClass = (index) ->
