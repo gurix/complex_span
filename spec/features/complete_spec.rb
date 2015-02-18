@@ -1,11 +1,5 @@
 require 'rails_helper'
 
-RSpec::Matchers.define :have_log_message do |message, index|
-  match do |page|
-    expect(page.execute_script "return logger.getMessage(#{index})").to eq message
-  end
-end
-
 describe 'Experiment', js: true do
   scenario 'running the complete process' do
     visit root_path
@@ -22,42 +16,39 @@ describe 'Experiment', js: true do
 
     expect(page).to have_content 'Please press the right arrow key to continue'
 
-    find("body").native.send_keys :arrow_right
+    find('body').native.send_keys :arrow_right
 
     expect(page).to have_log_message('Show instruction 1_1', log_index += 1)
     expect(page).to have_content 'When you are ready for the practice trials, please press the right arrow key.'
 
-
-    find("body").native.send_keys :arrow_left
+    find('body').native.send_keys :arrow_left
 
     expect(page).to have_log_message('Show instruction 1', log_index += 1)
     expect(page).to have_content 'Please press the right arrow key to continue'
 
-    find("body").native.send_keys :arrow_right
+    find('body').native.send_keys :arrow_right
 
     expect(page).to have_log_message('Show instruction 1_1', log_index += 1)
     expect(page).to have_content 'When you are ready for the practice trials, please press the right arrow key.'
 
-    find("body").native.send_keys :arrow_right
+    find('body').native.send_keys :arrow_right
 
     # In trial mode we test some possible answers
 
     14.times do | trial_counter |
-      expect(page.execute_script 'return SessionData().trial_counter').to eq (trial_counter)
+      expect(page.execute_script 'return SessionData().trial_counter').to eq trial_counter
       expect(page).to have_selector('#fixating_point svg')
       10.times do | word_counter |
-
-        expect(page.execute_script 'return SessionData().word_counter').to eq (word_counter)
+        expect(page.execute_script 'return SessionData().word_counter').to eq word_counter
 
         word_text = page.execute_script("return SessionData().trials[#{trial_counter}].words[#{word_counter}].text")
         word_color = page.execute_script("return SessionData().trials[#{trial_counter}].words[#{word_counter}].color")
 
         expect(page).to have_content word_text
 
-        find("body").native.send_keys word_color == 1 ? :arrow_right : :arrow_left
+        find('body').native.send_keys word_color == 1 ? :arrow_right : :arrow_left
       end
     end
-
 
     # fill_in 'age', with: '666'
     #
