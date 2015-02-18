@@ -1,38 +1,46 @@
 require 'rails_helper'
 
+RSpec::Matchers.define :have_log_message do |message, index|
+  match do |page|
+    expect(page.execute_script "return logger.getMessage(#{index})").to eq message
+  end
+end
+
 describe 'Experiment', js: true do
   scenario 'running the complete process' do
     visit root_path
+    log_index = 0
 
-    expect(page.execute_script 'return logger.getMessage(0)').to eq 'initializing'
+    expect(page).to have_log_message('initializing', 0)
 
     expect(page.execute_script 'return SessionData().trials.length').to eq 14
 
     click_button 'Next'
 
-    expect(page.execute_script 'return logger.getMessage(1)').to eq 'toggleFullScreen'
-    expect(page.execute_script 'return logger.getMessage(2)').to eq 'Show instruction 1'
+    expect(page).to have_log_message('toggleFullScreen', log_index += 1)
+    expect(page).to have_log_message('Show instruction 1', log_index += 1)
+
     expect(page).to have_content 'Please press the right arrow key to continue'
 
     find("body").native.send_keys :arrow_right
 
-    expect(page.execute_script 'return logger.getMessage(3)').to eq 'Show instruction 1_1'
+    expect(page).to have_log_message('Show instruction 1_1', log_index += 1)
     expect(page).to have_content 'When you are ready for the practice trials, please press the right arrow key.'
 
 
     find("body").native.send_keys :arrow_left
 
-    expect(page.execute_script 'return logger.getMessage(4)').to eq 'Show instruction 1'
+    expect(page).to have_log_message('Show instruction 1', log_index += 1)
     expect(page).to have_content 'Please press the right arrow key to continue'
 
     find("body").native.send_keys :arrow_right
 
-    expect(page.execute_script 'return logger.getMessage(5)').to eq 'Show instruction 1_1'
+    expect(page).to have_log_message('Show instruction 1_1', log_index += 1)
     expect(page).to have_content 'When you are ready for the practice trials, please press the right arrow key.'
 
-    expect(page.execute_script 'return logger.getMessage(5)').to eq 'Show instruction 1_1'
-
     find("body").native.send_keys :arrow_right
+
+    # In trial mode we test some possible answers
 
     14.times do | trial_counter |
       expect(page.execute_script 'return SessionData().trial_counter').to eq (trial_counter)
@@ -42,9 +50,11 @@ describe 'Experiment', js: true do
         expect(page.execute_script 'return SessionData().word_counter').to eq (word_counter)
 
         word_text = page.execute_script("return SessionData().trials[#{trial_counter}].words[#{word_counter}].text")
+        word_color = page.execute_script("return SessionData().trials[#{trial_counter}].words[#{word_counter}].color")
 
         expect(page).to have_content word_text
-        binding.pry
+
+        find("body").native.send_keys word_color == 1 ? :arrow_right : :arrow_left
       end
     end
 
