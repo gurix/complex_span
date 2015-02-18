@@ -54,8 +54,17 @@
       word_stack = window['words_' + $translate.use()]
       word_stack.shuffle()
 
+      # The final delay condition randomly selected
+      final_delay = [200, 1500].shuffle()[0]
+
+      # The middle delay condition is randomly selected within the two possibilities of distribution for 11 trials (5, 6 vs 6, 5)
+      middle_delays =[
+        [200, 200, 200, 200, 200, 200, 1500, 1500, 1500, 1500, 1500].shuffle()
+        [200, 200, 200, 200, 200, 1500, 1500, 1500, 1500, 1500, 1500].shuffle()
+      ].shuffle()[0]
+
       # Shuffle an array with delay conditions. Ensure the first two includes each condition in a random order
-      word_delays = [200, 1500].shuffle().concat([200, 200, 200, 200, 200, 200, 1500, 1500, 1500, 1500, 1500, 1500].shuffle())
+      word_delays = [200, 1500].shuffle().concat(middle_delays).concat(final_delay)
 
       # Generate an array of trials containing the words that we complete later during the test
       $scope.session.trials = []
@@ -96,6 +105,6 @@
           retrievals[number_of_retrievals - 1 ].retrieval_position = number_of_retrievals
 
         $scope.session.trials.push { words: words, retrievals: retrievals, word_delay: word_delay }
-      console.log $scope.session.trials
+
     $scope.PrepareTest()
 ])
