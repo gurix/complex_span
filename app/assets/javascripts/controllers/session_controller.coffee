@@ -54,6 +54,9 @@
       word_stack = window['words_' + $translate.use()]
       word_stack.shuffle()
 
+      # Shuffle an array with delay conditions. Ensure the first two includes each condition in a random order
+      word_delays = [200, 1500].shuffle().concat([200, 200, 200, 200, 200, 200, 1500, 1500, 1500, 1500, 1500, 1500].shuffle())
+
       # Generate an array of trials containing the words that we complete later during the test
       $scope.session.trials = []
       word_counter = 0
@@ -63,15 +66,15 @@
         retrievals = []
 
         # Shuffle the color for each trial
-        word_colors = [1, 1, 1, 1, 1, 2, 2, 2, 2, 2].shuffle()
+        word_colors = ['red', 'red', 'red', 'red', 'red', 'blue', 'blue', 'blue', 'blue', 'blue'].shuffle()
 
-        # Shuffle the conditions for each trial
-        word_delays = [200, 200, 200, 200, 200, 1500, 1500, 1500, 1500, 1500].shuffle()
+        # Get word delay condition for each trial
+        word_delay = word_delays[number_of_trials - 1]
 
         for number_of_words in [1..10]
           word =  word_stack[word_counter]
           word.color = word_colors[number_of_words - 1]
-          word.delay = word_delays[number_of_words - 1]
+          word.delay = if word.color == 'red' then 200 else word_delay
           word.trial = number_of_trials
           word.word_position = number_of_words
           # Add words for each trial
@@ -92,7 +95,7 @@
         for number_of_retrievals in [1..retrievals.length]
           retrievals[number_of_retrievals - 1 ].retrieval_position = number_of_retrievals
 
-        $scope.session.trials.push { words: words, retrievals: retrievals }
-
+        $scope.session.trials.push { words: words, retrievals: retrievals, word_delay: word_delay }
+      console.log $scope.session.trials
     $scope.PrepareTest()
 ])

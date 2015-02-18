@@ -27,7 +27,7 @@
       $scope.session.trials[$scope.session.trial_counter].retrievals
 
     $scope.WordColor = () ->
-      'wordcolor' + $scope.CurrentWord().color
+      $scope.CurrentWord().color + '_word'
 
     $scope.ShowWord = () ->
       $scope.show_word

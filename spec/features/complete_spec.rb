@@ -38,6 +38,8 @@ describe 'Experiment', js: true do
       expect(page.execute_script 'return SessionData().trial_counter').to eq trial_counter
       expect(page).to have_selector('#fixating_point svg')
 
+      word_delay_condition = page.execute_script("return SessionData().trials[#{trial_counter}].word_delay")
+
       presented_words = []
 
       10.times do | word_counter |
@@ -46,13 +48,17 @@ describe 'Experiment', js: true do
 
         word_text = page.execute_script("return SessionData().trials[#{trial_counter}].words[#{word_counter}].text")
         presented_words << word_text
+
         word_color = page.execute_script("return SessionData().trials[#{trial_counter}].words[#{word_counter}].color")
         word_delay = page.execute_script("return SessionData().trials[#{trial_counter}].words[#{word_counter}].delay")
 
         expect(page.find '#word').to be_visible
         expect(page.find '#word').to have_content word_text
 
-        find('body').native.send_keys word_color == 1 ? :arrow_right : :arrow_left
+        expect(word_delay).to eq 200 if word_color == 'red'
+        expect(word_delay).to eq word_delay_condition if word_color == 'blue'
+
+        find('body').native.send_keys word_color == 'blue' ? :arrow_right : :arrow_left
 
         # We have to wait until the next word appears, otherwise this E2E-Test will be to fast
         sleep (word_delay.to_f / 1000)
@@ -74,7 +80,7 @@ describe 'Experiment', js: true do
         find('body').native.send_keys :arrow_right
 
         expect(page).to have_content 'When you are ready for the test trials, please press the right arrow key.'
-        
+
         find('body').native.send_keys :arrow_right
       end
 
