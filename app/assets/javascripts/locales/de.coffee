@@ -8,8 +8,8 @@
               an einem ruhigen Ort durchführen ohne Ablenkung Bspw. durch Lärm.'
 
   INSTRUCTION_1:
-    TEXT: '<p>Vielen Dank, dass Sie an unserem Experiment teilnehmen! Das Experiment wird etwa 15 Minuten dauern.</p>
-           <p>In jedem Durchgang werden Ihnen nacheinander 10 Wörter präsentiert, die sich alle auf konkrete Objekte beziehen.
+    THANK_YOU: '<p>Vielen Dank, dass Sie an unserem Experiment teilnehmen! Das Experiment wird etwa 15 Minuten dauern.</p>'
+    TEXT: '<p>In jedem Durchgang werden Ihnen nacheinander 10 Wörter präsentiert, die sich alle auf konkrete Objekte beziehen.
               Sie haben nun zwei Aufgaben:</p>
            <p>Die erste Aufgabe ist, für jedes Wort zu beurteilen, ob das bezeichnete Objekt grösser oder kleiner als ein Fussball ist.</p>
            <p>Wenn es <strong>kleiner</strong> als ein Fussball ist, drücken Sie die <strong>linke</strong> Pfeiltaste;</p>
@@ -25,7 +25,7 @@
            drücken Sie die linke Pfeiltaste.'
 
   INSTRUCTION_1_2 :
-    TEXT: 'Wenn Sie bereit sind für die Übungsaufgaben, drücken Sie die rechte Pfeiltaste. Wenn Sie die Instruktion noch einmal sehen möchten,
+    TEXT: 'Wenn Sie bereit sind für die Testaufgaben, drücken Sie die rechte Pfeiltaste. Wenn Sie die Instruktion noch einmal sehen möchten,
            drücken Sie die linke Pfeiltaste.'
 
   RETRIEVE:
