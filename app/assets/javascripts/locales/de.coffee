@@ -31,7 +31,23 @@
   RETRIEVE:
     INSTRUCTION: 'Wählen Sie die 5 roten Wörter mit der Maus aus'
 
+  FINISHING:
+    SINCERITY_SERIOUS: 'Ich habe den Test ernsthaft durchgeführt'
+    SINCERITY_TEST: 'Ich habe den Test nicht ernsthaft durchgeführt'
+    SUBMIT: 'Daten absenden ...'
+    FILL_OUT_ALL_DATA: 'Bitte füllen Sie das folgende Formular aus ...'
+    HOW_OLD_ARE_YOU: 'Wie alt sind sie?'
+    GENDER: 'Geschlecht'
+    GENDER_FEMALE: 'Weiblich'
+    GENDER_MALE: 'Männlich'
+    QUALIFICATION: 'Höchster Schulabschluss'
+    QUALIFICATION_NO_HIGH_SHOOL: 'Obligatorische Schule'
+    QUALIFICATION_HIGH_SHOOL: 'Gymnasium / Maturität '
+    QUALIFICATION_UNIVERSITY: 'Fachhochschule/Universität '
+    QUALIFICATION_DOCTORAL: 'Doktorat'
+
   ERROR:
+    NUMERICAL_BETWEEN_10_AND_100: 'Bitte geben Sie eine Zahl zwischen 10 und 100 ein'
     NO_FULLSCREEN_SUPPORT: 'Ihr Browser unterstützt keinen Vollbild-Modus, bitte verwenden Sie einen moderneren Browser um teilzunehmen.
                             <br/>Lesen Sie mehr <a class="alert-link" href="http://browsehappy.com/">hier</a>.'
     EXITED_FULLSCREEN: 'Das Experiment wurde abgebrochen weil sie den Vollbildschirm-Modus verlassen haben.'

@@ -2,14 +2,25 @@
   | {{CurrentWord().text}}
 
 #fixating_point.text-center ng-show='ShowFixationPoint()'
-  svg width='100' heigth='100'
+  svg version="1.1" width='100' heigth='100' xmlns="http://www.w3.org/2000/svg"
     path d='M0,50 L100,50 M50,0 L50,100' stroke='black' stroke-width='4'/
 
 #retrieval_matrix ng-show='ShowRetrievalMatrix()'
-  .text-center
-    h1.intruction.text-danger translate="RETRIEVE.INSTRUCTION"
+  .text-center ng-show='ShowRetrievalMatrixInstructionRed()'
+    h1.intruction.red_word translate='RETRIEVE.INSTRUCTION_RED'
 
-  .row
+  .text-center ng-show='ShowRetrievalMatrixInstructionBlue()'
+    h1.intruction.blue_word
+      | {{ 'RETRIEVE.INSTRUCTION_BLUE' | translate }}
+
+    #blue_circle ng-show='ShowBlueCircle()' ng-click='ClickBlueCircle()'
+      svg version="1.1" viewbox=("0 0 120 120") xmlns="http://www.w3.org/2000/svg" width="200"
+        circle cx="60" cy="60" r="50" fill="blue" /
+
+      h1.intruction.blue_word
+        | {{ 'RETRIEVE.INSTRUCTION_CIRCLE' | translate }}
+
+  .row ng-hide='ShowBlueCircle()'
     .col-xs-1.retrieval_word ng-repeat="(index, retrieval) in CurrentRetrievals()"
       div ng-click="ClickRetrieval(index)" ng-class='RetrievalClickedClass(index)'
         | {{retrieval.text}}

@@ -1,0 +1,40 @@
+form name="newSessionForm" novalidate="novalidate" ng-submit="newSessionForm.$valid && startSession()"
+  fieldset
+    div translate='FINISHING.FILL_OUT_ALL_DATA'
+
+    .form-group
+      .radio
+        label
+          input type="radio" name="sincerity" ng-model="session.sincerity" value="serious" ng-required="!session.sincerity"
+          | {{'FINISHING.SINCERITY_SERIOUS' | translate}}
+      .radio
+        label
+          input type="radio" name="sincerity" ng-model="session.sincerity" value="test" ng-required="!session.sincerity"
+          | {{'FINISHING.SINCERITY_TEST' | translate}}
+
+    .form-group
+      label for="session_age" translate="FINISHING.HOW_OLD_ARE_YOU"
+      input#session_age.form-control max="100" min="10" name="age" ng-model="session.age" required="" type="number" /
+      .text-danger ng-show="newSessionForm.age.$dirty && newSessionForm.age.$invalid" translate="ERROR.NUMERICAL_BETWEEN_10_AND_100"
+
+    .form-group
+      label translate="FINISHING.GENDER"
+      .radio
+        label
+          input type="radio" name="gender" ng-model="session.gender" value="f" ng-required="!session.gender"
+          | {{'FINISHING.GENDER_FEMALE' | translate}}
+      .radio
+        label
+          input type="radio" name="gender" ng-model="session.gender" value="m" ng-required="!session.gender"
+          | {{'FINISHING.GENDER_MALE' | translate}}
+
+    .form-group
+      label for="education" translate="FINISHING.QUALIFICATION"
+      select.form-control name="eductaion" ng-model="session.education" required="required" id="session_education"
+        option value="no_high_shool" translate="FINISHING.QUALIFICATION_NO_HIGH_SHOOL"
+        option value="high_shool" translate="FINISHING.QUALIFICATION_HIGH_SHOOL"
+        option value="university" translate="FINISHING.QUALIFICATION_UNIVERSITY"
+        option value="doctoral" translate="FINISHING.QUALIFICATION_DOCTORAL"
+
+    .form-group
+      button.btn.btn-primary ng-disabled="!newSessionForm.$valid" translate="FINISHING.SUBMIT"

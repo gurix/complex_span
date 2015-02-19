@@ -13,6 +13,9 @@
     $scope.number_of_selectable_words_per_retrieval = 5
     $scope.show_instruction = false
     $scope.show_instruction_1_2 = false
+    $scope.show_blue_circle = false
+    $scope.show_retrieval_matrix_instruction_red = false
+    $scope.show_retrieval_matrix_instruction_blue = false
 
     $scope.ShowFixationPoint = () ->
       $scope.show_fixation_point
@@ -29,6 +32,9 @@
     $scope.WordColor = () ->
       $scope.CurrentWord().color + '_word'
 
+    $scope.ColorOfRetrievalMatrixInstruction = () ->
+      if $scope.session.trial_counter == 13 then 'blue' else 'red'
+
     $scope.ShowWord = () ->
       $scope.show_word
 
@@ -40,6 +46,15 @@
 
     $scope.ShowInstruction_1_2 = () ->
       $scope.show_instruction_1_2
+
+    $scope.ShowRetrievalMatrixInstructionRed = () ->
+      $scope.show_retrieval_matrix_instruction_red
+
+    $scope.ShowRetrievalMatrixInstructionBlue = () ->
+      $scope.show_retrieval_matrix_instruction_blue
+
+    $scope.ShowBlueCircle = () ->
+       $scope.show_blue_circle
 
     # (Re)Starts a trial by displaying the first word
     $scope.StartTrial = () ->
@@ -129,19 +144,28 @@
 
       logger.push 'Start with retrieval of session ' + $scope.session.trial_counter
       $scope.show_retrieval_matrix = true
-      $scope.clicked_retrieval_counter = 1
+      $scope.clicked_retrieval_counter = 0
+
+      if $scope.session.trial_counter == 13
+        $scope.show_blue_circle = true
+        $scope.show_blue_circle_instruction = true
+        $scope.show_retrieval_matrix_instruction_blue = true
+        $scope.show_retrieval_matrix_instruction_red = false
+      else
+        $scope.show_retrieval_matrix_instruction_red = true
+
 
     # Triggers some actions when a user clicked on a word he remembers
     $scope.ClickRetrieval = (index) ->
       unless $scope.CurrentRetrievals()[index].clicked
+        $scope.clicked_retrieval_counter++
+
         logger.push 'Clicked ' +  $scope.clicked_retrieval_counter + ' on word ' + $scope.session.trial_counter
 
         # Save properties of the click
         $scope.CurrentRetrievals()[index].clicked = true
         $scope.CurrentRetrievals()[index].clicked_at = new Date()
         $scope.CurrentRetrievals()[index].click_order = $scope.clicked_retrieval_counter
-
-        $scope.clicked_retrieval_counter++
 
         if $scope.clicked_retrieval_counter > $scope.number_of_selectable_words_per_retrieval
           # Hide the cursor immediately
@@ -152,11 +176,14 @@
 
           $scope.session.trial_counter++
 
-          if $scope.session.trial_counter != $scope.number_of_trials_to_practice
-            $timeout (-> $scope.StartTrial()), 2000
-          else
+          if $scope.session.trial_counter == 14
+            location.href='#/finishing'
+          else if $scope.session.trial_counter == $scope.number_of_trials_to_practice
             # Redisplay instruction before the real test starts
             $scope.DisplayInstruction_1_2()
+          else
+            $timeout (-> $scope.StartTrial()), 2000
+
 
 
     $scope.DisplayInstruction_1_2 = () ->
@@ -191,6 +218,9 @@
     # sets class of a clicked retrieval word to .clicked
     $scope.RetrievalClickedClass = (index) ->
       return 'clicked' if $scope.CurrentRetrievals()[index].clicked
+
+    $scope.ClickBlueCircle = () ->
+      $timeout (-> $scope.show_blue_circle = false), 0
 
     # Start the first trials
     $scope.StartTrial()

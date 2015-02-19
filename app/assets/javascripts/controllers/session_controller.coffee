@@ -5,7 +5,6 @@
     localStorageService.bind($scope, 'session')
     $scope.session = {}
     $scope.session.language = $translate.use()
-
     $scope.session.trial_counter = 0
 
     $scope.ToggleBigScreen = () ->

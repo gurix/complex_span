@@ -28,9 +28,27 @@
            press the left arrow key. '
 
   RETRIEVE:
-    INSTRUCTION: 'Please select the 5 red words with the mouse'
+    INSTRUCTION_RED: 'Please select the 5 red words with the mouse'
+    INSTRUCTION_BLUE: 'This time please recall the blue words, not the red words, in their order of presentation.'
+    INSTRUCTION_CIRCLE: 'Continue by clicking on the blue circle.'
+
+  FINISHING:
+    SINCERITY_SERIOUS: 'I seriously performed the test'
+    SINCERITY_TEST: 'I did the test not seriously'
+    SUBMIT: 'Submit data ...'
+    FILL_OUT_ALL_DATA: 'Please complete the following form ...'
+    HOW_OLD_ARE_YOU: 'How old are you?'
+    GENDER: 'Gender'
+    GENDER_FEMALE: 'Female'
+    GENDER_MALE: 'Male'
+    QUALIFICATION: 'Highest educational qualification'
+    QUALIFICATION_NO_HIGHS_HOOL: 'No high school degree'
+    QUALIFICATION_HIGH_SHOOL: 'high school degree'
+    QUALIFICATION_UNIVERSITY: 'University degree'
+    QUALIFICATION_DOCTORAL: 'Doctoral degree'
 
   ERROR:
+    NUMERICAL_BETWEEN_10_AND_100: 'Please provide a numerically age between 10 to 100'
     NO_FULLSCREEN_SUPPORT: 'Your Browser does not support Fullscreen, please use a modern broser to participate.<br/>
                             Read more <a class="alert-link" href="http://browsehappy.com/">here</a>.'
     EXITED_FULLSCREEN: 'The experiment was aborted because you exit the fullscreen mode.'

@@ -2,6 +2,7 @@ require 'rails_helper'
 
 describe 'Experiment', js: true do
   scenario 'running the complete process' do
+    
     visit root_path
     log_index = 0
 
@@ -64,7 +65,13 @@ describe 'Experiment', js: true do
         sleep (word_delay.to_f / 1000)
       end
 
-      expect(page).to have_content 'Please select the 5 red words with the mouse'
+      if trial_counter == 13
+        expect(page).to have_content 'This time please recall the blue words, not the red words, in their order of presentation. Continue by clicking on the blue circle.'
+
+        page.execute_script("$(\"#blue_circle\").click()")
+      else
+        expect(page).to have_content 'Please select the 5 red words with the mouse'
+      end
 
       presented_words.each do | word |
         page.execute_script("$(\"#retrieval_matrix div.ng-binding:contains('#{word}')\").click()")
@@ -87,20 +94,21 @@ describe 'Experiment', js: true do
       sleep 2
     end
 
-    # fill_in 'age', with: '666'
-    #
-    # expect(page).to have_content 'Please provide a numerically age between 10 to 100'
-    #
-    # fill_in 'age', with: '22'
-    #
-    # expect(page).not_to have_content 'Please provide a numerically age between 10 to 100'
-    #
-    # choose 'Female'
-    #
-    # select 'high school degree', from: 'session_education'
-    #
-    # click_button 'Next'
-    #
-    # expect(page.execute_script 'return logger.log[2].message').to eq 'startSession'
+    choose 'I did the test not seriously'
+
+    fill_in 'age', with: '666'
+
+    expect(page).to have_content 'Please provide a numerically age between 10 to 100'
+
+    fill_in 'age', with: '22'
+
+    expect(page).not_to have_content 'Please provide a numerically age between 10 to 100'
+
+    choose 'Female'
+
+    select 'high school degree', from: 'session_education'
+
+    click_button 'Submit data ...'
+
   end
 end

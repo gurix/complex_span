@@ -19,5 +19,8 @@
       ).when('/test',
         templateUrl: "test/index.html",
         controller: 'TrialsController'
+      ).when('/finishing',
+        templateUrl: "finishing/index.html",
+        controller: 'FinishingController'
       )
 ])
