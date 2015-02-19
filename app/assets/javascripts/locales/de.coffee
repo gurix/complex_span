@@ -32,10 +32,12 @@
     INSTRUCTION: 'Wählen Sie die 5 roten Wörter mit der Maus aus'
 
   FINISHING:
-    SINCERITY_SERIOUS: 'Ich habe den Test ernsthaft durchgeführt'
-    SINCERITY_TEST: 'Ich habe den Test nicht ernsthaft durchgeführt'
+    SINCERITY: '<p>Zum Schluss bitten wir Sie, uns ehrlich zu sagen, ob Sie den Versuch ernsthaft durchgeführt haben. Egal wie Sie antworten, Sie bekommen
+                   unabhängig davon die zugesicherte Bezahlung. Diese Frage dient nur dazu, zu entscheiden, ob Ihre Daten in die Auswertung eingehen.<p>
+                <p>Haben Sie den Versuch ernsthaft durchgeführt?</p>'
+    SINCERITY_SERIOUS: 'ja, meine Daten können verwendet werden eführt'
+    SINCERITY_TEST: 'nein, meine Daten nicht verwenden'
     SUBMIT: 'Daten absenden ...'
-    FILL_OUT_ALL_DATA: 'Bitte füllen Sie das folgende Formular aus ...'
     HOW_OLD_ARE_YOU: 'Wie alt sind sie?'
     GENDER: 'Geschlecht'
     GENDER_FEMALE: 'Weiblich'
@@ -45,6 +47,12 @@
     QUALIFICATION_HIGH_SHOOL: 'Gymnasium / Maturität '
     QUALIFICATION_UNIVERSITY: 'Fachhochschule/Universität '
     QUALIFICATION_DOCTORAL: 'Doktorat'
+    DEBRIEFING: '<p>Vielen Dank für die Teilnahme an dem Experiment. Ziel des Experiments war, herauszufinden, ob Menschen Information, die sie nicht im
+                    Gedächtnis behalten können, gezielt vergessen können, und ob das besser gelingt, wenn sie dazu mehr Zeit zur Verfügung haben. Daher haben
+                    wir im letzten Durchgang nach den blauen Wörtern gefragt, die Sie ja eigentlich vergessen sollten. Die Zeit nach den blauen Wörtern wurde
+                    experimentell variiert – manche Personen hatten nur 200 ms nach jedem blauen Wort, andere Personen hatten 1500 ms Zeit. Wir erwarten, dass
+                    Personen, die nach jedem blauen Wort länger Zeit hatten, die blauen Wörter schlechter erinnern können.</p>
+                    <p>Hier ist Ihr Code zur Bestätigung Ihrer Teilnahme: Cspan-DRM-1</p>'
 
   ERROR:
     NUMERICAL_BETWEEN_10_AND_100: 'Bitte geben Sie eine Zahl zwischen 10 und 100 ein'

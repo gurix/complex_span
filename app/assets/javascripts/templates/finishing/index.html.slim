@@ -1,7 +1,11 @@
-form name="newSessionForm" novalidate="novalidate" ng-submit="newSessionForm.$valid && startSession()"
-  fieldset
-    div translate='FINISHING.FILL_OUT_ALL_DATA'
+.alert.alert-danger ng-show="ShowErrorMessage()"
+  | {{error_message}}
 
+div ng-show="ShowDebriefing()" translate="FINISHING.DEBRIEFING"
+
+form name="newSessionForm" novalidate="novalidate" ng-submit="newSessionForm.$valid && startSession()" ng-show='ShowForm()'
+  fieldset
+    div translate='FINISHING.SINCERITY'
     .form-group
       .radio
         label
@@ -31,10 +35,11 @@ form name="newSessionForm" novalidate="novalidate" ng-submit="newSessionForm.$va
     .form-group
       label for="education" translate="FINISHING.QUALIFICATION"
       select.form-control name="eductaion" ng-model="session.education" required="required" id="session_education"
+        option
         option value="no_high_shool" translate="FINISHING.QUALIFICATION_NO_HIGH_SHOOL"
         option value="high_shool" translate="FINISHING.QUALIFICATION_HIGH_SHOOL"
         option value="university" translate="FINISHING.QUALIFICATION_UNIVERSITY"
         option value="doctoral" translate="FINISHING.QUALIFICATION_DOCTORAL"
 
     .form-group
-      button.btn.btn-primary ng-disabled="!newSessionForm.$valid" translate="FINISHING.SUBMIT"
+      button.btn.btn-primary ng-disabled="!newSessionForm.$valid" translate="FINISHING.SUBMIT" ng-click='ClickSendData()'

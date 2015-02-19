@@ -4,6 +4,7 @@
     "angular": "latest",
     "angular-route": "latest",
     "bigscreen": "latest",
+    "detectjs": "latest",
     "bootstrap-sass-official": "latest",
     "angular-local-storage": "latest",
     "angular-cookies": "latest",

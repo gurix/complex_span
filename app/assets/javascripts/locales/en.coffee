@@ -33,19 +33,27 @@
     INSTRUCTION_CIRCLE: 'Continue by clicking on the blue circle.'
 
   FINISHING:
-    SINCERITY_SERIOUS: 'I seriously performed the test'
-    SINCERITY_TEST: 'I did the test not seriously'
+    SINCERITY: '<p>Finally, we ask you to tell us honestly whether you did the experiment seriously, giving it your full attention. You will receive your
+                   payment independent of how you respond, this question serves only to decide whether your data will be included in the analysis.</p>
+                <p>Have you done the experiment seriously?</p>'
+    SINCERITY_SERIOUS: 'Yes, my data should be used'
+    SINCERITY_TEST: 'No, my data should not be used'
     SUBMIT: 'Submit data ...'
-    FILL_OUT_ALL_DATA: 'Please complete the following form ...'
     HOW_OLD_ARE_YOU: 'How old are you?'
     GENDER: 'Gender'
     GENDER_FEMALE: 'Female'
     GENDER_MALE: 'Male'
     QUALIFICATION: 'Highest educational qualification'
-    QUALIFICATION_NO_HIGHS_HOOL: 'No high school degree'
+    QUALIFICATION_NO_HIGH_SHOOL: 'No high school degree'
     QUALIFICATION_HIGH_SHOOL: 'high school degree'
     QUALIFICATION_UNIVERSITY: 'University degree'
     QUALIFICATION_DOCTORAL: 'Doctoral degree'
+    DEBRIEFING: '<p>Thank you again for participating in our experiment. The goal of this experiment was to investigate whether people can intentionally forget
+                    information they want to forget, and whether this is accomplished better when more time is available for forgetting. To that end we tested,
+                    in the last trial, your memory for the blue words, which you were supposed to forget. Across participants we varied the free time following
+                    each of the blue words – some participants had only 200 ms, others had 1500 ms time after each blue word. We expect that participants who
+                    had longer free time following the blue words are able to remember fewer of them. </p>
+                 <p>Here is your code to confirm your participation: Cspan-DRM-1</p>'
 
   ERROR:
     NUMERICAL_BETWEEN_10_AND_100: 'Please provide a numerically age between 10 to 100'

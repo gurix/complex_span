@@ -4,8 +4,14 @@ class Session
   field :age, type: Integer
   field :sincerity, type: Boolean
   field :gender
-  field :educational_achievement
+  field :education
   field :system_information, type: Hash
+  field :trials, type: Array
 
-  validates :age, :gender, :educational_achievement, :system_information, :sincerity, presence: true
+  embeds_many :logs
+  embeds_many :trials
+
+  accepts_nested_attributes_for :logs, :trials
+
+  validates :age, :gender, :education, :system_information, :sincerity, :logs, :trials, presence: true
 end

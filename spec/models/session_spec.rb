@@ -5,5 +5,5 @@ describe Session do
   it { expect(subject).to validate_presence_of(:sincerity) }
   it { expect(subject).to validate_presence_of(:age) }
   it { expect(subject).to validate_presence_of(:gender) }
-  it { expect(subject).to validate_presence_of(:educational_achievement) }
+  it { expect(subject).to validate_presence_of(:education) }
 end

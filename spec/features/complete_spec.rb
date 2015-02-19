@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe 'Experiment', js: true do
   scenario 'running the complete process' do
-    
+
     visit root_path
     log_index = 0
 
@@ -90,11 +90,10 @@ describe 'Experiment', js: true do
 
         find('body').native.send_keys :arrow_right
       end
-
       sleep 2
     end
 
-    choose 'I did the test not seriously'
+    choose 'Yes, my data should be used'
 
     fill_in 'age', with: '666'
 
@@ -108,7 +107,12 @@ describe 'Experiment', js: true do
 
     select 'high school degree', from: 'session_education'
 
+    #expect {click_button 'Submit data ...'}.to change { Session.count }.by(1)
+
     click_button 'Submit data ...'
 
+    binding.pry
+
+    expect(page).to have_content 'Thank you again for participating in our experiment.'
   end
 end
