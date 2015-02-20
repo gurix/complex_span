@@ -21,8 +21,8 @@
         | {{ 'RETRIEVE.INSTRUCTION_CIRCLE' | translate }}
 
   .row ng-hide='ShowBlueCircle()'
-    .col-xs-1.retrieval_word ng-repeat="(index, retrieval) in CurrentRetrievals()"
-      div ng-click="ClickRetrieval(index)" ng-class='RetrievalClickedClass(index)'
+    .col-xs-1.retrieval_word ng-repeat="retrieval in CurrentRetrievals()"
+      div ng-click="ClickRetrieval($index)" ng-class='RetrievalClickedClass($index)'
         | {{retrieval.text}}
 
 div ng-show='ShowInstruction_1_2()'

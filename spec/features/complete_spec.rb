@@ -8,9 +8,9 @@ describe 'Experiment', js: true do
 
     expect(page).to have_log_message('initializing', 0)
 
-    expect(page.execute_script 'return SessionData().trials.length').to eq 14
-
     click_button 'Next'
+
+    expect(page.execute_script 'return SessionData().trials.length').to eq 14
 
     expect(page).to have_log_message('toggleFullScreen', log_index += 1)
     expect(page).to have_log_message('Show instruction 1', log_index += 1)
@@ -35,11 +35,10 @@ describe 'Experiment', js: true do
     find('body').native.send_keys :arrow_right
 
     14.times do | trial_counter |
+      trial = page.execute_script("return SessionData().trials[#{trial_counter}]")
 
-      expect(page.execute_script 'return SessionData().trial_counter').to eq trial_counter
+      expect(page.execute_script("return SessionData().trial_counter")).to eq trial_counter
       expect(page).to have_selector('#fixating_point svg')
-
-      word_delay_condition = page.execute_script("return SessionData().trials[#{trial_counter}].word_delay")
 
       presented_words = []
 
@@ -47,22 +46,20 @@ describe 'Experiment', js: true do
 
         expect(page.execute_script 'return SessionData().word_counter').to eq word_counter
 
-        word_text = page.execute_script("return SessionData().trials[#{trial_counter}].words[#{word_counter}].text")
-        presented_words << word_text
+        word = page.execute_script("return SessionData().trials[#{trial_counter}].words[#{word_counter}]")
 
-        word_color = page.execute_script("return SessionData().trials[#{trial_counter}].words[#{word_counter}].color")
-        word_delay = page.execute_script("return SessionData().trials[#{trial_counter}].words[#{word_counter}].delay")
+        presented_words << word["text"]
 
         expect(page.find '#word').to be_visible
-        expect(page.find '#word').to have_content word_text
+        expect(page.find '#word').to have_content word["text"]
 
-        expect(word_delay).to eq 200 if word_color == 'red'
-        expect(word_delay).to eq word_delay_condition if word_color == 'blue'
+        expect(word["delay"]).to eq 200 if word["color"]  == 'red'
+        expect(word["delay"]).to eq trial["word_delay"] if word["color"] == 'blue'
 
-        find('body').native.send_keys word_color == 'blue' ? :arrow_right : :arrow_left
+        find('body').native.send_keys word["color"]  == 'blue' ? :arrow_right : :arrow_left
 
         # We have to wait until the next word appears, otherwise this E2E-Test will be to fast
-        sleep (word_delay.to_f / 1000)
+        sleep (word["delay"].to_f / 1000)
       end
 
       if trial_counter == 13
@@ -107,11 +104,11 @@ describe 'Experiment', js: true do
 
     select 'high school degree', from: 'session_education'
 
-    #expect {click_button 'Submit data ...'}.to change { Session.count }.by(1)
-
     click_button 'Submit data ...'
 
-    binding.pry
+    sleep 10
+
+    expect(Session.count).to eq 1
 
     expect(page).to have_content 'Thank you again for participating in our experiment.'
   end

@@ -1,9 +1,9 @@
-@controllers.controller("SessionsController", ['$translate','$scope','localStorageService',
-  ($translate, $scope, localStorageService) ->
+@controllers.controller("SessionsController", ['$translate','$scope','localStorageService','$timeout',
+  ($translate, $scope, localStorageService, $timeout) ->
 
     $scope.canGoBigscreen = BigScreen.enabled
     localStorageService.bind($scope, 'session')
-    $scope.session = {}
+    $scope.session = {} unless $scope.session
     $scope.session.language = $translate.use()
     $scope.session.trial_counter = 0
 
@@ -89,7 +89,7 @@
           words.push word
 
           # Push cloned words also to the retrievals
-          retrievals.push jQuery.extend({}, word)
+          retrievals.push JSON.parse(JSON.stringify word)
           word_counter++
 
         # Add some additional words in the retrievals not presented before
@@ -105,5 +105,5 @@
 
         $scope.session.trials.push { words: words, retrievals: retrievals, word_delay: word_delay }
 
-    $scope.PrepareTest()
+    $scope.PrepareTest() unless $scope.session.trials
 ])

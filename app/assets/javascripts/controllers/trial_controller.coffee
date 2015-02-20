@@ -160,14 +160,14 @@
       unless $scope.CurrentRetrievals()[index].clicked
         $scope.clicked_retrieval_counter++
 
-        logger.push 'Clicked ' +  $scope.clicked_retrieval_counter + ' on word ' + $scope.session.trial_counter
+        logger.push 'Clicked ' +  $scope.clicked_retrieval_counter + ' on word ' + $scope.CurrentRetrievals()[index].text
 
         # Save properties of the click
         $scope.CurrentRetrievals()[index].clicked = true
         $scope.CurrentRetrievals()[index].clicked_at = new Date()
         $scope.CurrentRetrievals()[index].click_order = $scope.clicked_retrieval_counter
 
-        if $scope.clicked_retrieval_counter > $scope.number_of_selectable_words_per_retrieval
+        if $scope.clicked_retrieval_counter >= $scope.number_of_selectable_words_per_retrieval
           # Hide the cursor immediately
           $('body').addClass('no-cursor')
 
@@ -180,7 +180,7 @@
             location.href='#/finishing'
           else if $scope.session.trial_counter == $scope.number_of_trials_to_practice
             # Redisplay instruction before the real test starts
-            $scope.DisplayInstruction_1_2()
+            $timeout (-> $scope.DisplayInstruction_1_2()), 0
           else
             $timeout (-> $scope.StartTrial()), 2000
 

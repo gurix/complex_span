@@ -25,17 +25,17 @@ RSpec.configure do |config|
 
   config.before(:suite) do
     FactoryGirl.reload
+    DatabaseCleaner.clean
   end
 
   config.before(:each) do
     I18n.locale = :en
     DatabaseCleaner.start
     ActionMailer::Base.deliveries.clear
-  end
-
-  config.after(:each) do
     DatabaseCleaner.clean
   end
+
+  Capybara.default_wait_time = 20
 
   Capybara.register_driver :selenium do |app|
     Capybara::Selenium::Driver.new(app, :browser => :chrome)
