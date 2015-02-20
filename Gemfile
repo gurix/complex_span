@@ -1,4 +1,7 @@
 source 'https://rubygems.org'
+ruby "2.1.2"
+
+gem 'unicorn' # using unicorn, see https://devcenter.heroku.com/articles/rails-unicorn
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.7'
