@@ -5,6 +5,8 @@
     BigScreen.onexit = () ->
         logger.push 'Exit fullscreen'
 
+    $('body').removeClass('no-cursor')
+
     $scope.error_message = ''
     $scope.show_debriefing = false
     $scope.show_form = true
