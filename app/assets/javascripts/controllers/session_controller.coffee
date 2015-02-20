@@ -97,7 +97,7 @@
         for number_of_words_not_presented in [1..5]
           word = word_stack[word_counter]
           word.trial = number_of_trials
-          retrievals.push
+          retrievals.push word
           word_counter++
 
         # Shuffle the retrievals and update the position
