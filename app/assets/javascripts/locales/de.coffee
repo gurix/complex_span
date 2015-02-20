@@ -1,6 +1,5 @@
 @translations_de =
   HOME:
-    EXPERIMENT_TITLE: 'Benötigt ein Experiment-Titel hier'
     SWITCH_LANGUAGE: 'English'
     NEXT: 'Weiter ...'
     WARNING: 'Dieses Experiment wird im Vollbild-Modus durchfeführt. Das Verlassen des Vollbildmodus wird das Experiment abbrechen. Bitte

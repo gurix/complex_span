@@ -16,6 +16,7 @@
       $scope.error_message != ''
 
     $scope.ClickSendData = () ->
+      logger.push 'Send data'
 
       # Gather some information about the client
       system_informations =
@@ -42,11 +43,13 @@
       $scope.show_form = false
 
       $.post('/sessions',{ session: data }).done( ->
+          BigScreen.toggle() unless window.debug
+          logger.push 'Done sending data'
           $scope.show_debriefing = true
           console.log $scope.show_debriefing
           $scope.error_message = ''
         ).fail (jqxhr, textStatus, error)->
-
+          logger.push 'failed send data '  + textStatus + ', ' + error
           $timeout (-> $scope.show_form = true), 0
 
           $scope.error_message = 'Request Failed: ' + textStatus + ', ' + error

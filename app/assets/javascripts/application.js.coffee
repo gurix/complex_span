@@ -12,4 +12,7 @@
 #= require_tree .
 
 @logger = new window.Logger()
+@logger.clear()
 @logger.push('initializing')
+
+window.debug = true unless location.hostname == "complexspan.herokuapp.com"

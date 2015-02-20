@@ -1,7 +1,6 @@
 @controllers.controller("TrialsController", ['$translate','$scope','localStorageService','$timeout'
   ($translate, $scope, localStorageService, $timeout) ->
 
-    $scope.session = {}
     localStorageService.bind($scope, 'session')
     $scope.show_word = false
     $scope.show_retrieval_matrix = false

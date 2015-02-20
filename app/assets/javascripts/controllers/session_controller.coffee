@@ -8,7 +8,8 @@
     $scope.session.trial_counter = 0
 
     $scope.ToggleBigScreen = () ->
-      #BigScreen.toggle()
+      BigScreen.toggle() unless window.debug
+      $scope.session = {}
       logger.push 'toggleFullScreen'
       $scope.GoToInstruction1()
       true
