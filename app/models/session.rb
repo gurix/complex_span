@@ -2,7 +2,7 @@ class Session
   include Mongoid::Document
 
   field :age, type: Integer
-  field :sincerity, type: Boolean
+  field :sincerity, type: String
   field :gender
   field :education
   field :system_information, type: Hash

@@ -43,6 +43,8 @@
       $scope.show_form = false
 
       $.post('/sessions',{ session: data }).done( ->
+          BigScreen.onexit = () ->
+              logger.push 'Exit fullscreen'
           BigScreen.toggle() unless window.debug
           logger.push 'Done sending data'
           $scope.show_debriefing = true
