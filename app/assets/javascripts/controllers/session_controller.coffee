@@ -9,7 +9,7 @@
 
     $scope.ToggleBigScreen = () ->
       BigScreen.toggle() unless window.debug
-      $scope.session = {}
+      $timeout ( -> $scope.session = {} ), 0
       logger.push 'toggleFullScreen'
       $scope.GoToInstruction1()
       true
@@ -95,7 +95,9 @@
 
         # Add some additional words in the retrievals not presented before
         for number_of_words_not_presented in [1..5]
-          retrievals.push word_stack[word_counter]
+          word = word_stack[word_counter]
+          word.trial = number_of_trials
+          retrievals.push
           word_counter++
 
         # Shuffle the retrievals and update the position
@@ -106,5 +108,5 @@
 
         $scope.session.trials.push { words: words, retrievals: retrievals, word_delay: word_delay }
 
-    $scope.PrepareTest() unless $scope.session.trials
+    $scope.PrepareTest()
 ])

@@ -49,7 +49,7 @@
           console.log $scope.show_debriefing
           $scope.error_message = ''
         ).fail (jqxhr, textStatus, error)->
-          logger.push 'failed send data '  + textStatus + ', ' + error
+          logger.push 'failed send data '  + textStatus + ', ' + error + ', ' + jqxhr.responseText
           $timeout (-> $scope.show_form = true), 0
 
           $scope.error_message = 'Request Failed: ' + textStatus + ', ' + error

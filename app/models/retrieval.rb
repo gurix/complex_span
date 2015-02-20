@@ -15,5 +15,5 @@ class Retrieval
   field :click_order, type: Integer
 
   embedded_in :trials
-  # validates :color, :text, :delay, :size_difference, :trial, :word_position, :word_id, :clicked, :retrieval_position, :clicked_at, :click_order, presence: true
+  validates :text, :size_difference, :trial, :word_id, :retrieval_position, presence: true
 end

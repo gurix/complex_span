@@ -3,7 +3,11 @@ class SessionsController < ApplicationController
 
   def create
     @session = Session.create session_params
-    render plain: 'Done!'
+    if @session.valid?
+      render json: @session
+    else
+      render json: @session.errors, status: 500
+    end
   end
 
   def session_params

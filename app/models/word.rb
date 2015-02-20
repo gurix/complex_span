@@ -11,10 +11,10 @@ class Word
 
   field :start_time, type: DateTime
   field :stop_time, type: DateTime
-  field :reaction_time, type: Integer # Should not taken from here!
+  field :reaction_time, type: Integer
   field :pressed_key, type: Integer
 
   embedded_in :trials
 
-  # validates :color, :text, :delay, :size_difference, :trial, :word_position, :word_id, :start_time, :stop_time, :reaction_time, :pressed_key, presence: true
+  validates :color, :text, :delay, :size_difference, :trial, :word_position, :word_id, presence: true
 end
