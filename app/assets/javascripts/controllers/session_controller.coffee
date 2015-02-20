@@ -9,9 +9,10 @@
 
     $scope.ToggleBigScreen = () ->
       BigScreen.toggle() unless window.debug
-      $timeout ( -> $scope.session = {} ), 0
+      $timeout ( -> $scope.PrepareTest() ), 0
+      $timeout ( -> $scope.GoToInstruction1() ), 0
       logger.push 'toggleFullScreen'
-      $scope.GoToInstruction1()
+
       true
 
     $scope.GoToInstruction1 = () ->
@@ -50,6 +51,8 @@
       logger.push 'Switch language to ' + $translate.use()
 
     $scope.PrepareTest = () ->
+      $scope.session = {}
+      
       # Let's get a shuffled stack of words
       word_stack = window['words_' + $translate.use()]
       word_stack.shuffle()
@@ -107,6 +110,4 @@
           retrievals[number_of_retrievals - 1 ].retrieval_position = number_of_retrievals
 
         $scope.session.trials.push { words: words, retrievals: retrievals, word_delay: word_delay }
-
-    $scope.PrepareTest()
 ])
