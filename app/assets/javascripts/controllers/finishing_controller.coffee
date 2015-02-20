@@ -2,6 +2,9 @@
   ($translate, $scope, localStorageService, $timeout) ->
     localStorageService.bind($scope, 'session')
 
+    BigScreen.onexit = () ->
+        logger.push 'Exit fullscreen'
+
     $scope.error_message = ''
     $scope.show_debriefing = false
     $scope.show_form = true
@@ -43,11 +46,8 @@
       $scope.show_form = false
 
       $.post('/sessions',{ session: data }).done( ->
-          BigScreen.onexit = () ->
-              logger.push 'Exit fullscreen'
-          BigScreen.toggle() unless window.debug
           logger.push 'Done sending data'
-          $scope.show_debriefing = true
+          $timeout (-> $scope.show_debriefing = true), 0
           console.log $scope.show_debriefing
           $scope.error_message = ''
         ).fail (jqxhr, textStatus, error)->
