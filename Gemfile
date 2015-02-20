@@ -70,6 +70,9 @@ gem 'selenium-webdriver', '~> 2.44.0', group: [:development, :test]
 gem 'bower-rails'
 gem 'angular-rails-templates'
 
+# Makes running your Rails app easier on heroku
+gem 'rails_12factor', group: :production
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
