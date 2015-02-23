@@ -28,7 +28,9 @@
            drücken Sie die linke Pfeiltaste.'
 
   RETRIEVE:
-    INSTRUCTION: 'Wählen Sie die 5 roten Wörter mit der Maus aus'
+    INSTRUCTION_RED: 'Wählen Sie die 5 roten Wörter mit der Maus aus'
+    INSTRUCTION_BLUE: 'Dieses Mal geben Sie bitte nicht die roten, sondern die blauen Wörter in der richtigen Reihenfolge wieder!'
+    INSTRUCTION_CIRCLE: 'Weiter geht es mit einem Mausklick in den blauen Kreis. '
 
   FINISHING:
     SINCERITY: '<p>Zum Schluss bitten wir Sie, uns ehrlich zu sagen, ob Sie den Versuch ernsthaft durchgeführt haben. Egal wie Sie antworten, Sie bekommen
