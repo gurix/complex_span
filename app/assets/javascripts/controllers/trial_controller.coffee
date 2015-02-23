@@ -156,33 +156,44 @@
 
     # Triggers some actions when a user clicked on a word he remembers
     $scope.ClickRetrieval = (index) ->
-      unless $scope.CurrentRetrievals()[index].clicked
-        $scope.clicked_retrieval_counter++
+      retrieval_id = '#retrieval-' + index
 
-        logger.push 'Clicked ' +  $scope.clicked_retrieval_counter + ' on word ' + $scope.CurrentRetrievals()[index].text
+      clicked_retrieval = JSON.parse(JSON.stringify $scope.CurrentRetrievals()[index])
 
-        # Save properties of the click
-        $scope.CurrentRetrievals()[index].clicked = true
-        $scope.CurrentRetrievals()[index].clicked_at = new Date()
-        $scope.CurrentRetrievals()[index].click_order = $scope.clicked_retrieval_counter
+      $scope.clicked_retrieval_counter++
 
-        if $scope.clicked_retrieval_counter >= $scope.number_of_selectable_words_per_retrieval
-          # Hide the cursor immediately
-          $('body').addClass('no-cursor')
+      logger.push 'Clicked ' +  $scope.clicked_retrieval_counter + ' on word ' + $scope.CurrentRetrievals()[index].text
 
-          # Hide Matrix
-          $timeout (-> $scope.show_retrieval_matrix = false), 0
+      # Save properties of the click
+      clicked_retrieval.clicked_at = new Date()
+      clicked_retrieval.click_order = $scope.clicked_retrieval_counter
 
+      $scope.CurrentTrial().retrieval_clicks.push clicked_retrieval
+
+      $(retrieval_id).addClass 'clicked'
+
+      $timeout (-> $(retrieval_id).removeClass 'clicked'), 1000
+
+      if $scope.clicked_retrieval_counter >= $scope.number_of_selectable_words_per_retrieval
+        # Hide the cursor immediately
+        $('body').addClass('no-cursor')
+
+        # Ensure the clicked class is removed
+        $timeout (-> $(retrieval_id).removeClass 'clicked'), 0
+
+        # Hide Matrix
+        $timeout (-> $scope.show_retrieval_matrix = false), 0
+
+        if $scope.session.trial_counter < 13
           $scope.session.trial_counter++
 
-          if $scope.session.trial_counter == 14
-            location.href='#/finishing'
-          else if $scope.session.trial_counter == $scope.number_of_trials_to_practice
+          if $scope.session.trial_counter == $scope.number_of_trials_to_practice
             # Redisplay instruction before the real test starts
             $timeout (-> $scope.DisplayInstruction_1_2()), 0
           else
             $timeout (-> $scope.StartTrial()), 2000
-
+        else
+          $timeout (-> location.href = '#/finishing'), 1000
 
 
     $scope.DisplayInstruction_1_2 = () ->
@@ -213,10 +224,6 @@
           $timeout (-> $scope.show_instruction = false), 0
           $scope.DisplayInstruction_1_2()
         e.preventDefault()
-
-    # sets class of a clicked retrieval word to .clicked
-    $scope.RetrievalClickedClass = (index) ->
-      return 'clicked' if $scope.CurrentRetrievals()[index].clicked
 
     $scope.ClickBlueCircle = () ->
       $timeout (-> $scope.show_blue_circle = false), 0

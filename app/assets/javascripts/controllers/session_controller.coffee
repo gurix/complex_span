@@ -52,7 +52,7 @@
 
     $scope.PrepareTest = () ->
       $scope.session = {}
-      
+
       # Let's get a shuffled stack of words
       word_stack = window['words_' + $translate.use()]
       word_stack.shuffle()
@@ -109,5 +109,5 @@
         for number_of_retrievals in [1..retrievals.length]
           retrievals[number_of_retrievals - 1 ].retrieval_position = number_of_retrievals
 
-        $scope.session.trials.push { words: words, retrievals: retrievals, word_delay: word_delay }
+        $scope.session.trials.push { words: words, retrievals: retrievals, word_delay: word_delay, retrieval_clicks: [] }
 ])

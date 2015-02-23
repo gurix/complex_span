@@ -70,8 +70,10 @@ describe 'Experiment', js: true do
         expect(page).to have_content 'Please select the 5 red words with the mouse'
       end
 
-      presented_words.each do | word |
+      presented_words.sample(5).each_with_index do | word, index |
         page.execute_script("$(\"#retrieval_matrix div.ng-binding:contains('#{word}')\").click()")
+
+        expect(page.execute_script("return SessionData().trials[#{trial_counter}].retrieval_clicks[#{index}].text")).to eq word
       end
 
       if trial_counter == 1

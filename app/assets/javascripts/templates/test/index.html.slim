@@ -22,7 +22,7 @@
 
   .row ng-hide='ShowBlueCircle()'
     .col-xs-1.retrieval_word ng-repeat="retrieval in CurrentRetrievals()"
-      div ng-click="ClickRetrieval($index)" ng-class='RetrievalClickedClass($index)'
+      div ng-click="ClickRetrieval($index)" id="{{ 'retrieval-' + $index }}"
         | {{retrieval.text}}
 
 div ng-show='ShowInstruction_1_2()'
