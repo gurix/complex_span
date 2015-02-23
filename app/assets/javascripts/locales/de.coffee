@@ -2,7 +2,7 @@
   HOME:
     SWITCH_LANGUAGE: 'English'
     NEXT: 'Weiter ...'
-    WARNING: 'Dieses Experiment wird im Vollbild-Modus durchfeführt. Das Verlassen des Vollbildmodus wird das Experiment abbrechen. Bitte
+    WARNING: 'Dieses Experiment wird im Vollbild-Modus durchgeführt. Das Verlassen des Vollbildmodus wird das Experiment abbrechen. Bitte
               schliessen Sie all ihre anderen Programme und schalten sie alle Benachrichtigungen aus. Sorgen sie dafür das sie dieses Experiment
               an einem ruhigen Ort durchführen ohne Ablenkung Bspw. durch Lärm.'
 
