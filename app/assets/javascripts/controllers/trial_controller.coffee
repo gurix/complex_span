@@ -63,6 +63,9 @@
       # Reset word counter
       $scope.session.word_counter = 0
 
+      # Register the time when a trial is started
+      $scope.CurrentTrial().started_at = new Date()
+
       logger.push 'Start with trial ' + $scope.session.trial_counter
 
       # Show fixation point
@@ -152,7 +155,7 @@
         $scope.show_retrieval_matrix_instruction_red = false
       else
         $scope.show_retrieval_matrix_instruction_red = true
-
+        $scope.CurrentTrial().retrieval_matrix_shown_at = new Date()
 
     # Triggers some actions when a user clicked on a word he remembers
     $scope.ClickRetrieval = (index) ->
@@ -226,6 +229,7 @@
         e.preventDefault()
 
     $scope.ClickBlueCircle = () ->
+      $scope.CurrentTrial().retrieval_matrix_shown_at = new Date()
       $timeout (-> $scope.show_blue_circle = false), 0
 
     # Start the first trials

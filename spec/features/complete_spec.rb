@@ -89,6 +89,10 @@ describe 'Experiment', js: true do
 
         find('body').native.send_keys :arrow_right
       end
+
+      expect(page.execute_script("return SessionData().trials[#{trial_counter}].started_at").to_time).to be <= Time.now
+      expect(page.execute_script("return SessionData().trials[#{trial_counter}].retrieval_matrix_shown_at").to_time).to be <= Time.now
+
       sleep 2
     end
 
