@@ -2,7 +2,6 @@ require 'rails_helper'
 
 describe 'Experiment', js: true do
   scenario 'running the complete process' do
-
     visit root_path
     log_index = 0
 
@@ -37,33 +36,33 @@ describe 'Experiment', js: true do
     14.times do | trial_counter |
       trial = page.execute_script("return SessionData().trials[#{trial_counter}]")
 
-      expect(page.execute_script("return SessionData().trial_counter")).to eq trial_counter
+      expect(page.execute_script('return SessionData().trial_counter')).to eq trial_counter
       expect(page).to have_selector('#fixating_point svg')
 
       presented_words = []
 
       10.times do | word_counter |
-
         expect(page.execute_script 'return SessionData().word_counter').to eq word_counter
 
         word = page.execute_script("return SessionData().trials[#{trial_counter}].words[#{word_counter}]")
 
-        presented_words << word["text"]
+        presented_words << word['text']
 
         expect(page.find '#word').to be_visible
-        expect(page.find '#word').to have_content word["text"]
+        expect(page.find '#word').to have_content word['text']
 
-        expect(word["delay"]).to eq 200 if word["color"]  == 'red'
-        expect(word["delay"]).to eq trial["word_delay"] if word["color"] == 'blue'
+        expect(word['delay']).to eq 200 if word['color']  == 'red'
+        expect(word['delay']).to eq trial['word_delay'] if word['color'] == 'blue'
 
-        find('body').native.send_keys word["color"]  == 'blue' ? :arrow_right : :arrow_left
+        find('body').native.send_keys word['color']  == 'blue' ? :arrow_right : :arrow_left
 
         # We have to wait until the next word appears, otherwise this E2E-Test will be to fast
-        sleep (word["delay"].to_f / 1000)
+        sleep(word['delay'].to_f / 1000)
       end
 
       if trial_counter == 13
-        expect(page).to have_content 'This time please recall the blue words, not the red words, in their order of presentation. Continue by clicking on the blue circle.'
+        expect(page).to have_content 'This time please recall the blue words, not the red words, in their order of presentation.'
+        expect(page).to have_content 'Continue by clicking on the blue circle.'
 
         page.execute_script("$(\"#blue_circle\").click()")
       else
