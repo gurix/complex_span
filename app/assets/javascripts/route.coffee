@@ -1,10 +1,6 @@
 @cspan.config([ '$routeProvider','$locationProvider',
   ($routeProvider, $locationProvider)->
     $routeProvider
-      .when('/:language?',
-        templateUrl: "index.html",
-        controller: 'SessionsController'
-      )
       .when('/session/instruction_1',
         templateUrl: "session/instruction_1.html",
         controller: 'SessionsController'
@@ -22,5 +18,8 @@
       ).when('/finishing',
         templateUrl: "finishing/index.html",
         controller: 'FinishingController'
+      ).when('/:language?',
+        templateUrl: "index.html",
+        controller: 'SessionsController'
       )
 ])
