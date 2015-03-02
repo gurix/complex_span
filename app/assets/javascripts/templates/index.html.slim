@@ -6,8 +6,13 @@ div.clear-both
   .alert.alert-danger ng-hide="canGoBigscreen" translate="ERROR.NO_FULLSCREEN_SUPPORT"
 
   div ng-show="canGoBigscreen"
-    .alert.alert-warning translate="HOME.WARNING"
-    button.btn.btn-default ng-click="ChangeLanguage()" translate="HOME.SWITCH_LANGUAGE"
+    div ng-show="ShowInformedConsent()"
+      p translate="HOME.INFORMED_CONSENT"
+      .pull-right
+        button.btn.btn-primary ng-click="ShowWarning()" translate="HOME.NEXT"
+    div ng-hide="ShowInformedConsent()"
+      .alert.alert-warning translate="HOME.WARNING"
+      .pull-right
+        button.btn.btn-primary ng-click="ToggleBigScreen()" translate="HOME.NEXT"
 
-    .pull-right
-      button.btn.btn-primary ng-click="ToggleBigScreen()" translate="HOME.NEXT"
+    button.btn.btn-default ng-click="ChangeLanguage()" translate="HOME.SWITCH_LANGUAGE"
