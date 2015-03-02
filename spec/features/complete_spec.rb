@@ -3,32 +3,38 @@ require 'rails_helper'
 describe 'Experiment', js: true do
   scenario 'running the complete process' do
     visit root_path
-    log_index = 0
 
-    expect(page).to have_log_message('initializing', 0)
+    expect(page).to have_log_message('initializing')
+
+    expect(page).to have_content 'If you agree, please press the “Next” button below.'
+
+    click_button 'Next'
+
+    expect(page).to have_log_message('accepted informed consent')
+
+    expect(page).to have_content 'To run this experiment wee need to take you in fullscreen mode.'
 
     click_button 'Next'
 
     expect(page.execute_script 'return SessionData().trials.length').to eq 14
-
-    expect(page).to have_log_message('toggleFullScreen', log_index += 1)
-    expect(page).to have_log_message('Show instruction 1', log_index += 1)
+    
+    expect(page).to have_log_message('Show instruction 1')
 
     expect(page).to have_content 'Please press the right arrow key to continue'
 
     find('body').native.send_keys :arrow_right
 
-    expect(page).to have_log_message('Show instruction 1_1', log_index += 1)
+    expect(page).to have_log_message('Show instruction 1_1')
     expect(page).to have_content 'When you are ready for the practice trials, please press the right arrow key.'
 
     find('body').native.send_keys :arrow_left
 
-    expect(page).to have_log_message('Show instruction 1', log_index += 1)
+    expect(page).to have_log_message('Show instruction 1')
     expect(page).to have_content 'Please press the right arrow key to continue'
 
     find('body').native.send_keys :arrow_right
 
-    expect(page).to have_log_message('Show instruction 1_1', log_index += 1)
+    expect(page).to have_log_message('Show instruction 1_1')
     expect(page).to have_content 'When you are ready for the practice trials, please press the right arrow key.'
 
     find('body').native.send_keys :arrow_right

@@ -6,6 +6,16 @@
               schliessen Sie all ihre anderen Programme und schalten sie alle Benachrichtigungen aus. Sorgen sie dafür das sie dieses Experiment
               an einem ruhigen Ort durchführen ohne Ablenkung Bspw. durch Lärm.'
 
+    INFORMED_CONSENT: '<p>
+                          Bei diesem Experiment werden Sie gebeten, Wörter kurzfristig im Gedächtnis zu behalten. Gleichzeitig sollen Sie Entscheidungen über 
+                          die Wörter treffen. Das Experiment dauert etwa 15 Minuten. Ihre Daten werden anonym aufgezeichnet. Die Teilnahme ist
+                          selbstverständlich freiwillig, und Sie können jederzeit ohne Angabe von Gründen abbrechen; in dem Fall werden Ihre Daten nicht
+                          verwendet. Die Bezahlung erhalten Sie allerdings nur, wenn Sie das Experiment vollständig durchführen.
+                      </p>
+                      <p>
+                        Wenn Sie einverstanden sind, an dem Experiment teilzunehmen, drücken Sie bitte unten die Taste „Weiter“
+                      </p>'
+
   INSTRUCTION_1:
     THANK_YOU: '<p>Vielen Dank, dass Sie an unserem Experiment teilnehmen! Das Experiment wird etwa 15 Minuten dauern.</p>'
     TEXT: '<p>In jedem Durchgang werden Ihnen nacheinander 10 Wörter präsentiert, die sich alle auf konkrete Objekte beziehen.

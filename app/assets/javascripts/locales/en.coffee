@@ -5,6 +5,15 @@
     WARNING: 'To run this experiment wee need to take you in fullscreen mode. Exiting the fullscreen mode will terminate the experiment.
               Please close all other running applications and turn off all notifications. Ensure you are in a calm place without any
               distractions i.e noise.'
+    INFORMED_CONSENT: '<p>
+                          In this experiment you will be asked to briefly remember short sets of words. You will also make judgments on the words at the same
+                          time. The experiment will take about 15 minutes. The data will be recorded anonymously. Your participation is of course voluntary,
+                          and you can quit the experiment at any time without giving any reasons. However, you will receive payment only if you complete the
+                          experiment.
+                      </p>
+                      <p>
+                        If you agree, please press the “Next” button below.
+                      </p>'
 
   INSTRUCTION_1:
     THANK_YOU: '<p>Thank you very much for taking part in our experiment! The experiment will take about 15 minutes.</p>'
