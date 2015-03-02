@@ -17,7 +17,7 @@ describe 'Experiment', js: true do
     click_button 'Next'
 
     expect(page.execute_script 'return SessionData().trials.length').to eq 14
-    
+
     expect(page).to have_log_message('Show instruction 1')
 
     expect(page).to have_content 'Please press the right arrow key to continue'
@@ -120,6 +120,9 @@ describe 'Experiment', js: true do
     sleep 10
 
     expect(Session.count).to eq 1
+    session = Session.last
+
+    expect(session.ip_address).to eq '127.0.0.1'
 
     expect(page).to have_content 'Thank you again for participating in our experiment.'
   end
