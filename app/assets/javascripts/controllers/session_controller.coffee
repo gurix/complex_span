@@ -1,5 +1,7 @@
-@controllers.controller("SessionsController", ['$translate','$scope','localStorageService','$timeout',
-  ($translate, $scope, localStorageService, $timeout) ->
+@controllers.controller("SessionsController", ['$translate','$scope','localStorageService','$timeout','$routeParams',
+  ($translate, $scope, localStorageService, $timeout, $routeParams) ->
+
+    $translate.use $routeParams.language || 'en'
 
     $scope.canGoBigscreen = BigScreen.enabled
     localStorageService.bind($scope, 'session')
