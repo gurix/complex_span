@@ -48,3 +48,7 @@ At the moment, English and German is supported. One can choose the language over
 * On production:
 http://complexspan.herokuapp.com/#/de or http://complexspan.herokuapp.com/#/en
 * On your local development environment: http://localhost:3000/#/de or http://localhost:3000/#/en
+
+## Links and Tools
+
+* Mongodb Administration interface http://genghisapp.com/
