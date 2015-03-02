@@ -175,7 +175,7 @@
 
       $(retrieval_id).addClass 'clicked'
 
-      $timeout (-> $(retrieval_id).removeClass 'clicked'), 1000
+      $timeout (-> $(retrieval_id).removeClass 'clicked'), 300
 
       if $scope.clicked_retrieval_counter >= $scope.number_of_selectable_words_per_retrieval
         # Hide the cursor immediately
