@@ -12,7 +12,7 @@
                           experiment.
                       </p>
                       <p>
-                        If you agree, please press the “Next” button below. 
+                        If you agree, please press the “Next” button below.
                       </p>'
 
   INSTRUCTION_1:

@@ -12,13 +12,14 @@
       $scope.session.show_informed_consent
 
     $scope.ShowWarning = () ->
+      logger.push 'accepted informed consent'
       $timeout ( -> $scope.session.show_informed_consent = false ), 0
 
     $scope.ToggleBigScreen = () ->
       BigScreen.toggle() unless window.debug
       $timeout ( -> $scope.PrepareTest() ), 0
       $timeout ( -> $scope.GoToInstruction1() ), 0
-      logger.push 'toggleFullScreen'
+      logger.push 'toggle fullscreen'
       true
 
     $scope.GoToInstruction1 = () ->
