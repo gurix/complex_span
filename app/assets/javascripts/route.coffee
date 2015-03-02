@@ -1,7 +1,7 @@
-@cspan.config([ '$routeProvider',
-  ($routeProvider)->
+@cspan.config([ '$routeProvider','$locationProvider',
+  ($routeProvider, $locationProvider)->
     $routeProvider
-      .when('/',
+      .when('/:language?',
         templateUrl: "index.html",
         controller: 'SessionsController'
       )
