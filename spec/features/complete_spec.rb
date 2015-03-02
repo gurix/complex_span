@@ -124,6 +124,8 @@ describe 'Experiment', js: true do
 
     expect(session.ip_address).to eq '127.0.0.1'
 
+    expect(session.language).to eq 'en'
+
     expect(page).to have_content 'Thank you again for participating in our experiment.'
   end
 end

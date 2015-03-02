@@ -44,6 +44,7 @@
         gender: $scope.session.gender
         education: $scope.session.education
         system_information: system_informations
+        language: $scope.session.language
 
       $scope.show_form = false
 
