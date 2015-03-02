@@ -8,11 +8,13 @@ div.clear-both
   div ng-show="canGoBigscreen"
     div ng-show="ShowInformedConsent()"
       p translate="HOME.INFORMED_CONSENT"
+
+      button.btn.btn-default ng-click="ChangeLanguage()" translate="HOME.SWITCH_LANGUAGE"
+
       .pull-right
         button.btn.btn-primary ng-click="ShowWarning()" translate="HOME.NEXT"
+
     div ng-hide="ShowInformedConsent()"
       .alert.alert-warning translate="HOME.WARNING"
       .pull-right
         button.btn.btn-primary ng-click="ToggleBigScreen()" translate="HOME.NEXT"
-
-    button.btn.btn-default ng-click="ChangeLanguage()" translate="HOME.SWITCH_LANGUAGE"
