@@ -1,0 +1,8 @@
+ruby:
+  system_information_headers = %w(screen_width screen_height navigator_user_agent navigator_platform window_innerHeight window_innerWidth window_screenX window_screenY window_pageXOffset window_pageYOffset)
+  headers = %w(id age sincerity gender education ip_address number_of_logs number_of_trials) + system_information_headers.map { | system_information_header| "sys_#{system_information_header}" }
+
+= CSV.generate_line headers
+- @sessions.each do |session|
+  = raw CSV.generate_line([session.id, session.age, session.sincerity, session.gender, session.education, session.ip_address, session.language, session.logs.count,
+                       session.trials.count] + session.system_information.values)
