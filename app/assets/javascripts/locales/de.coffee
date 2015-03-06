@@ -54,8 +54,8 @@
     GENDER_FEMALE: 'Weiblich'
     GENDER_MALE: 'Männlich'
     QUALIFICATION: 'Höchster Schulabschluss'
-    QUALIFICATION_NO_HIGH_SHOOL: 'Obligatorische Schule'
-    QUALIFICATION_HIGH_SHOOL: 'Gymnasium / Maturität '
+    QUALIFICATION_NO_HIGH_SCHOOL: 'Obligatorische Schule'
+    QUALIFICATION_HIGH_SCHOOL: 'Gymnasium / Maturität '
     QUALIFICATION_UNIVERSITY: 'Fachhochschule/Universität '
     QUALIFICATION_DOCTORAL: 'Doktorat'
     DEBRIEFING: '<p>Vielen Dank für die Teilnahme an dem Experiment. Ziel des Experiments war, herauszufinden, ob Menschen Information, die sie nicht im

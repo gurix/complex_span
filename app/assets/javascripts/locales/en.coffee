@@ -52,8 +52,8 @@
     GENDER_FEMALE: 'Female'
     GENDER_MALE: 'Male'
     QUALIFICATION: 'Highest educational qualification'
-    QUALIFICATION_NO_HIGH_SHOOL: 'No high school degree'
-    QUALIFICATION_HIGH_SHOOL: 'high school degree'
+    QUALIFICATION_NO_HIGH_SCHOOL: 'No high school degree'
+    QUALIFICATION_HIGH_SCHOOL: 'high school degree'
     QUALIFICATION_UNIVERSITY: 'University degree'
     QUALIFICATION_DOCTORAL: 'Doctoral degree'
     DEBRIEFING: '<p>Thank you again for participating in our experiment. The goal of this experiment was to investigate whether people can intentionally forget
