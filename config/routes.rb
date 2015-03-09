@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   resources :presentations, only: [:index]
   resources :retrieval_clicks, only: [:index]
   resources :retrievals, only: [:index]
+  resources :logs, only: [:index]
 end
