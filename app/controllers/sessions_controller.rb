@@ -1,6 +1,8 @@
 class SessionsController < ApplicationController
   respond_to :html
 
+  skip_before_action :authenticate, only: :create
+
   def create
     @session = Session.create session_params.merge(ip_address: request.remote_ip)
     if @session.valid?
