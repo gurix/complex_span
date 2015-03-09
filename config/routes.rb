@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   resources :sessions, only: [:create, :index]
   resources :presentations, only: [:index]
   resources :retrieval_clicks, only: [:index]
+  resources :retrievals, only: [:index]
 end
