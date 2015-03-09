@@ -1,5 +1,6 @@
 class Session
   include Mongoid::Document
+  include Mongoid::Timestamps
 
   field :age, type: Integer
   field :sincerity, type: String

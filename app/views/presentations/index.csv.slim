@@ -1,0 +1,8 @@
+ruby:
+  headers = %w(session_id trial word_position color delay start_time stop_time reaction_time pressed_key text word_id size_difference)
+
+= CSV.generate_line headers
+- @presentations.each do |presentation|
+  = raw CSV.generate_line([ presentation.trials.sessions.id, presentation.trial, presentation.word_position, presentation.color, presentation.delay,
+                            presentation.start_time, presentation.reaction_time, presentation.pressed_key, presentation.text, presentation.word_id,
+                            presentation.size_difference ])
