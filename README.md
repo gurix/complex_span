@@ -46,13 +46,15 @@ After pushing your master branch, heroku picks up the changes and deploys the ne
 ## Languages
 At the moment, English and German is supported. One can choose the language over a) the button on the first  page, or b) over the a direct url:
 
-* On production:
-http://complexspan.herokuapp.com/#/de or http://complexspan.herokuapp.com/#/en
-* On your local development environment: http://localhost:3000/#/de or http://localhost:3000/#/en
+* http://localhost:3000/#/de for german
+* http://localhost:3000/#/en for english
 
-## Data Export
+## Data Administration and Export
+
+A rudimentary administration interface is available under http://localhost:3000/admin including the links to export data.
+
 Everything is stored in a document based database. This kind of storage is not suitable for data analysis therefore we added a csv data export for this
-experiment. You can download raw data in realtime, protected via http authentication.
+experiment:
 
 * Sessions /sessions.csv
 * Word presentation /presentations.csv
