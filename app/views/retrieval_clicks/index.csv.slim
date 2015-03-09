@@ -1,0 +1,7 @@
+ruby:
+  headers = %w(session_id trial word_position retrieval_position click_order clicked_at color delay text word_id size_difference retrieval_matrix_shown_at)
+
+= CSV.generate_line headers
+- @retrieval_clicks.each do |click|
+  = raw CSV.generate_line([ click.trials.sessions.id, click.trial, click.word_position, click.retrieval_position, click.click_order, click.clicked_at,
+                            click.color, click.delay, click.text, click.word_id, click.size_difference, click.trials.retrieval_matrix_shown_at])

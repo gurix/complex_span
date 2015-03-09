@@ -8,10 +8,8 @@ class PresentationsController < ApplicationController
 
     respond_to do |format|
       format.csv do
-        headers['Content-Disposition'] = 'inline'
-        headers['Content-Type'] = 'text/plain'
-        # headers['Content-Disposition'] = 'attachment; filename="presentations"'
-        # headers['Content-Type'] ||= 'text/csv'
+        headers['Content-Disposition'] = 'attachment; filename="presentations"'
+        headers['Content-Type'] ||= 'text/csv'
       end
     end
   end
