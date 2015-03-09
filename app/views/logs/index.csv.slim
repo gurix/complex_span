@@ -1,0 +1,6 @@
+ruby:
+  headers = %w(session_id message time)
+
+= CSV.generate_line headers
+- @logs.each do |log|
+  = raw CSV.generate_line([ log.sessions.id, log.message, log.time ])
