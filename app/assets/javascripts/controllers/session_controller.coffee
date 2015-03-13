@@ -1,11 +1,12 @@
 @controllers.controller("SessionsController", ['$translate','$scope','localStorageService','$timeout','$routeParams',
   ($translate, $scope, localStorageService, $timeout, $routeParams) ->
-
-    $translate.use $routeParams.language || 'en'
-
+    
     $scope.canGoBigscreen = BigScreen.enabled
     localStorageService.bind($scope, 'session')
     $scope.session = {} unless $scope.session
+
+    $translate.use $routeParams.language
+
     $scope.session.language = $translate.use()
     $scope.session.trial_counter = 0
     $scope.session.show_informed_consent = true
