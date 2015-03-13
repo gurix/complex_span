@@ -16,8 +16,8 @@ describe PresentationsController do
       presentation = session.trials.last.words.last
 
       expect(csv.last).to eq [session.id.to_s, presentation.trial, presentation.word_position, presentation.color, presentation.delay,
-                              exact_time(presentation.start_time), exact_time(presentation.stop_time), presentation.reaction_time, presentation.pressed_key, presentation.text, presentation.word_id,
-                              presentation.size_difference]
+                              exact_time(presentation.start_time), exact_time(presentation.stop_time), presentation.reaction_time, presentation.pressed_key,
+                              presentation.text, presentation.word_id, presentation.size_difference]
     end
   end
 end

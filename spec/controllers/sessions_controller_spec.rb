@@ -17,7 +17,7 @@ describe SessionsController do
 
       expect(csv.last).to eq [session.id.to_s, session.created_at.to_s, session.updated_at.to_s,  session.age, session.sincerity, session.gender,
                               session.education, session.ip_address, session.language, session.logs.count, session.trials.count] +
-                              session.system_information.values
+        session.system_information.values
     end
   end
 end
