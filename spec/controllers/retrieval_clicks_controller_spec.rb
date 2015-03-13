@@ -16,9 +16,9 @@ describe RetrievalClicksController do
 
       click = session.trials.last.retrieval_clicks.last
 
-      expect(csv.last).to eq [click.trials.sessions.id.to_s, click.trial, click.word_position, click.retrieval_position, click.click_order,
-                              click.clicked_at.to_s, click.color, click.delay, click.text, click.word_id, click.size_difference,
-                              click.trials.retrieval_matrix_shown_at.to_s]
+      expect(csv.last).to eq [ click.trials.sessions.id.to_s, click.trial, click.word_position, click.retrieval_position, click.click_order,
+                               exact_time(click.clicked_at), click.color, click.delay, click.text, click.word_id, click.size_difference,
+                               exact_time(click.trials.retrieval_matrix_shown_at) ]
     end
   end
 end

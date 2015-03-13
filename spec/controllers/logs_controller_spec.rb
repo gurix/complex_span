@@ -15,7 +15,7 @@ describe LogsController do
 
       log = session.logs.last
 
-      expect(csv.last).to eq [log.sessions.id.to_s, log.message, log.time.to_s]
+      expect(csv.last).to eq [log.sessions.id.to_s, log.message, exact_time(log.time)]
     end
   end
 end

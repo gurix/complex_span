@@ -3,4 +3,4 @@ ruby:
 
 = CSV.generate_line headers
 - @logs.each do |log|
-  = raw CSV.generate_line([ log.sessions.id, log.message, log.time ])
+  = raw CSV.generate_line([ log.sessions.id, log.message, exact_time(log.time) ])
