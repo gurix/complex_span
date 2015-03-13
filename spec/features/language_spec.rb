@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe 'Languages', js: true do
-  scenario 'us english if no language is given' do
+  scenario 'use english if no language is given' do
     visit root_path
 
     expect(page).to have_content 'If you agree, please press the “Next” button below.'

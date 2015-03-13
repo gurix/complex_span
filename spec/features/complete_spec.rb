@@ -3,6 +3,7 @@ require 'rails_helper'
 describe 'Experiment', js: true do
   scenario 'running the complete process' do
     visit root_path
+    page.execute_script('localStorage.clear()')
 
     expect(page).to have_log_message('initializing')
 

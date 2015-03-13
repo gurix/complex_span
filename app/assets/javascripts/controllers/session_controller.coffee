@@ -1,11 +1,11 @@
 @controllers.controller("SessionsController", ['$translate','$scope','localStorageService','$timeout','$routeParams',
   ($translate, $scope, localStorageService, $timeout, $routeParams) ->
-    
+
     $scope.canGoBigscreen = BigScreen.enabled
     localStorageService.bind($scope, 'session')
     $scope.session = {} unless $scope.session
 
-    $translate.use $routeParams.language
+    $translate.use($routeParams.language) unless angular.isUndefined($routeParams.language)
 
     $scope.session.language = $translate.use()
     $scope.session.trial_counter = 0
