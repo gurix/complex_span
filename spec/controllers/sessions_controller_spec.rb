@@ -11,7 +11,7 @@ describe SessionsController do
 
       csv = CSV.parse response.body,  converters: :numeric
 
-      expect(csv.first).to eq %w(id age sincerity gender education ip_address number_of_logs number_of_trials sys_screen_width sys_screen_height
+      expect(csv.first).to eq %w(id age sincerity gender education ip_address language number_of_logs number_of_trials sys_screen_width sys_screen_height
                                  sys_navigator_user_agent sys_navigator_platform sys_window_innerHeight sys_window_innerWidth sys_window_screenX
                                  sys_window_screenY sys_window_pageXOffset sys_window_pageYOffset)
 
