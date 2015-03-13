@@ -8,7 +8,7 @@
 ])
 
 @cspan.config(['$translateProvider', ($translateProvider) ->
-  $translateProvider.translations('en', @translations_en).translations('de', @translations_de).preferredLanguage('en')
+  $translateProvider.translations('de', @translations_de).translations('en', @translations_en)
   $translateProvider.useLocalStorage()
 ])
 

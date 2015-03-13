@@ -16,7 +16,8 @@ describe RetrievalsController do
       retrieval = session.trials.last.retrievals.last
 
       expect(csv.last).to eq [retrieval.trials.sessions.id.to_s, retrieval.trial, retrieval.word_position, retrieval.retrieval_position, retrieval.color,
-                              retrieval.delay, retrieval.text, retrieval.word_id, retrieval.size_difference, retrieval.trials.retrieval_matrix_shown_at.to_s]
+                              retrieval.delay, retrieval.text, retrieval.word_id, retrieval.size_difference,
+                              exact_time(retrieval.trials.retrieval_matrix_shown_at)]
     end
   end
 end
