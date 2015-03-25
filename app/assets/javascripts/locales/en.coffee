@@ -21,22 +21,26 @@
            <p>Your first task is to judge for each word whether the object it refers to is larger or smaller than a soccer ball.</p>
            <p>If the object is <strong>smaller</strong> than a soccer ball, please press the <strong>left</strong> arrow key;</p>
            <p>if the object is <strong>larger</strong> than a soccer ball, please press the <strong>right</strong> arrow key.</p>
-           <p>Your second task is to remember all the red words in their order of presentation. You don’t need to remember the blue words.
+           <p>Your second task is to remember all the  <strong>red words</strong> in their <strong>order of presentation</strong>. You don’t need to remember the blue words.<br>
            At the end of the presentation of all 10 words you will be asked to select the red words from a set of 15 words. Please click on
            the 5 red words that you remembered in their order of presentation.</p>
            <p>You will first do two practice trials, followed by 12 test trials.</p>'
     CONTINUE: 'Please press the right arrow key to continue ...'
 
   INSTRUCTION_1_1:
-    TEXT: 'When you are ready for the practice trials, please press the right arrow key. If you want to re-read the instructions,
-           press the left arrow key.'
+    TEXT: '<p>When you are ready for the practice trials, please press the right arrow key. If you want to re-read the instructions,
+           press the left arrow key.</p>
+           <p>Reminder:</p>
+           <p>If the object is <strong>smaller</strong> than a soccer ball, please press the <strong>left</strong> arrow key;</p>
+           <p>if the object is <strong>larger</strong> than a soccer ball, please press the <strong>right</strong> arrow key.</p>
+           <p>Also, remember all the <strong>red words</strong> in their <strong>order of presentation</strong>.'
 
   INSTRUCTION_1_2:
     TEXT: 'When you are ready for the test trials, please press the right arrow key. If you want to re-read the instructions,
            press the left arrow key. '
 
   RETRIEVE:
-    INSTRUCTION_RED: 'Please select the 5 red words with the mouse'
+    INSTRUCTION_RED: 'Please select the 5 red words, in their order of presentation, with the mouse'
     INSTRUCTION_BLUE: 'This time please recall the blue words, not the red words, in their order of presentation.'
     INSTRUCTION_CIRCLE: 'Continue by clicking on the blue circle.'
 
@@ -58,13 +62,14 @@
     QUALIFICATION_DOCTORAL: 'Doctoral degree'
     DEBRIEFING: '<p>Thank you again for participating in our experiment. The goal of this experiment was to investigate whether people can intentionally forget
                     information they want to forget, and whether this is accomplished better when more time is available for forgetting. To that end we tested,
-                    in the last trial, your memory for the blue words, which you were supposed to forget. Across participants we varied the free time following
-                    each of the blue words – some participants had only 200 ms, others had 1500 ms time after each blue word. We expect that participants who
+                    in the last trial, your memory for the blue words, which you were supposed to forget. We varied the free time following
+                    each of the blue words – either only 200 ms or 1500 ms after each blue word. We expect that participants who
                     had longer free time following the blue words are able to remember fewer of them. </p>
+                    <p>Please do not share this information with anyone! It is crucial the explanation is kept confidential until we have collected all data.</p>
                  <p>Here is your code to confirm your participation: Cspan-DRM-1</p>'
 
   ERROR:
     NUMERICAL_BETWEEN_10_AND_100: 'Please provide a numerically age between 10 to 100'
-    NO_FULLSCREEN_SUPPORT: 'Your Browser does not support Fullscreen, please use a modern broser to participate.<br/>
+    NO_FULLSCREEN_SUPPORT: 'Your Browser does not support fullscreen, please use a modern browser to participate.<br/>
                             Read more <a class="alert-link" href="http://browsehappy.com/">here</a>.'
     EXITED_FULLSCREEN: 'The experiment was aborted because you exit the fullscreen mode.'
