@@ -2,7 +2,7 @@
   HOME:
     SWITCH_LANGUAGE: 'Deutsch'
     NEXT: 'Next...'
-    WARNING: 'To run this experiment wee need to take you in fullscreen mode. Exiting the fullscreen mode will terminate the experiment.
+    WARNING: 'To run this experiment we need to take you in fullscreen mode. Exiting the fullscreen mode will terminate the experiment.
               Please close all other running applications and turn off all notifications. Ensure you are in a calm place without any
               distractions i.e noise.'
     INFORMED_CONSENT: '<p>
