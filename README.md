@@ -62,6 +62,12 @@ experiment:
 * Setup of the retrieval matrix displayed after each trial /retrievals.csv
 * Logs written in each session /logs.csv
 
+## Notes
+
+Key bindings for presentations:
+* Key 39: right arrow pressed
+* Key 37: left arrow pressed
+
 ## Links and Tools
 
 * Mongodb Administration interface http://genghisapp.com/
