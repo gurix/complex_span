@@ -10,13 +10,49 @@
     $scope.session.language = $translate.use()
     $scope.session.trial_counter = 0
     $scope.session.show_informed_consent = true
+    $scope.error_message = ''
+    $scope.session_id = ''
+
+    $scope.ShowErrorMessage = () ->
+      $scope.error_message != ''
 
     $scope.ShowInformedConsent = () ->
       $scope.session.show_informed_consent
 
     $scope.ShowWarning = () ->
       logger.push 'accepted informed consent'
-      $timeout ( -> $scope.session.show_informed_consent = false ), 0
+
+      logger.push 'Push data'
+
+      # Gather some information about the client
+      system_informations =
+        screen_width: screen.width
+        screen_height: screen.height
+        navigator_user_agent: navigator.userAgent
+        navigator_platform: navigator.platform
+        window_innerHeight: window.innerHeight
+        window_innerWidth: window.innerWidth
+        window_screenX: window.screenX
+        window_screenY: window.screenY
+        window_pageXOffset: window.pageXOffset
+        window_pageYOffset: window.pageYOffset
+
+      data =
+        logs: logger.log
+        system_information: system_informations
+        language: $scope.session.language
+
+      $.post('/sessions',{ session: data }).done( (data)->
+          logger.push 'Done sending data'
+          $scope.session_id = data._id.$oid
+          $timeout ( -> $scope.session.show_informed_consent = false ), 0
+          $scope.error_message = ''
+        ).fail (jqxhr, textStatus, error)->
+          logger.push 'failed send data '  + textStatus + ', ' + error + ', ' + jqxhr.responseText
+          $timeout ( -> $scope.session.show_informed_consent = true ), 0
+
+          $scope.error_message = 'Request Failed: ' + textStatus + ', ' + error
+          console.log $scope.error_message
 
     $scope.ToggleBigScreen = () ->
       BigScreen.toggle() unless window.debug
@@ -61,7 +97,7 @@
       logger.push 'Switch language to ' + $translate.use()
 
     $scope.PrepareTest = () ->
-      $scope.session = {}
+      $scope.session = { id: $scope.session_id }
 
       # Let's get a shuffled stack of words
       word_stack = window['words_' + $translate.use()]

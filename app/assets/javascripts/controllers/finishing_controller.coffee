@@ -21,7 +21,7 @@
       $scope.error_message != ''
 
     $scope.ClickSendData = () ->
-      logger.push 'Send data'
+      logger.push 'Update data'
 
       # Gather some information about the client
       system_informations =
@@ -48,7 +48,7 @@
 
       $scope.show_form = false
 
-      $.post('/sessions',{ session: data }).done( ->
+      $.ajax("/sessions/#{$scope.session.id}", { method: 'PATCH', data: { session: data }}).done( ->
           logger.push 'Done sending data'
           $timeout (-> $scope.show_debriefing = true), 0
           console.log $scope.show_debriefing

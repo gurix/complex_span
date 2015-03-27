@@ -11,9 +11,19 @@ describe 'Experiment', js: true do
 
     click_button 'Next'
 
-    expect(page).to have_log_message('accepted informed consent')
+    expect(page).to have_log_message('Push data')
 
-    expect(page).to have_content 'To run this experiment wee need to take you in fullscreen mode.'
+    expect(page).to have_content 'To run this experiment we need to take you in fullscreen mode.'
+
+    session = Session.last
+
+    expect(Session.count).to eq 1
+    expect(session.ip_address).to eq '127.0.0.1'
+
+    expect(session.language).to eq 'en'
+    expect(session.created_at).to_not be_nil
+    expect(session.trials).to be_empty
+    expect(session.logs).not_to be_empty
 
     click_button 'Next'
 
@@ -123,13 +133,14 @@ describe 'Experiment', js: true do
     sleep 10
 
     expect(Session.count).to eq 1
-    session = Session.last
+    session.reload
 
-    expect(session.ip_address).to eq '127.0.0.1'
-
-    expect(session.language).to eq 'en'
-    expect(session.created_at).to_not be_nil
     expect(session.updated_at).to_not be_nil
+    expect(session.trials.count).to eq 14
+    expect(session.age).to eq 22
+    expect(session.sincerity).to eq 'serious'
+    expect(session.gender).to eq 'f'
+    expect(session.education).to eq 'high_school'
 
     expect(page).to have_content 'Thank you again for participating in our experiment.'
   end

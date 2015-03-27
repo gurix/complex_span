@@ -1,10 +1,20 @@
 class SessionsController < ApplicationController
   respond_to :html
 
-  skip_before_action :authenticate, only: :create
+  skip_before_action :authenticate, only: [:create, :update]
 
   def create
     @session = Session.create session_params.merge(ip_address: request.remote_ip)
+    if @session.valid?
+      render json: @session
+    else
+      render json: @session.errors, status: 500
+    end
+  end
+
+  def update
+    @session = Session.find params[:id]
+    @session.update_attributes session_params
     if @session.valid?
       render json: @session
     else
