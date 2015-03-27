@@ -31,6 +31,10 @@ form name="newSessionForm" novalidate="novalidate" ng-submit="newSessionForm.$va
         label
           input type="radio" name="gender" ng-model="session.gender" value="m" ng-required="!session.gender"
           | {{'FINISHING.GENDER_MALE' | translate}}
+      .radio
+        label
+          input type="radio" name="gender" ng-model="session.gender" value="x" ng-required="!session.gender"
+          | {{'FINISHING.GENDER_OTHERS' | translate}}
 
     .form-group
       label for="education" translate="FINISHING.QUALIFICATION"

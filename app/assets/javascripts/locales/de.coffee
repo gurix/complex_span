@@ -57,6 +57,7 @@
     GENDER: 'Geschlecht'
     GENDER_FEMALE: 'Weiblich'
     GENDER_MALE: 'Männlich'
+    GENDER_OTHERS: 'Anderes'
     QUALIFICATION: 'Höchster Schulabschluss'
     QUALIFICATION_NO_HIGH_SCHOOL: 'Obligatorische Schule'
     QUALIFICATION_HIGH_SCHOOL: 'Gymnasium / Maturität '

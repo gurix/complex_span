@@ -112,6 +112,8 @@ describe 'Experiment', js: true do
 
     expect(page).not_to have_content 'Please provide a numerically age between 10 to 100'
 
+    choose 'Male'
+    choose 'Others'
     choose 'Female'
 
     select 'high school degree', from: 'session_education'
