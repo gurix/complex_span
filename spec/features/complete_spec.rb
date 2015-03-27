@@ -73,7 +73,7 @@ describe 'Experiment', js: true do
 
         page.execute_script("$(\"#blue_circle\").click()")
       else
-        expect(page).to have_content 'Please select the 5 red words with the mouse'
+        expect(page).to have_content 'Please select the 5 red words, in their order of presentation, with the mouse'
       end
 
       presented_words.sample(5).each_with_index do | word, index |
