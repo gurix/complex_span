@@ -181,22 +181,21 @@
         # Hide the cursor immediately
         $('body').addClass('no-cursor')
 
-        # Ensure the clicked class is removed
-        $timeout (-> $(retrieval_id).removeClass 'clicked'), 0
-
         # Hide Matrix
-        $timeout (-> $scope.show_retrieval_matrix = false), 0
+        $timeout (->
+          $scope.show_retrieval_matrix = false
 
-        if $scope.session.trial_counter < 13
-          $scope.session.trial_counter++
+          if $scope.session.trial_counter < 13
+            $scope.session.trial_counter++
 
-          if $scope.session.trial_counter == $scope.number_of_trials_to_practice
-            # Redisplay instruction before the real test starts
-            $timeout (-> $scope.DisplayInstruction_1_2()), 0
+            if $scope.session.trial_counter == $scope.number_of_trials_to_practice
+              # Redisplay instruction before the real test starts
+              $timeout (-> $scope.DisplayInstruction_1_2()), 1300
+            else
+              $timeout (-> $scope.StartTrial()), 2000
           else
-            $timeout (-> $scope.StartTrial()), 2000
-        else
-          $timeout (-> location.href = '#/finishing'), 1000
+            $timeout (-> location.href = '#/finishing'), 1000
+        ), 1000
 
 
     $scope.DisplayInstruction_1_2 = () ->
