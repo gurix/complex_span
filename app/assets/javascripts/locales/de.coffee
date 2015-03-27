@@ -4,7 +4,7 @@
     NEXT: 'Weiter ...'
     WARNING: 'Dieses Experiment wird im Vollbild-Modus durchgeführt. Das Verlassen des Vollbildmodus wird das Experiment abbrechen. Bitte
               schliessen Sie all ihre anderen Programme und schalten sie alle Benachrichtigungen aus. Sorgen sie dafür das sie dieses Experiment
-              an einem ruhigen Ort durchführen ohne Ablenkung Bspw. durch Lärm.'
+              an einem ruhigen Ort durchführen ohne Ablenkung bspw. durch Lärm.'
 
     INFORMED_CONSENT: '<p>
                           Bei diesem Experiment werden Sie gebeten, Wörter kurzfristig im Gedächtnis zu behalten. Gleichzeitig sollen Sie Entscheidungen über 
@@ -23,22 +23,26 @@
            <p>Die erste Aufgabe ist, für jedes Wort zu beurteilen, ob das bezeichnete Objekt grösser oder kleiner als ein Fussball ist.</p>
            <p>Wenn es <strong>kleiner</strong> als ein Fussball ist, drücken Sie die <strong>linke</strong> Pfeiltaste;</p>
            <p>wenn es <strong>grösser</strong> als ein Fussball ist, drücken Sie die <strong>rechte</strong> Pfeiltaste.</p>
-           <p>Ihre zweite Aufgabe ist, sich alle roten Wörter in der richtigen Reihenfolge zu merken. Die blauen Wörter müssen Sie sich
-              nicht merken. Am Ende der Darbietung der 10 Wörter werden Sie gebeten, die roten Wörter aus einer Menge von 15 Wörtern auszuwählen.
+           <p>Ihre zweite Aufgabe ist, sich alle <strong>roten Wörter</strong> in der <strong>richtigen Reihenfolge</strong> zu merken. Die blauen Wörter müssen Sie sich
+              nicht merken. <br>Am Ende der Darbietung der 10 Wörter werden Sie gebeten, die roten Wörter aus einer Menge von 15 Wörtern auszuwählen.
               Klicken Sie auf die 5 roten Wörter, die Sie sich gemerkt haben, in der richtigen Reihenfolge.</p>
            <p>Sie werden zunächst 2 Übungs-Durchgänge bearbeiten, danach folgen 12 Test-Durchgänge.</p>'
     CONTINUE: 'Bitte drücken Sie die rechte Pfeiltaste um fortzufahren ...'
 
   INSTRUCTION_1_1:
-    TEXT: 'Wenn Sie bereit sind für die Übungsaufgaben, drücken Sie die rechte Pfeiltaste. Wenn Sie die Instruktion noch einmal sehen möchten,
-           drücken Sie die linke Pfeiltaste.'
+    TEXT: '<p>Wenn Sie bereit sind für die Übungsaufgaben, drücken Sie die rechte Pfeiltaste. Wenn Sie die Instruktion noch einmal sehen möchten,
+           drücken Sie die linke Pfeiltaste.</p>
+           <p>Zur Erinnerung:</p>
+           <p>Wenn ein Objekt <strong>kleiner</strong> als ein Fussball ist, drücken Sie die <strong>linke</strong> Pfeiltaste;</p>
+           <p>wenn es <strong>grösser</strong> als ein Fussball ist, drücken Sie die <strong>rechte</strong> Pfeiltaste.</p>
+           <p>Merken Sie sich ausserdem die <strong>5 roten Wörter in der richtigen Reihenfolge</strong>.'
 
   INSTRUCTION_1_2 :
     TEXT: 'Wenn Sie bereit sind für die Testaufgaben, drücken Sie die rechte Pfeiltaste. Wenn Sie die Instruktion noch einmal sehen möchten,
            drücken Sie die linke Pfeiltaste.'
 
   RETRIEVE:
-    INSTRUCTION_RED: 'Wählen Sie die 5 roten Wörter mit der Maus aus'
+    INSTRUCTION_RED: 'Wählen Sie die 5 roten Wörter, in der richtigen Reihenfolge, mit der Maus aus.'
     INSTRUCTION_BLUE: 'Dieses Mal geben Sie bitte nicht die roten, sondern die blauen Wörter in der richtigen Reihenfolge wieder!'
     INSTRUCTION_CIRCLE: 'Weiter geht es mit einem Mausklick in den blauen Kreis. '
 
@@ -61,8 +65,8 @@
     DEBRIEFING: '<p>Vielen Dank für die Teilnahme an dem Experiment. Ziel des Experiments war, herauszufinden, ob Menschen Information, die sie nicht im
                     Gedächtnis behalten können, gezielt vergessen können, und ob das besser gelingt, wenn sie dazu mehr Zeit zur Verfügung haben. Daher haben
                     wir im letzten Durchgang nach den blauen Wörtern gefragt, die Sie ja eigentlich vergessen sollten. Die Zeit nach den blauen Wörtern wurde
-                    experimentell variiert – manche Personen hatten nur 200 ms nach jedem blauen Wort, andere Personen hatten 1500 ms Zeit. Wir erwarten, dass
-                    Personen, die nach jedem blauen Wort länger Zeit hatten, die blauen Wörter schlechter erinnern können.</p>
+                    experimentell variiert – entweder nur 200 ms nach jedem blauen Wort, oder 1500 ms nach jedem blauem Wort. Wir erwarten, dass bei 1500 ms nach jedem blauen Wort, die blauen Wörter schlechter erinnert werden können, als bei 200 ms nach jedem blauen Wort.</p>
+                    <p>Bitte geben Sie diese Information an niemanden weiter! Es ist wichtig, dass die Erklärung bis zum Abschluss der Datenerhebung absolut vertraulich behandelt wird.</p>
                     <p>Hier ist Ihr Code zur Bestätigung Ihrer Teilnahme: Cspan-DRM-1</p>'
 
   ERROR:
