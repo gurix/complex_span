@@ -6,6 +6,8 @@ div.clear-both
   .alert.alert-danger ng-hide="canGoBigscreen" translate="ERROR.NO_FULLSCREEN_SUPPORT"
 
   div ng-show="canGoBigscreen"
+    .alert.alert-danger ng-show="ShowErrorMessage()"
+      | {{error_message}}
     div ng-show="ShowInformedConsent()"
       p translate="HOME.INFORMED_CONSENT"
 
