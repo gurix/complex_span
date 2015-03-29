@@ -66,7 +66,7 @@
       # Register the time when a trial is started
       $scope.CurrentTrial().started_at = new Date()
 
-      logger.push 'Start with trial ' + $scope.session.trial_counter
+      logger.push "Start with trial #{$scope.session.trial_counter}"
 
       # Show fixation point
       $scope.show_fixation_point = true
@@ -76,7 +76,7 @@
 
     # Displays the word for presentation
     $scope.DisplayWord = () ->
-      logger.push 'Display word ' + $scope.session.word_counter + ' in trial ' + $scope.session.trial_counter
+      logger.push "Display word #{$scope.session.word_counter} in trial #{$scope.session.trial_counter} with color #{$scope.CurrentWord().color} and text #{$scope.CurrentWord().text}"
 
       # Ensure fixation point is hidden
       $scope.show_fixation_point = false
@@ -165,7 +165,7 @@
 
       $scope.clicked_retrieval_counter++
 
-      logger.push 'Clicked ' +  $scope.clicked_retrieval_counter + ' on word ' + $scope.CurrentRetrievals()[index].text
+      logger.push "Clicked #{$scope.clicked_retrieval_counter} on word #{$scope.CurrentRetrievals()[index].text} with color #{$scope.CurrentRetrievals()[index].color}"
 
       # Save properties of the click
       clicked_retrieval.clicked_at = new Date()
