@@ -50,9 +50,7 @@
         ).fail (jqxhr, textStatus, error)->
           logger.push 'failed send data '  + textStatus + ', ' + error + ', ' + jqxhr.responseText
           $timeout ( -> $scope.session.show_informed_consent = true ), 0
-
           $scope.error_message = 'Request Failed: ' + textStatus + ', ' + error
-          console.log $scope.error_message
 
     $scope.ToggleBigScreen = () ->
       BigScreen.toggle() unless window.debug

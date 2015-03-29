@@ -51,7 +51,6 @@
       $.ajax("/sessions/#{$scope.session.id}", { method: 'PATCH', data: { session: data }}).done( ->
           logger.push 'Done sending data'
           $timeout (-> $scope.show_debriefing = true), 0
-          console.log $scope.show_debriefing
           $scope.error_message = ''
         ).fail (jqxhr, textStatus, error)->
           logger.push 'failed send data '  + textStatus + ', ' + error + ', ' + jqxhr.responseText
