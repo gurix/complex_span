@@ -16,7 +16,8 @@ describe 'Languages', js: true do
   scenario 'navigating directly to german' do
     visit "#{root_path}#/de"
 
-    expect(page).to have_content 'Wenn Sie einverstanden sind, an dem Experiment teilzunehmen, drücken Sie bitte unten die Taste „Weiter“ '
+    expect(page).to have_content 'Wenn Sie einverstanden sind, an dem Experiment teilzunehmen, drücken Sie bitte unten die Taste „Weiter“'
+    page.execute_script('localStorage.clear()')
   end
 
   scenario 'switch language via button' do
@@ -26,7 +27,7 @@ describe 'Languages', js: true do
 
     click_button 'Deutsch'
 
-    expect(page).to have_content 'Wenn Sie einverstanden sind, an dem Experiment teilzunehmen, drücken Sie bitte unten die Taste „Weiter“ '
+    expect(page).to have_content 'Wenn Sie einverstanden sind, an dem Experiment teilzunehmen, drücken Sie bitte unten die Taste „Weiter“'
 
     click_button 'English'
 
