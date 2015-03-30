@@ -66,7 +66,9 @@ describe 'Experiment', js: true do
         presented_words << word['text']
 
         expect(page.find '#word').to be_visible
+        Capybara.exact = true
         expect(page.find '#word').to have_content word['text']
+        Capybara.exact = false
 
         expect(word['delay']).to eq 200 if word['color']  == 'red'
         expect(word['delay']).to eq trial['word_delay'] if word['color'] == 'blue'
