@@ -8,7 +8,6 @@
 
     INFORMED_CONSENT: '<p>
                           Bei diesem Experiment werden Sie gebeten, Wörter kurzfristig im Gedächtnis zu behalten. Gleichzeitig sollen Sie Entscheidungen über 
-                          die Wörter treffen. Das Experiment dauert etwa 15 Minuten. Ihre Daten werden anonym aufgezeichnet. Die Teilnahme ist
                           selbstverständlich freiwillig, und Sie können jederzeit ohne Angabe von Gründen abbrechen; in dem Fall werden Ihre Daten nicht
                           verwendet. Die Bezahlung erhalten Sie allerdings nur, wenn Sie das Experiment vollständig durchführen.
                       </p>
@@ -68,7 +67,8 @@
                     wir im letzten Durchgang nach den blauen Wörtern gefragt, die Sie ja eigentlich vergessen sollten. Die Zeit nach den blauen Wörtern wurde
                     experimentell variiert – entweder nur 200 ms nach jedem blauen Wort, oder 1500 ms nach jedem blauem Wort. Wir erwarten, dass bei 1500 ms nach jedem blauen Wort, die blauen Wörter schlechter erinnert werden können, als bei 200 ms nach jedem blauen Wort.</p>
                     <p>Bitte geben Sie diese Information an niemanden weiter! Es ist wichtig, dass die Erklärung bis zum Abschluss der Datenerhebung absolut vertraulich behandelt wird.</p>
-                    <p>Hier ist Ihr Code zur Bestätigung Ihrer Teilnahme: Cspan-DRM-1</p>'
+                    <p>Hier ist Ihr Code zur Bestätigung Ihrer Teilnahme: Cspan-DRM-1</p>
+                    <p>Sie können den Vollbildmodus nun verlassen, drücken Sie dazu auf "ESC".</p>'
 
   ERROR:
     NUMERICAL_BETWEEN_10_AND_100: 'Bitte geben Sie eine Zahl zwischen 10 und 100 ein'

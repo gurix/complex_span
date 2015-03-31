@@ -7,7 +7,7 @@
               distractions i.e noise.'
     INFORMED_CONSENT: '<p>
                           In this experiment you will be asked to briefly remember short sets of words. You will also make judgments on the words at the same
-                          time. The experiment will take about 15 minutes. The data will be recorded anonymously. Your participation is of course voluntary,
+                          time. The experiment will take about 9 minutes. The data will be recorded anonymously. Your participation is of course voluntary,
                           and you can quit the experiment at any time without giving any reasons. However, you will receive payment only if you complete the
                           experiment.
                       </p>
@@ -67,7 +67,8 @@
                     each of the blue words – either only 200 ms or 1500 ms after each blue word. We expect that participants who
                     had longer free time following the blue words are able to remember fewer of them. </p>
                     <p>Please do not share this information with anyone! It is crucial the explanation is kept confidential until we have collected all data.</p>
-                 <p>Here is your code to confirm your participation: Cspan-DRM-1</p>'
+                 <p>Here is your code to confirm your participation: Cspan-DRM-1</p>
+                 <p>You can exit the fullscreen mode now by pressing "ESC".</p>'
 
   ERROR:
     NUMERICAL_BETWEEN_10_AND_100: 'Please provide a numerically age between 10 to 100'
