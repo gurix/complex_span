@@ -53,7 +53,7 @@
           $scope.error_message = 'Request Failed: ' + textStatus + ', ' + error
 
     $scope.ToggleBigScreen = () ->
-      BigScreen.toggle() unless window.debug
+      BigScreen.toggle()
       $timeout ( -> $scope.PrepareTest() ), 0
       $timeout ( -> $scope.GoToInstruction1() ), 0
       logger.push 'toggle fullscreen'
