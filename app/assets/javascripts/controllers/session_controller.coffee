@@ -14,8 +14,7 @@
     $scope.session_id = ''
 
     if $scope.session.started == true
-      $scope.session.started = false
-      logger.push 'already_started'
+      localStorage.clear()
       location.href='#/session/test_already_started'
 
     $scope.ShowErrorMessage = () ->
