@@ -52,6 +52,7 @@
           logger.push 'Done sending data'
           $timeout (-> $scope.show_debriefing = true), 0
           $scope.error_message = ''
+          localStorage.clear()
         ).fail (jqxhr, textStatus, error)->
           logger.push 'failed send data '  + textStatus + ', ' + error + ', ' + jqxhr.responseText
           $timeout (-> $scope.show_form = true), 0
