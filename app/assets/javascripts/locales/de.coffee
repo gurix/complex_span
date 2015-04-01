@@ -16,7 +16,7 @@
                       </p>'
 
   INSTRUCTION_1:
-    THANK_YOU: '<p>Vielen Dank, dass Sie an unserem Experiment teilnehmen! Das Experiment wird etwa 15 Minuten dauern.</p>'
+    THANK_YOU: '<p>Vielen Dank, dass Sie an unserem Experiment teilnehmen! Das Experiment wird etwa 9 Minuten dauern.</p>'
     TEXT: '<p>In jedem Durchgang werden Ihnen nacheinander 10 Wörter präsentiert, die sich alle auf konkrete Objekte beziehen.
               Sie haben nun zwei Aufgaben:</p>
            <p>Die erste Aufgabe ist, für jedes Wort zu beurteilen, ob das bezeichnete Objekt grösser oder kleiner als ein Fussball ist.</p>
