@@ -215,7 +215,6 @@
           $timeout (-> $scope.StartTrial()), 2000
         e.preventDefault()
 
-    #
     $scope.DisplayInstruction = () ->
       $timeout (-> $scope.show_instruction = true), 0
       logger.push 'Show instruction'
@@ -233,9 +232,7 @@
       $timeout (-> $scope.show_blue_circle = false), 0
 
     if $scope.session.started == true
-      $scope.session.started = false
-      logger.push 'already_started'
-      $scope.$destroy()
+      localStorage.clear()
       location.href='#/session/test_already_started'
 
     else
