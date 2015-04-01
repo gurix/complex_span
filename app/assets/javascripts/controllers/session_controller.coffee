@@ -13,6 +13,11 @@
     $scope.error_message = ''
     $scope.session_id = ''
 
+    if $scope.session.started == true
+      $scope.session.started = false
+      logger.push 'already_started'
+      location.href='#/session/test_already_started'
+
     $scope.ShowErrorMessage = () ->
       $scope.error_message != ''
 

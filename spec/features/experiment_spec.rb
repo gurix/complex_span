@@ -146,4 +146,50 @@ describe 'Experiment', js: true do
 
     expect(page).to have_content 'Thank you again for participating in our experiment.'
   end
+
+  context 'navigation during tests' do
+    before do
+      visit root_path
+      page.execute_script('localStorage.clear()')
+
+      expect(page).to have_content 'If you agree, please press the “Next” button below.'
+
+      click_button 'Next'
+
+      expect(page).to have_content 'To run this experiment we need to take you in fullscreen mode.'
+
+      click_button 'Next'
+
+      expect(page).to have_content 'Please press the right arrow key to continue'
+
+      find('body').native.send_keys :arrow_right
+
+      expect(page).to have_content 'When you are ready for the practice trials, please press the right arrow key.'
+
+      find('body').native.send_keys :arrow_left
+
+      expect(page).to have_content 'Please press the right arrow key to continue'
+
+      find('body').native.send_keys :arrow_right
+
+      expect(page).to have_content 'When you are ready for the practice trials, please press the right arrow key.'
+
+      find('body').native.send_keys :arrow_right
+
+      expect(page.find '#word').to be_visible
+
+    end
+
+    scenario 'user reloads the page during the test' do
+      page.driver.browser.navigate.refresh
+
+      expect(page).to have_content 'The experiment was aborted because you exited or reloaded the page.'
+    end
+
+    scenario 'user hits the back button during the test' do
+      page.driver.browser.navigate.back
+
+      expect(page).to have_content 'The experiment was aborted because you exited or reloaded the page.'
+    end
+  end
 end

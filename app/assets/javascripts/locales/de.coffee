@@ -7,7 +7,7 @@
               an einem ruhigen Ort durchführen ohne Ablenkung bspw. durch Lärm.'
 
     INFORMED_CONSENT: '<p>
-                          Bei diesem Experiment werden Sie gebeten, Wörter kurzfristig im Gedächtnis zu behalten. Gleichzeitig sollen Sie Entscheidungen über 
+                          Bei diesem Experiment werden Sie gebeten, Wörter kurzfristig im Gedächtnis zu behalten. Gleichzeitig sollen Sie Entscheidungen über
                           selbstverständlich freiwillig, und Sie können jederzeit ohne Angabe von Gründen abbrechen; in dem Fall werden Ihre Daten nicht
                           verwendet. Die Bezahlung erhalten Sie allerdings nur, wenn Sie das Experiment vollständig durchführen.
                       </p>
@@ -75,3 +75,4 @@
     NO_FULLSCREEN_SUPPORT: 'Ihr Browser unterstützt keinen Vollbild-Modus, bitte verwenden Sie einen moderneren Browser um teilzunehmen.
                             <br/>Lesen Sie mehr <a class="alert-link" href="http://browsehappy.com/">hier</a>.'
     EXITED_FULLSCREEN: 'Das Experiment wurde abgebrochen weil sie den Vollbildschirm-Modus verlassen haben.'
+    TEST_ALREADY_STARTED: 'Der Test wurde abgebrochen weil sie die Siete verlassen oder neu geladen haben.'

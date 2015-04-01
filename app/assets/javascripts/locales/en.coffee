@@ -74,4 +74,5 @@
     NUMERICAL_BETWEEN_10_AND_100: 'Please provide a numerically age between 10 to 100'
     NO_FULLSCREEN_SUPPORT: 'Your Browser does not support fullscreen, please use a modern browser to participate.<br/>
                             Read more <a class="alert-link" href="http://browsehappy.com/">here</a>.'
-    EXITED_FULLSCREEN: 'The experiment was aborted because you exit the fullscreen mode.'
+    EXITED_FULLSCREEN: 'The experiment was aborted because you exited the fullscreen mode.'
+    TEST_ALREADY_STARTED: 'The experiment was aborted because you exited or reloaded the page.'

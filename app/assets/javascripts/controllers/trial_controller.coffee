@@ -57,6 +57,7 @@
 
     # (Re)Starts a trial by displaying the first word
     $scope.StartTrial = () ->
+      $scope.session.started = true
       # Ensure the cursor is hidden in this view
       $('body').addClass('no-cursor')
 
@@ -231,6 +232,12 @@
       $scope.CurrentTrial().retrieval_matrix_shown_at = new Date()
       $timeout (-> $scope.show_blue_circle = false), 0
 
-    # Start the first trials
-    $scope.StartTrial()
+    if $scope.session.started == true
+      $scope.session.started = false
+      logger.push 'already_started'
+      $scope.$destroy()
+      location.href='#/session/test_already_started'
+
+    else
+      $scope.StartTrial()
   ])
