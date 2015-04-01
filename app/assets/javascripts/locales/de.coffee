@@ -75,4 +75,4 @@
     NO_FULLSCREEN_SUPPORT: 'Ihr Browser unterstützt keinen Vollbild-Modus, bitte verwenden Sie einen moderneren Browser um teilzunehmen.
                             <br/>Lesen Sie mehr <a class="alert-link" href="http://browsehappy.com/">hier</a>.'
     EXITED_FULLSCREEN: 'Das Experiment wurde abgebrochen weil sie den Vollbildschirm-Modus verlassen haben.'
-    TEST_ALREADY_STARTED: 'Der Test wurde abgebrochen weil sie die Siete verlassen oder neu geladen haben.'
+    TEST_ALREADY_STARTED: 'Der Test wurde abgebrochen weil sie die Seite verlassen oder neu geladen haben.'
