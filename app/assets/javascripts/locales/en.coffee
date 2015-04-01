@@ -16,7 +16,7 @@
                       </p>'
 
   INSTRUCTION_1:
-    THANK_YOU: '<p>Thank you very much for taking part in our experiment! The experiment will take about 15 minutes.</p>'
+    THANK_YOU: '<p>Thank you very much for taking part in our experiment! The experiment will take about 9 minutes.</p>'
     TEXT: '<p>In each trial you will see 10 words presented sequentially. All words refer to concrete objects. You have two tasks:</p>
            <p>Your first task is to judge for each word whether the object it refers to is larger or smaller than a soccer ball.</p>
            <p>If the object is <strong>smaller</strong> than a soccer ball, please press the <strong>left</strong> arrow key;</p>

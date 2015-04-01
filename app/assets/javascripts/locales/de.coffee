@@ -7,8 +7,7 @@
               an einem ruhigen Ort durchführen ohne Ablenkung bspw. durch Lärm.'
 
     INFORMED_CONSENT: '<p>
-                          Bei diesem Experiment werden Sie gebeten, Wörter kurzfristig im Gedächtnis zu behalten. Gleichzeitig sollen Sie Entscheidungen über
-                          selbstverständlich freiwillig, und Sie können jederzeit ohne Angabe von Gründen abbrechen; in dem Fall werden Ihre Daten nicht
+                          Bei diesem Experiment werden Sie gebeten, Wörter kurzfristig im Gedächtnis zu behalten. Gleichzeitig sollen Sie Entscheidungen über die Wörter treffen. Das Experiment dauert etwa 9 Minuten. Ihre Daten werden anonym aufgezeichnet. Die Teilnahme ist selbstverständlich freiwillig, und Sie können jederzeit ohne Angabe von Gründen abbrechen; in dem Fall werden Ihre Daten nicht
                           verwendet. Die Bezahlung erhalten Sie allerdings nur, wenn Sie das Experiment vollständig durchführen.
                       </p>
                       <p>
