@@ -1,1252 +1,1252 @@
 @words_en = [
   {
     word_id: "1",
-    text: "Mosquito",
+    text: "mosquito",
     size_difference: "-35.5"
   },
   {
     word_id: "2",
-    text: "Pea",
+    text: "pea",
     size_difference: "-35.5"
   },
   {
     word_id: "3",
-    text: "Pill",
+    text: "pill",
     size_difference: "-35"
   },
   {
     word_id: "4",
-    text: "Fly",
+    text: "fly",
     size_difference: "-35"
   },
   {
     word_id: "5",
-    text: "Staple",
+    text: "staple",
     size_difference: "-35"
   },
   {
     word_id: "6",
-    text: "Tooth",
+    text: "tooth",
     size_difference: "-34.5"
   },
   {
     word_id: "7",
-    text: "Bee",
+    text: "bee",
     size_difference: "-34"
   },
   {
     word_id: "8",
-    text: "Button",
+    text: "button",
     size_difference: "-34"
   },
   {
     word_id: "9",
-    text: "Cherry",
+    text: "cherry",
     size_difference: "-34"
   },
   {
     word_id: "10",
-    text: "Earring",
+    text: "earring",
     size_difference: "-34"
   },
   {
     word_id: "11",
-    text: "Grape",
+    text: "grape",
     size_difference: "-34"
   },
   {
     word_id: "12",
-    text: "Pebble",
+    text: "pebble",
     size_difference: "-34"
   },
   {
     word_id: "13",
-    text: "Coin",
+    text: "coin",
     size_difference: "-34"
   },
   {
     word_id: "14",
-    text: "Olive",
+    text: "olive",
     size_difference: "-34"
   },
   {
     word_id: "15",
-    text: "Eye",
+    text: "eye",
     size_difference: "-33"
   },
   {
     word_id: "16",
-    text: "Nut",
+    text: "nut",
     size_difference: "-33"
   },
   {
     word_id: "17",
-    text: "Stamp",
+    text: "stamp",
     size_difference: "-33"
   },
   {
     word_id: "18",
-    text: "Toe",
+    text: "toe",
     size_difference: "-33"
   },
   {
     word_id: "19",
-    text: "Caterpillar",
+    text: "caterpillar",
     size_difference: "-31"
   },
   {
     word_id: "20",
-    text: "Keyring",
+    text: "keyring",
     size_difference: "-33"
   },
   {
     word_id: "21",
-    text: "Strawberry",
+    text: "strawberry",
     size_difference: "-33"
   },
   {
     word_id: "22",
-    text: "Ear",
+    text: "ear",
     size_difference: "-32"
   },
   {
     word_id: "23",
-    text: "Egg",
+    text: "egg",
     size_difference: "-32"
   },
   {
     word_id: "24",
-    text: "Key",
+    text: "key",
     size_difference: "-32"
   },
   {
     word_id: "25",
-    text: "Needle",
+    text: "needle",
     size_difference: "-32"
   },
   {
     word_id: "26",
-    text: "Teabag",
+    text: "teabag",
     size_difference: "-32"
   },
   {
     word_id: "27",
-    text: "Wasp",
+    text: "wasp",
     size_difference: "-32"
   },
   {
     word_id: "28",
-    text: "Paperclip",
+    text: "paperclip",
     size_difference: "-32"
   },
   {
     word_id: "29",
-    text: "Biscuit",
+    text: "biscuit",
     size_difference: "-31"
   },
   {
     word_id: "30",
-    text: "Finger",
+    text: "finger",
     size_difference: "-31"
   },
   {
     word_id: "31",
-    text: "Moth",
+    text: "moth",
     size_difference: "-31"
   },
   {
     word_id: "32",
-    text: "Nose",
+    text: "nose",
     size_difference: "-31"
   },
   {
     word_id: "33",
-    text: "Snail",
+    text: "snail",
     size_difference: "-31"
   },
   {
     word_id: "34",
-    text: "Doorknob",
+    text: "doorknob",
     size_difference: "-31"
   },
   {
     word_id: "35",
-    text: "Fig",
+    text: "fig",
     size_difference: "-30"
   },
   {
     word_id: "36",
-    text: "Frog",
+    text: "frog",
     size_difference: "-30"
   },
   {
     word_id: "37",
-    text: "Goldfish",
+    text: "goldfish",
     size_difference: "-30"
   },
   {
     word_id: "38",
-    text: "Watch",
+    text: "watch",
     size_difference: "-30"
   },
   {
     word_id: "39",
-    text: "Apricot",
+    text: "apricot",
     size_difference: "-29"
   },
   {
     word_id: "40",
-    text: "Doughnut",
+    text: "doughnut",
     size_difference: "-29"
   },
   {
     word_id: "41",
-    text: "Lighter",
+    text: "lighter",
     size_difference: "-29"
   },
   {
     word_id: "42",
-    text: "Wrist",
+    text: "wrist",
     size_difference: "-29"
   },
   {
     word_id: "43",
-    text: "Canary",
+    text: "canary",
     size_difference: "-29"
   },
   {
     word_id: "44",
-    text: "Teacup",
+    text: "teacup",
     size_difference: "-29"
   },
   {
     word_id: "45",
-    text: "Grasshopper",
+    text: "grasshopper",
     size_difference: "-28"
   },
   {
     word_id: "46",
-    text: "Lemon",
+    text: "lemon",
     size_difference: "-28"
   },
   {
     word_id: "47",
-    text: "Peach",
+    text: "peach",
     size_difference: "-28"
   },
   {
     word_id: "48",
-    text: "Spider",
+    text: "spider",
     size_difference: "-28"
   },
   {
     word_id: "49",
-    text: "Tongue",
+    text: "tongue",
     size_difference: "-28"
   },
   {
     word_id: "50",
-    text: "Orange",
+    text: "orange",
     size_difference: "-27"
   },
   {
     word_id: "51",
-    text: "Amulet",
+    text: "amulet",
     size_difference: "-26"
   },
   {
     word_id: "52",
-    text: "Ankle",
+    text: "ankle",
     size_difference: "-26"
   },
   {
     word_id: "53",
-    text: "Apple",
+    text: "apple",
     size_difference: "-26"
   },
   {
     word_id: "54",
-    text: "Mug",
+    text: "mug",
     size_difference: "-26"
   },
   {
     word_id: "55",
-    text: "Cup",
+    text: "cup",
     size_difference: "-26"
   },
   {
     word_id: "56",
-    text: "Grapefruit",
+    text: "grapefruit",
     size_difference: "-25"
   },
   {
     word_id: "57",
-    text: "Jar",
+    text: "jar",
     size_difference: "-24"
   },
   {
     word_id: "58",
-    text: "Pipe",
+    text: "pipe",
     size_difference: "-24"
   },
   {
     word_id: "59",
-    text: "Rose",
+    text: "rose",
     size_difference: "-24"
   },
   {
     word_id: "60",
-    text: "Cigar",
+    text: "cigar",
     size_difference: "-24"
   },
   {
     word_id: "61",
-    text: "Wallet",
+    text: "wallet",
     size_difference: "-23"
   },
   {
     word_id: "62",
-    text: "Teaspoon",
+    text: "teaspoon",
     size_difference: "-23"
   },
   {
     word_id: "63",
-    text: "Toad",
+    text: "toad",
     size_difference: "-22"
   },
   {
     word_id: "64",
-    text: "Bacon",
+    text: "bacon",
     size_difference: "-21"
   },
   {
     word_id: "65",
-    text: "Broccoli",
+    text: "broccoli",
     size_difference: "-21"
   },
   {
     word_id: "66",
-    text: "Brush",
+    text: "brush",
     size_difference: "-21"
   },
   {
     word_id: "67",
-    text: "Butterfly",
+    text: "butterfly",
     size_difference: "-21"
   },
   {
     word_id: "68",
-    text: "Carrot",
+    text: "carrot",
     size_difference: "-21"
   },
   {
     word_id: "69",
-    text: "Fork",
+    text: "fork",
     size_difference: "-21"
   },
   {
     word_id: "70",
-    text: "Leek",
+    text: "leek",
     size_difference: "-21"
   },
   {
     word_id: "71",
-    text: "Rat",
+    text: "rat",
     size_difference: "-21"
   },
   {
     word_id: "72",
-    text: "Stapler",
+    text: "stapler",
     size_difference: "-21"
   },
   {
     word_id: "73",
-    text: "Joystick",
+    text: "joystick",
     size_difference: "-20"
   },
   {
     word_id: "74",
-    text: "Knife",
+    text: "knife",
     size_difference: "-20"
   },
   {
     word_id: "75",
-    text: "Spoon",
+    text: "spoon",
     size_difference: "-20"
   },
   {
     word_id: "76",
-    text: "Pancake",
+    text: "pancake",
     size_difference: "-19"
   },
   {
     word_id: "77",
-    text: "Scissors",
+    text: "scissors",
     size_difference: "-19"
   },
   {
     word_id: "78",
-    text: "Zucchini",
+    text: "zucchini",
     size_difference: "-19"
   },
   {
     word_id: "79",
-    text: "Pencil",
+    text: "pencil",
     size_difference: "-19"
   },
   {
     word_id: "80",
-    text: "Napkin",
+    text: "napkin",
     size_difference: "-18"
   },
   {
     word_id: "81",
-    text: "Steak",
+    text: "steak",
     size_difference: "-18"
   },
   {
     word_id: "82",
-    text: "Whisk",
+    text: "whisk",
     size_difference: "-18"
   },
   {
     word_id: "83",
-    text: "Comb",
+    text: "comb",
     size_difference: "-18"
   },
   {
     word_id: "84",
-    text: "Glove",
+    text: "glove",
     size_difference: "-17"
   },
   {
     word_id: "85",
-    text: "Bottle",
+    text: "bottle",
     size_difference: "-16"
   },
   {
     word_id: "86",
-    text: "Chisel",
+    text: "chisel",
     size_difference: "-16"
   },
   {
     word_id: "87",
-    text: "Crab",
+    text: "crab",
     size_difference: "-16"
   },
   {
     word_id: "88",
-    text: "Gun",
+    text: "gun",
     size_difference: "-16"
   },
   {
     word_id: "89",
-    text: "Jellyfish",
+    text: "jellyfish",
     size_difference: "-16"
   },
   {
     word_id: "90",
-    text: "Mask",
+    text: "mask",
     size_difference: "-16"
   },
   {
     word_id: "91",
-    text: "Plate",
+    text: "plate",
     size_difference: "-16"
   },
   {
     word_id: "92",
-    text: "Tile",
+    text: "tile",
     size_difference: "-16"
   },
   {
     word_id: "93",
-    text: "Notebook",
+    text: "notebook",
     size_difference: "-15"
   },
   {
     word_id: "94",
-    text: "Jug",
+    text: "jug",
     size_difference: "-14"
   },
   {
     word_id: "95",
-    text: "Kettle",
+    text: "kettle",
     size_difference: "-14"
   },
   {
     word_id: "96",
-    text: "Headphones",
+    text: "headphones",
     size_difference: "-14"
   },
   {
     word_id: "97",
-    text: "Dagger",
+    text: "dagger",
     size_difference: "-13"
   },
   {
     word_id: "98",
-    text: "Pot",
+    text: "pot",
     size_difference: "-12"
   },
   {
     word_id: "99",
-    text: "Dish",
+    text: "dish",
     size_difference: "-11"
   },
   {
     word_id: "100",
-    text: "Ladle",
+    text: "ladle",
     size_difference: "-11"
   },
   {
     word_id: "101",
-    text: "Pumpkin",
+    text: "pumpkin",
     size_difference: "-11"
   },
   {
     word_id: "102",
-    text: "Postcard",
+    text: "postcard",
     size_difference: "-23"
   },
   {
     word_id: "103",
-    text: "Sock",
+    text: "sock",
     size_difference: "-11"
   },
   {
     word_id: "104",
-    text: "Squirrel",
+    text: "squirrel",
     size_difference: "-11"
   },
   {
     word_id: "105",
-    text: "Worm",
+    text: "worm",
     size_difference: "-11"
   },
   {
     word_id: "106",
-    text: "Foot",
+    text: "foot",
     size_difference: "-8"
   },
   {
     word_id: "107",
-    text: "Frisbee",
+    text: "frisbee",
     size_difference: "-8"
   },
   {
     word_id: "108",
-    text: "Telephone",
+    text: "telephone",
     size_difference: "-8"
   },
   {
     word_id: "109",
-    text: "Bread",
+    text: "bread",
     size_difference: "-6"
   },
   {
     word_id: "110",
-    text: "Bucket",
+    text: "bucket",
     size_difference: "-6"
   },
   {
     word_id: "111",
-    text: "Hat",
+    text: "hat",
     size_difference: "-6"
   },
   {
     word_id: "112",
-    text: "Hedgehog",
+    text: "hedgehog",
     size_difference: "-6"
   },
   {
     word_id: "113",
-    text: "Ruler",
+    text: "ruler",
     size_difference: "-6"
   },
   {
     word_id: "114",
-    text: "Saucepan",
+    text: "saucepan",
     size_difference: "-6"
   },
   {
     word_id: "115",
-    text: "Shoe",
+    text: "shoe",
     size_difference: "-6"
   },
   {
     word_id: "116",
-    text: "Seagull",
+    text: "seagull",
     size_difference: "-4"
   },
   {
     word_id: "117",
-    text: "Rabbit",
+    text: "rabbit",
     size_difference: "-3"
   },
   {
     word_id: "118",
-    text: "Hammer",
+    text: "hammer",
     size_difference: "-1"
   },
   {
     word_id: "119",
-    text: "Helmet",
+    text: "helmet",
     size_difference: "-1"
   },
   {
     word_id: "120",
-    text: "Duck",
+    text: "duck",
     size_difference: "4"
   },
   {
     word_id: "121",
-    text: "Flute",
+    text: "flute",
     size_difference: "4"
   },
   {
     word_id: "122",
-    text: "Hatchet",
+    text: "hatchet",
     size_difference: "4"
   },
   {
     word_id: "123",
-    text: "Laptop",
+    text: "laptop",
     size_difference: "4"
   },
   {
     word_id: "124",
-    text: "Necklace",
+    text: "necklace",
     size_difference: "4"
   },
   {
     word_id: "125",
-    text: "Necktie",
+    text: "necktie",
     size_difference: "4"
   },
   {
     word_id: "126",
-    text: "Watermelon",
+    text: "watermelon",
     size_difference: "4"
   },
   {
     word_id: "127",
-    text: "Wok",
+    text: "wok",
     size_difference: "4"
   },
   {
     word_id: "128",
-    text: "Chicken",
+    text: "chicken",
     size_difference: "9"
   },
   {
     word_id: "129",
-    text: "Saw",
+    text: "saw",
     size_difference: "9"
   },
   {
     word_id: "130",
-    text: "Cat",
+    text: "cat",
     size_difference: "14"
   },
   {
     word_id: "131",
-    text: "Machete",
+    text: "machete",
     size_difference: "14"
   },
   {
     word_id: "132",
-    text: "Rooster",
+    text: "rooster",
     size_difference: "14"
   },
   {
     word_id: "133",
-    text: "Sink",
+    text: "sink",
     size_difference: "14"
   },
   {
     word_id: "134",
-    text: "Violin",
+    text: "violin",
     size_difference: "14"
   },
   {
     word_id: "135",
-    text: "Tyre",
+    text: "tyre",
     size_difference: "22"
   },
   {
     word_id: "136",
-    text: "Arm",
+    text: "arm",
     size_difference: "24"
   },
   {
     word_id: "137",
-    text: "Computer",
+    text: "computer",
     size_difference: "24"
   },
   {
     word_id: "138",
-    text: "Penguin",
+    text: "penguin",
     size_difference: "24"
   },
   {
     word_id: "139",
-    text: "Fox",
+    text: "fox",
     size_difference: "25"
   },
   {
     word_id: "140",
-    text: "Axe",
+    text: "axe",
     size_difference: "34"
   },
   {
     word_id: "141",
-    text: "Goose",
+    text: "goose",
     size_difference: "34"
   },
   {
     word_id: "142",
-    text: "Lamb",
+    text: "lamb",
     size_difference: "34"
   },
   {
     word_id: "143",
-    text: "Skateboard",
+    text: "skateboard",
     size_difference: "34"
   },
   {
     word_id: "144",
-    text: "Trumpet",
+    text: "trumpet",
     size_difference: "34"
   },
   {
     word_id: "145",
-    text: "Amplifier",
+    text: "amplifier",
     size_difference: "44"
   },
   {
     word_id: "146",
-    text: "Radiator",
+    text: "radiator",
     size_difference: "44"
   },
   {
     word_id: "147",
-    text: "Belt",
+    text: "belt",
     size_difference: "54"
   },
   {
     word_id: "148",
-    text: "Monkey",
+    text: "monkey",
     size_difference: "54"
   },
   {
     word_id: "149",
-    text: "Pants",
+    text: "pants",
     size_difference: "54"
   },
   {
     word_id: "150",
-    text: "Child",
+    text: "child",
     size_difference: "64"
   },
   {
     word_id: "151",
-    text: "Dog",
+    text: "dog",
     size_difference: "64"
   },
   {
     word_id: "152",
-    text: "Dress",
+    text: "dress",
     size_difference: "64"
   },
   {
     word_id: "153",
-    text: "Eagle",
+    text: "eagle",
     size_difference: "64"
   },
   {
     word_id: "154",
-    text: "Freezer",
+    text: "freezer",
     size_difference: "64"
   },
   {
     word_id: "155",
-    text: "Guitar",
+    text: "guitar",
     size_difference: "64"
   },
   {
     word_id: "156",
-    text: "Pram",
+    text: "pram",
     size_difference: "64"
   },
   {
     word_id: "157",
-    text: "Saddle",
+    text: "saddle",
     size_difference: "64"
   },
   {
     word_id: "158",
-    text: "Sled",
+    text: "sled",
     size_difference: "64"
   },
   {
     word_id: "159",
-    text: "Towel",
+    text: "towel",
     size_difference: "64"
   },
   {
     word_id: "160",
-    text: "Turtle",
+    text: "turtle",
     size_difference: "64"
   },
   {
     word_id: "161",
-    text: "Jaguar",
+    text: "jaguar",
     size_difference: "74"
   },
   {
     word_id: "162",
-    text: "Ski",
+    text: "ski",
     size_difference: "74"
   },
   {
     word_id: "163",
-    text: "Umbrella",
+    text: "umbrella",
     size_difference: "74"
   },
   {
     word_id: "164",
-    text: "Wolf",
+    text: "wolf",
     size_difference: "74"
   },
   {
     word_id: "165",
-    text: "Ape",
+    text: "ape",
     size_difference: "84"
   },
   {
     word_id: "166",
-    text: "Coyote",
+    text: "coyote",
     size_difference: "84"
   },
   {
     word_id: "167",
-    text: "Dishwasher",
+    text: "dishwasher",
     size_difference: "84"
   },
   {
     word_id: "168",
-    text: "Harp",
+    text: "harp",
     size_difference: "84"
   },
   {
     word_id: "169",
-    text: "Sheep",
+    text: "sheep",
     size_difference: "84"
   },
   {
     word_id: "170",
-    text: "Suitcase",
+    text: "suitcase",
     size_difference: "84"
   },
   {
     word_id: "171",
-    text: "Sword",
+    text: "sword",
     size_difference: "84"
   },
   {
     word_id: "172",
-    text: "Toilet",
+    text: "toilet",
     size_difference: "84"
   },
   {
     word_id: "173",
-    text: "Shirt",
+    text: "shirt",
     size_difference: "85"
   },
   {
     word_id: "174",
-    text: "Goat",
+    text: "goat",
     size_difference: "86"
   },
   {
     word_id: "175",
-    text: "Leopard",
+    text: "leopard",
     size_difference: "94"
   },
   {
     word_id: "176",
-    text: "Orangutan",
+    text: "orangutan",
     size_difference: "94"
   },
   {
     word_id: "177",
-    text: "Pig",
+    text: "pig",
     size_difference: "94"
   },
   {
     word_id: "178",
-    text: "Boy",
+    text: "boy",
     size_difference: "94"
   },
   {
     word_id: "179",
-    text: "Girl",
+    text: "girl",
     size_difference: "94"
   },
   {
     word_id: "180",
-    text: "Branch",
+    text: "branch",
     size_difference: "104"
   },
   {
     word_id: "181",
-    text: "Chair",
+    text: "chair",
     size_difference: "104"
   },
   {
     word_id: "182",
-    text: "Crib",
+    text: "crib",
     size_difference: "114"
   },
   {
     word_id: "183",
-    text: "Engine",
+    text: "engine",
     size_difference: "114"
   },
   {
     word_id: "184",
-    text: "Fridge",
+    text: "fridge",
     size_difference: "114"
   },
   {
     word_id: "185",
-    text: "Motorbike",
+    text: "motorbike",
     size_difference: "114"
   },
   {
     word_id: "186",
-    text: "Table",
+    text: "table",
     size_difference: "114"
   },
   {
     word_id: "187",
-    text: "Woman",
+    text: "woman",
     size_difference: "128"
   },
   {
     word_id: "188",
-    text: "Pony",
+    text: "pony",
     size_difference: "84"
   },
   {
     word_id: "189",
-    text: "Gazelle",
+    text: "gazelle",
     size_difference: "134"
   },
   {
     word_id: "190",
-    text: "Walrus",
+    text: "walrus",
     size_difference: "134"
   },
   {
     word_id: "191",
-    text: "Man",
+    text: "man",
     size_difference: "139"
   },
   {
     word_id: "192",
-    text: "Bicycle",
+    text: "bicycle",
     size_difference: "144"
   },
   {
     word_id: "193",
-    text: "Desk",
+    text: "desk",
     size_difference: "144"
   },
   {
     word_id: "194",
-    text: "Bush",
+    text: "bush",
     size_difference: "155"
   },
   {
     word_id: "195",
-    text: "Antelope",
+    text: "antelope",
     size_difference: "164"
   },
   {
     word_id: "196",
-    text: "Blackboard",
+    text: "blackboard",
     size_difference: "164"
   },
   {
     word_id: "197",
-    text: "Cow",
+    text: "cow",
     size_difference: "164"
   },
   {
     word_id: "198",
-    text: "Lion",
+    text: "lion",
     size_difference: "164"
   },
   {
     word_id: "199",
-    text: "Piano",
+    text: "piano",
     size_difference: "164"
   },
   {
     word_id: "200",
-    text: "Spear",
+    text: "spear",
     size_difference: "164"
   },
   {
     word_id: "201",
-    text: "Zebra",
+    text: "zebra",
     size_difference: "164"
   },
   {
     word_id: "202",
-    text: "Mattress",
+    text: "mattress",
     size_difference: "164"
   },
   {
     word_id: "203",
-    text: "Gorilla",
+    text: "gorilla",
     size_difference: "177"
   },
   {
     word_id: "204",
-    text: "Tiger",
+    text: "tiger",
     size_difference: "184"
   },
   {
     word_id: "205",
-    text: "Bull",
+    text: "bull",
     size_difference: "200"
   },
   {
     word_id: "206",
-    text: "Bear",
+    text: "bear",
     size_difference: "205"
   },
   {
     word_id: "207",
-    text: "Door",
+    text: "door",
     size_difference: "214"
   },
   {
     word_id: "208",
-    text: "Horse",
+    text: "horse",
     size_difference: "214"
   },
   {
     word_id: "209",
-    text: "Shark",
+    text: "shark",
     size_difference: "214"
   },
   {
     word_id: "210",
-    text: "Sofa",
+    text: "sofa",
     size_difference: "214"
   },
   {
     word_id: "211",
-    text: "Bed",
+    text: "bed",
     size_difference: "224"
   },
   {
     word_id: "212",
-    text: "Alligator",
+    text: "alligator",
     size_difference: "264"
   },
   {
     word_id: "213",
-    text: "Buffalo",
+    text: "buffalo",
     size_difference: "264"
   },
   {
     word_id: "214",
-    text: "Carriage",
+    text: "carriage",
     size_difference: "264"
   },
   {
     word_id: "215",
-    text: "Jeep",
+    text: "jeep",
     size_difference: "264"
   },
   {
     word_id: "216",
-    text: "Lance",
+    text: "lance",
     size_difference: "264"
   },
   {
     word_id: "217",
-    text: "Tent",
+    text: "tent",
     size_difference: "264"
   },
   {
     word_id: "218",
-    text: "Trailer",
+    text: "trailer",
     size_difference: "264"
   },
   {
     word_id: "219",
-    text: "Couch",
+    text: "couch",
     size_difference: "264"
   },
   {
     word_id: "220",
-    text: "Tractor",
+    text: "tractor",
     size_difference: "314"
   },
   {
     word_id: "221",
-    text: "Car",
+    text: "car",
     size_difference: "354"
   },
   {
     word_id: "222",
-    text: "Elephant",
+    text: "elephant",
     size_difference: "364"
   },
   {
     word_id: "223",
-    text: "Hut",
+    text: "hut",
     size_difference: "364"
   },
   {
     word_id: "224",
-    text: "Tree",
+    text: "tree",
     size_difference: "364"
   },
   {
     word_id: "225",
-    text: "Boat",
+    text: "boat",
     size_difference: "374"
   },
   {
     word_id: "226",
-    text: "Office",
+    text: "office",
     size_difference: "464"
   },
   {
     word_id: "227",
-    text: "Dinosaur",
+    text: "dinosaur",
     size_difference: "490"
   },
   {
     word_id: "228",
-    text: "Library",
+    text: "library",
     size_difference: "540"
   },
   {
     word_id: "229",
-    text: "Caravan",
+    text: "caravan",
     size_difference: "564"
   },
   {
     word_id: "230",
-    text: "Garage",
+    text: "garage",
     size_difference: "564"
   },
   {
     word_id: "231",
-    text: "Mammoth",
+    text: "mammoth",
     size_difference: "564"
   },
   {
     word_id: "232",
-    text: "Van",
+    text: "van",
     size_difference: "590"
   },
   {
     word_id: "233",
-    text: "Helicopter",
+    text: "helicopter",
     size_difference: "764"
   },
   {
     word_id: "234",
-    text: "Truck",
+    text: "truck",
     size_difference: "764"
   },
   {
     word_id: "235",
-    text: "Factory",
+    text: "factory",
     size_difference: "814"
   },
   {
     word_id: "236",
-    text: "Bus",
+    text: "bus",
     size_difference: "964"
   },
   {
     word_id: "237",
-    text: "Whale",
+    text: "whale",
     size_difference: "1464"
   },
   {
     word_id: "238",
-    text: "House",
+    text: "house",
     size_difference: "1964"
   },
   {
     word_id: "239",
-    text: "Tower",
+    text: "tower",
     size_difference: "3000"
   },
   {
     word_id: "240",
-    text: "Train",
+    text: "train",
     size_difference: "3964"
   },
   {
     word_id: "241",
-    text: "Bridge",
+    text: "bridge",
     size_difference: "5000"
   },
   {
     word_id: "242",
-    text: "Pyramid",
+    text: "pyramid",
     size_difference: "10964"
   },
   {
     word_id: "243",
-    text: "Skyscraper",
+    text: "skyscraper",
     size_difference: "11955"
   },
   {
     word_id: "244",
-    text: "Castle",
+    text: "castle",
     size_difference: "19964"
   },
   {
     word_id: "245",
-    text: "Cloud",
+    text: "cloud",
     size_difference: "20000"
   },
   {
     word_id: "246",
-    text: "Ship",
+    text: "ship",
     size_difference: "21960"
   },
   {
     word_id: "247",
-    text: "Mountain",
+    text: "mountain",
     size_difference: "49964"
   },
   {
     word_id: "248",
-    text: "Island",
+    text: "island",
     size_difference: "500000"
   },
   {
     word_id: "249",
-    text: "Planet",
+    text: "planet",
     size_difference: "14999999964"
   },
   {
     word_id: "250",
-    text: "Sun",
+    text: "sun",
     size_difference: "139000000000"
   }
 ]
