@@ -68,7 +68,7 @@
                     had longer free time following the blue words are able to remember fewer of them. </p>
                     <p>Please do not share this information with anyone! It is crucial the explanation is kept confidential until we have collected all data.</p>
                  <p>Here is your code to confirm your participation: Cspan-DRM-1</p>
-                 <p>You can exit the fullscreen mode now by pressing "ESC".</p>'
+                 <p>You can exit the fullscreen mode now by pressing "ESC" and then close the browser window/tab.</p>'
 
   ERROR:
     NUMERICAL_BETWEEN_10_AND_100: 'Please provide a numerically age between 10 to 100'
