@@ -23,7 +23,8 @@
            <p>if the object is <strong>larger</strong> than a soccer ball, please press the <strong>right</strong> arrow key.</p>
            <p>Your second task is to remember all the  <strong>red words</strong> in their <strong>order of presentation</strong>. You don’t need to remember the blue words.<br>
            At the end of the presentation of all 10 words you will be asked to select the red words from a set of 15 words. Please click on
-           the 5 red words that you remembered in their order of presentation.</p>
+           the 5 red words that you remembered in their order of presentation.<br>
+           If you do not remember all words nevertheless try to select each word at the position it initially appeared. For example, if you do not remember the third red word that was presented, but the fourth red word, please select the fourth word as the fourth word.</p>
            <p>You will first do two practice trials, followed by 12 test trials.</p>'
     CONTINUE: 'Please press the right arrow key to continue ...'
 

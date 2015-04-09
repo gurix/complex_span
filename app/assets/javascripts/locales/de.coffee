@@ -23,7 +23,9 @@
            <p>wenn es <strong>grösser</strong> als ein Fussball ist, drücken Sie die <strong>rechte</strong> Pfeiltaste.</p>
            <p>Ihre zweite Aufgabe ist, sich alle <strong>roten Wörter</strong> in der <strong>richtigen Reihenfolge</strong> zu merken. Die blauen Wörter müssen Sie sich
               nicht merken. <br>Am Ende der Darbietung der 10 Wörter werden Sie gebeten, die roten Wörter aus einer Menge von 15 Wörtern auszuwählen.
-              Klicken Sie auf die 5 roten Wörter, die Sie sich gemerkt haben, in der richtigen Reihenfolge.</p>
+              Klicken Sie auf die 5 roten Wörter, die Sie sich gemerkt haben, in der richtigen Reihenfolge.<br>
+              Sollten Sie sich nicht an alle roten Wörter erinnern, versuchen Sie trotzdem, die Wörter jeweils an der richtigen Position auszuwählen. Erinnern Sie sich zum Beispiel an das Vierte rote Wort, nicht aber an das Dritte, wählen Sie das Vierte bitte trotzdem als Viertes aus.
+              </p>
            <p>Sie werden zunächst 2 Übungs-Durchgänge bearbeiten, danach folgen 12 Test-Durchgänge.</p>'
     CONTINUE: 'Bitte drücken Sie die rechte Pfeiltaste um fortzufahren ...'
 
