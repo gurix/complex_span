@@ -4,7 +4,7 @@
     NEXT: 'Next...'
     WARNING: 'To run this experiment we need to take you in fullscreen mode. Exiting the fullscreen mode, reloading the webpage, or going-"back" in the browser will terminate the experiment.
               Please close all other running applications and turn off all notifications. Ensure you are in a calm place without any
-              distractions i.e noise.'
+              distractions, for example, noise.'
     INFORMED_CONSENT: '<p>
                           In this experiment you will be asked to briefly remember short sets of words. You will also make judgments on the words at the same
                           time. The experiment will take about 9 minutes. The data will be recorded anonymously. Your participation is of course voluntary,
