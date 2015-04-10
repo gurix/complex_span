@@ -72,7 +72,7 @@ describe 'Experiment', js: true do
 
         expect(word['delay']).to eq 200 if word['color']  == 'red'
         expect(word['delay']).to eq trial['word_delay'] if word['color'] == 'blue'
-
+        sleep(0.3) # Wait at least 500ms to be sure not to be to fast
         find('body').native.send_keys word['color']  == 'blue' ? :arrow_right : :arrow_left
 
         # We have to wait until the next word appears, otherwise this E2E-Test will be to fast

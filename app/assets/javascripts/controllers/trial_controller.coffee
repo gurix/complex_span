@@ -96,30 +96,36 @@
       $(document).unbind('keydown')
       $(document).keydown (e) ->
 
-        # It must be left or right
-        if (e.keyCode == 39 || e.keyCode == 37)
-          logger.push 'Pressed key ' + e.keyCode
+        keydown_time = new Date()
+        reaction_time = keydown_time - $scope.CurrentWord().start_time
+        
+        if (reaction_time > 200)
+          # It must be left or right
+          if (e.keyCode == 39 || e.keyCode == 37)
+            logger.push 'Pressed key ' + e.keyCode
 
-          # Record which key was pressed for this word
-          $scope.CurrentWord().pressed_key = e.keyCode
+            # Record which key was pressed for this word
+            $scope.CurrentWord().pressed_key = e.keyCode
 
-          # Ensure no more keydowns are accepted now
-          $(document).unbind('keydown')
+            # Ensure no more keydowns are accepted now
+            $(document).unbind('keydown')
 
-          # The timeout has to be canceled because we move on to the next word manually
-          $timeout.cancel next_word
+            # The timeout has to be canceled because we move on to the next word manually
+            $timeout.cancel next_word
 
-          # Set the time on the current word when we move on
-          $scope.CurrentWord().stop_time = new Date()
-          $scope.CurrentWord().reaction_time = $scope.CurrentWord().stop_time - $scope.CurrentWord().start_time
+            # Set the time on the current word when we move on
+            $scope.CurrentWord().stop_time = keydown_time
+            $scope.CurrentWord().reaction_time = reaction_time
 
-          # We emidiatly move on to the next word once left or right was pressed
-          if $scope.CurrentWord().reaction_time < 2000
-            $scope.NextWord()
+            # We emidiatly move on to the next word once left or right was pressed
+            if $scope.CurrentWord().reaction_time < 2000
+              $scope.NextWord()
+            else
+              logger.push 'Key pressed after 2000ms! (' + $scope.CurrentWord().reaction_time + 'ms)'
           else
-            logger.push 'Key pressed after 2000ms! (' + $scope.CurrentWord().reaction_time + 'ms)'
+            logger.push 'Pressed key ' + e.keyCode + ' instead of left or right!'
         else
-          logger.push 'Pressed key ' + e.keyCode + ' instead of left or right!'
+          logger.push 'Reaction time ' + reaction_time + ' to fast'
 
     $scope.NextWord = () ->
       # Ensure the current word is hidden until next will show up
