@@ -2,13 +2,12 @@
   HOME:
     SWITCH_LANGUAGE: 'English'
     NEXT: 'Weiter ...'
-    WARNING: 'Dieses Experiment wird im Vollbild-Modus durchgeführt. Das Verlassen des Vollbildmodus wird das Experiment abbrechen. Bitte
+    WARNING: 'Dieses Experiment wird im Vollbild-Modus durchgeführt. Das Verlassen des Vollbildmodus, das Neuladen der Webseite oder das "Zurück"-gehen im Browser werden das Experiment abbrechen. Bitte
               schliessen Sie all ihre anderen Programme und schalten sie alle Benachrichtigungen aus. Sorgen sie dafür das sie dieses Experiment
               an einem ruhigen Ort durchführen ohne Ablenkung bspw. durch Lärm.'
 
     INFORMED_CONSENT: '<p>
-                          Bei diesem Experiment werden Sie gebeten, Wörter kurzfristig im Gedächtnis zu behalten. Gleichzeitig sollen Sie Entscheidungen über
-                          selbstverständlich freiwillig, und Sie können jederzeit ohne Angabe von Gründen abbrechen; in dem Fall werden Ihre Daten nicht
+                          Bei diesem Experiment werden Sie gebeten, Wörter kurzfristig im Gedächtnis zu behalten. Gleichzeitig sollen Sie Entscheidungen über die Wörter treffen. Das Experiment dauert etwa 10 Minuten. Ihre Daten werden anonym aufgezeichnet. Die Teilnahme ist selbstverständlich freiwillig, und Sie können jederzeit ohne Angabe von Gründen abbrechen; in dem Fall werden Ihre Daten nicht
                           verwendet. Die Bezahlung erhalten Sie allerdings nur, wenn Sie das Experiment vollständig durchführen.
                       </p>
                       <p>
@@ -16,7 +15,7 @@
                       </p>'
 
   INSTRUCTION_1:
-    THANK_YOU: '<p>Vielen Dank, dass Sie an unserem Experiment teilnehmen! Das Experiment wird etwa 15 Minuten dauern.</p>'
+    THANK_YOU: '<p>Vielen Dank, dass Sie an unserem Experiment teilnehmen! Das Experiment wird etwa 10 Minuten dauern.</p>'
     TEXT: '<p>In jedem Durchgang werden Ihnen nacheinander 10 Wörter präsentiert, die sich alle auf konkrete Objekte beziehen.
               Sie haben nun zwei Aufgaben:</p>
            <p>Die erste Aufgabe ist, für jedes Wort zu beurteilen, ob das bezeichnete Objekt grösser oder kleiner als ein Fussball ist.</p>
@@ -24,7 +23,9 @@
            <p>wenn es <strong>grösser</strong> als ein Fussball ist, drücken Sie die <strong>rechte</strong> Pfeiltaste.</p>
            <p>Ihre zweite Aufgabe ist, sich alle <strong>roten Wörter</strong> in der <strong>richtigen Reihenfolge</strong> zu merken. Die blauen Wörter müssen Sie sich
               nicht merken. <br>Am Ende der Darbietung der 10 Wörter werden Sie gebeten, die roten Wörter aus einer Menge von 15 Wörtern auszuwählen.
-              Klicken Sie auf die 5 roten Wörter, die Sie sich gemerkt haben, in der richtigen Reihenfolge.</p>
+              Klicken Sie auf die 5 roten Wörter, die Sie sich gemerkt haben, in der richtigen Reihenfolge.<br>
+              Sollten Sie sich nicht an alle roten Wörter erinnern, versuchen Sie trotzdem, die Wörter jeweils an der richtigen Position auszuwählen. Erinnern Sie sich zum Beispiel an das Vierte rote Wort, nicht aber an das Dritte, wählen Sie das Vierte bitte trotzdem als Viertes aus.
+              </p>
            <p>Sie werden zunächst 2 Übungs-Durchgänge bearbeiten, danach folgen 12 Test-Durchgänge.</p>'
     CONTINUE: 'Bitte drücken Sie die rechte Pfeiltaste um fortzufahren ...'
 
@@ -68,7 +69,7 @@
                     experimentell variiert – entweder nur 200 ms nach jedem blauen Wort, oder 1500 ms nach jedem blauem Wort. Wir erwarten, dass bei 1500 ms nach jedem blauen Wort, die blauen Wörter schlechter erinnert werden können, als bei 200 ms nach jedem blauen Wort.</p>
                     <p>Bitte geben Sie diese Information an niemanden weiter! Es ist wichtig, dass die Erklärung bis zum Abschluss der Datenerhebung absolut vertraulich behandelt wird.</p>
                     <p>Hier ist Ihr Code zur Bestätigung Ihrer Teilnahme: Cspan-DRM-1</p>
-                    <p>Sie können den Vollbildmodus nun verlassen, drücken Sie dazu auf "ESC".</p>'
+                    <p>Sie können den Vollbildmodus nun verlassen, drücken Sie dazu auf "ESC". Anschliessend können Sie das Browser Fenster/Tab schliessen.</p>'
 
   ERROR:
     NUMERICAL_BETWEEN_10_AND_100: 'Bitte geben Sie eine Zahl zwischen 10 und 100 ein'
