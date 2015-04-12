@@ -72,7 +72,7 @@ describe 'Experiment', js: true do
 
         expect(word['delay']).to eq 200 if word['color']  == 'red'
         expect(word['delay']).to eq trial['word_delay'] if word['color'] == 'blue'
-        sleep(0.3) # Wait at least 500ms to be sure not to be to fast
+        sleep(0.3) # Wait at least 300ms to be sure not to be to fast
         find('body').native.send_keys word['color']  == 'blue' ? :arrow_right : :arrow_left
 
         # We have to wait until the next word appears, otherwise this E2E-Test will be to fast
@@ -89,7 +89,8 @@ describe 'Experiment', js: true do
       end
 
       presented_words.sample(5).each_with_index do | word, index |
-        page.execute_script("$(\"#retrieval_matrix div.ng-binding:contains('#{word}')\").click()")
+        sleep(0.3) # Wait at least 300ms to be sure not to be to fast
+        page.execute_script("$(\"#retrieval_matrix div.ng-binding\").filter(function(index) { return $(this).text() === \"#{word}\"; }).click()")
 
         expect(page.execute_script("return SessionData().trials[#{trial_counter}].retrieval_clicks[#{index}].text")).to eq word
       end
@@ -184,12 +185,16 @@ describe 'Experiment', js: true do
       page.driver.browser.navigate.refresh
 
       expect(page).to have_content 'The experiment was aborted because you exited or reloaded the page.'
+
+      page.execute_script('localStorage.clear()')
     end
 
     scenario 'user hits the back button during the test' do
       page.driver.browser.navigate.back
 
       expect(page).to have_content 'The experiment was aborted because you exited or reloaded the page.'
+
+      page.execute_script('localStorage.clear()')
     end
   end
 end

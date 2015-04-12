@@ -13,6 +13,7 @@
     $scope.show_instruction = false
     $scope.show_instruction_1_2 = false
     $scope.show_blue_circle = false
+    $scope.last_click = new Date()
     $scope.show_retrieval_matrix_instruction_red = false
     $scope.show_retrieval_matrix_instruction_blue = false
 
@@ -98,7 +99,7 @@
 
         keydown_time = new Date()
         reaction_time = keydown_time - $scope.CurrentWord().start_time
-        
+
         if (reaction_time > 200)
           # It must be left or right
           if (e.keyCode == 39 || e.keyCode == 37)
@@ -125,7 +126,7 @@
           else
             logger.push 'Pressed key ' + e.keyCode + ' instead of left or right!'
         else
-          logger.push 'Reaction time ' + reaction_time + ' to fast'
+          logger.push 'Reaction time ' + reaction_time + 'ms to fast'
 
     $scope.NextWord = () ->
       # Ensure the current word is hidden until next will show up
@@ -166,44 +167,49 @@
 
     # Triggers some actions when a user clicked on a word he remembers
     $scope.ClickRetrieval = (index) ->
-      retrieval_id = '#retrieval-' + index
+      time_between_clicks = (new Date()) - $scope.last_click
+      
+      if time_between_clicks > 300
+        $scope.last_click = new Date()
+        retrieval_id = '#retrieval-' + index
 
-      clicked_retrieval = JSON.parse(JSON.stringify $scope.CurrentRetrievals()[index])
+        clicked_retrieval = JSON.parse(JSON.stringify $scope.CurrentRetrievals()[index])
 
-      $scope.clicked_retrieval_counter++
+        $scope.clicked_retrieval_counter++
 
-      logger.push "Clicked #{$scope.clicked_retrieval_counter} on word #{$scope.CurrentRetrievals()[index].text} with color #{$scope.CurrentRetrievals()[index].color}"
+        logger.push "Clicked #{$scope.clicked_retrieval_counter} on word #{$scope.CurrentRetrievals()[index].text} with color #{$scope.CurrentRetrievals()[index].color}"
 
-      # Save properties of the click
-      clicked_retrieval.clicked_at = new Date()
-      clicked_retrieval.click_order = $scope.clicked_retrieval_counter
+        # Save properties of the click
+        clicked_retrieval.clicked_at = new Date()
+        clicked_retrieval.click_order = $scope.clicked_retrieval_counter
 
-      $scope.CurrentTrial().retrieval_clicks.push clicked_retrieval
+        $scope.CurrentTrial().retrieval_clicks.push clicked_retrieval
 
-      $(retrieval_id).addClass 'clicked'
+        $(retrieval_id).addClass 'clicked'
 
-      $timeout (-> $(retrieval_id).removeClass 'clicked'), 300
+        $timeout (-> $(retrieval_id).removeClass 'clicked'), 300
 
-      if $scope.clicked_retrieval_counter >= $scope.number_of_selectable_words_per_retrieval
-        # Hide the cursor immediately
-        $('body').addClass('no-cursor')
+        if $scope.clicked_retrieval_counter >= $scope.number_of_selectable_words_per_retrieval
+          # Hide the cursor immediately
+          $('body').addClass('no-cursor')
 
-        # Hide Matrix
-        $timeout (->
-          $scope.show_retrieval_matrix = false
+          # Hide Matrix
+          $timeout (->
+            $scope.show_retrieval_matrix = false
 
-          if $scope.session.trial_counter < 13
-            $scope.session.trial_counter++
+            if $scope.session.trial_counter < 13
+              $scope.session.trial_counter++
 
-            if $scope.session.trial_counter == $scope.number_of_trials_to_practice
-              # Redisplay instruction before the real test starts
-              $timeout (-> $scope.DisplayInstruction_1_2()), 1300
+              if $scope.session.trial_counter == $scope.number_of_trials_to_practice
+                # Redisplay instruction before the real test starts
+                $timeout (-> $scope.DisplayInstruction_1_2()), 1300
+              else
+                $timeout (-> $scope.StartTrial()), 2000
             else
-              $timeout (-> $scope.StartTrial()), 2000
-          else
-            $timeout (-> location.href = '#/finishing'), 1000
-        ), 1000
-
+              $timeout (-> location.href = '#/finishing'), 1000
+          ), 1000
+      else
+        logger.push 'Clicked within ' + time_between_clicks + 'ms to fast'
 
     $scope.DisplayInstruction_1_2 = () ->
       $timeout (-> $scope.show_instruction_1_2 = true), 0
