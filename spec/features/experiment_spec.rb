@@ -146,6 +146,8 @@ describe 'Experiment', js: true do
     expect(session.education).to eq 'high_school'
 
     expect(page).to have_content 'Thank you again for participating in our experiment.'
+
+    page.execute_script('localStorage.clear()')
   end
 
   context 'navigation during tests' do
@@ -178,7 +180,6 @@ describe 'Experiment', js: true do
       find('body').native.send_keys :arrow_right
 
       expect(page.find '#word').to be_visible
-
     end
 
     scenario 'user reloads the page during the test' do
