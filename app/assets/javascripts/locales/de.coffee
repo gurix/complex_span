@@ -26,7 +26,7 @@
               Klicken Sie auf die 5 roten Wörter, die Sie sich gemerkt haben, in der richtigen Reihenfolge.<br>
               Sollten Sie sich nicht an alle roten Wörter erinnern, versuchen Sie trotzdem, die Wörter jeweils an der richtigen Position auszuwählen. Erinnern Sie sich zum Beispiel an das Vierte rote Wort, nicht aber an das Dritte, wählen Sie das Vierte bitte trotzdem als Viertes aus.
               </p>
-           <p>Sie werden zunächst 2 Übungs-Durchgänge bearbeiten, danach folgen 12 Test-Durchgänge.</p>'
+           <p>Sie werden zunächst 2 Übungs-Durchgänge bearbeiten, danach folgen 12 ernsthafte Durchgänge.</p>'
     CONTINUE: 'Bitte drücken Sie die rechte Pfeiltaste um fortzufahren ...'
 
   INSTRUCTION_1_1:
@@ -38,7 +38,7 @@
            <p>Merken Sie sich ausserdem die <strong>5 roten Wörter in der richtigen Reihenfolge</strong>.'
 
   INSTRUCTION_1_2 :
-    TEXT: 'Wenn Sie bereit sind für die Testaufgaben, drücken Sie die rechte Pfeiltaste. Wenn Sie die Instruktion noch einmal sehen möchten,
+    TEXT: 'Wenn Sie bereit sind für die ensthaften Aufgaben, drücken Sie die rechte Pfeiltaste. Wenn Sie die Instruktion noch einmal sehen möchten,
            drücken Sie die linke Pfeiltaste.'
 
   RETRIEVE:
