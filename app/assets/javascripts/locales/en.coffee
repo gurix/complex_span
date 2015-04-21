@@ -7,7 +7,7 @@
               distractions, for example, noise.'
     INFORMED_CONSENT: '<p>
                           In this experiment you will be asked to briefly remember short sets of words. You will also make judgments on the words at the same
-                          time. The experiment will take about 10 minutes. The data will be recorded anonymously. Your participation is of course voluntary,
+                          time. The experiment will take about 10 to 15 minutes. The data will be recorded anonymously. Your participation is of course voluntary,
                           and you can quit the experiment at any time without giving any reasons. However, you will receive payment only if you complete the
                           experiment.
                       </p>
@@ -16,7 +16,7 @@
                       </p>'
 
   INSTRUCTION_1:
-    THANK_YOU: '<p>Thank you very much for taking part in our experiment! The experiment will take about 10 minutes.</p>'
+    THANK_YOU: '<p>Thank you very much for taking part in our experiment! The experiment will take about 10 to 15 minutes.</p>'
     TEXT: '<p>In each trial you will see 10 words presented sequentially. All words refer to concrete objects. You have two tasks:</p>
            <p>Your first task is to judge for each word whether the object it refers to is larger or smaller than a soccer ball.</p>
            <p>If the object is <strong>smaller</strong> than a soccer ball, please press the <strong>left</strong> arrow key;</p>

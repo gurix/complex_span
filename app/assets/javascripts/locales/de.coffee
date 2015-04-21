@@ -7,7 +7,7 @@
               an einem ruhigen Ort durchführen ohne Ablenkung bspw. durch Lärm.'
 
     INFORMED_CONSENT: '<p>
-                          Bei diesem Experiment werden Sie gebeten, Wörter kurzfristig im Gedächtnis zu behalten. Gleichzeitig sollen Sie Entscheidungen über die Wörter treffen. Das Experiment dauert etwa 10 Minuten. Ihre Daten werden anonym aufgezeichnet. Die Teilnahme ist selbstverständlich freiwillig, und Sie können jederzeit ohne Angabe von Gründen abbrechen; in dem Fall werden Ihre Daten nicht
+                          Bei diesem Experiment werden Sie gebeten, Wörter kurzfristig im Gedächtnis zu behalten. Gleichzeitig sollen Sie Entscheidungen über die Wörter treffen. Das Experiment dauert etwa 10 bis 15 Minuten. Ihre Daten werden anonym aufgezeichnet. Die Teilnahme ist selbstverständlich freiwillig, und Sie können jederzeit ohne Angabe von Gründen abbrechen; in dem Fall werden Ihre Daten nicht
                           verwendet. Die Bezahlung erhalten Sie allerdings nur, wenn Sie das Experiment vollständig durchführen.
                       </p>
                       <p>
@@ -15,7 +15,7 @@
                       </p>'
 
   INSTRUCTION_1:
-    THANK_YOU: '<p>Vielen Dank, dass Sie an unserem Experiment teilnehmen! Das Experiment wird etwa 10 Minuten dauern.</p>'
+    THANK_YOU: '<p>Vielen Dank, dass Sie an unserem Experiment teilnehmen! Das Experiment wird etwa 10 bis 15 Minuten dauern.</p>'
     TEXT: '<p>In jedem Durchgang werden Ihnen nacheinander 10 Wörter präsentiert, die sich alle auf konkrete Objekte beziehen.
               Sie haben nun zwei Aufgaben:</p>
            <p>Die erste Aufgabe ist, für jedes Wort zu beurteilen, ob das bezeichnete Objekt grösser oder kleiner als ein Fussball ist.</p>
