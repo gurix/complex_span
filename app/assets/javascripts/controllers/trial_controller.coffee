@@ -89,8 +89,8 @@
       # Remember the time when the current word is displayed
       $scope.CurrentWord().start_time = new Date()
 
-      # Display the word for 2000ms, otherwise it will move to the next word
-      next_word = $timeout (-> $scope.NextWord()), 2000
+      # Display the word for 3000ms, otherwise it will move to the next word
+      next_word = $timeout (-> $scope.NextWord()), 3000
 
       # Detect keydown event
       # Ensure we unbind the keydown event
