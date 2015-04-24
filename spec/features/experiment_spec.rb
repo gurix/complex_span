@@ -96,7 +96,7 @@ describe 'Experiment', js: true do
       end
 
       if trial_counter == 1
-        expect(page).to have_content 'When you are ready for the test trials, please press the right arrow key.'
+        expect(page).to have_content 'When you are ready for the serious trials, please press the right arrow key.'
 
         find('body').native.send_keys :arrow_left
 
@@ -104,7 +104,7 @@ describe 'Experiment', js: true do
 
         find('body').native.send_keys :arrow_right
 
-        expect(page).to have_content 'When you are ready for the test trials, please press the right arrow key.'
+        expect(page).to have_content 'When you are ready for the serious trials, please press the right arrow key.'
 
         find('body').native.send_keys :arrow_right
       end
@@ -133,7 +133,7 @@ describe 'Experiment', js: true do
 
     click_button 'Submit data ...'
 
-    sleep 10
+    sleep 4
 
     expect(Session.count).to eq 1
     session.reload
