@@ -72,8 +72,8 @@
                  <p>You can exit the fullscreen mode now by pressing "ESC" and close the browser window/tab after entering or copying the code.</p>'
 
   ERROR:
-    NO_DECISION: 'Attention: No judgement of the size difference was given. You have to judge for whether the object the word refers to is smaller (=<strong>
-                             left</strong> arrow key) or larger (=<strong>right</strong> arrow key) than a soccer ball.'
+    NO_DECISION: 'Attention: No judgement of the size difference was given. You have to judge for whether the object the word refers to is smaller (=left arrow 
+                  key) or larger (=right arrow key) than a soccer ball.'
     NUMERICAL_BETWEEN_10_AND_100: 'Please provide a numerically age between 10 to 100'
     NO_FULLSCREEN_SUPPORT: 'Your Browser does not support fullscreen, please use a modern browser to participate.<br/>
                             Read more <a class="alert-link" href="http://browsehappy.com/">here</a>.'
