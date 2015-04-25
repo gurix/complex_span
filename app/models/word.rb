@@ -13,6 +13,7 @@ class Word
   field :stop_time, type: DateTime
   field :reaction_time, type: Integer
   field :pressed_key, type: Integer
+  field :decision_missing, type: Boolean
 
   embedded_in :trials
 
