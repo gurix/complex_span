@@ -118,11 +118,11 @@
             $scope.CurrentWord().stop_time = keydown_time
             $scope.CurrentWord().reaction_time = reaction_time
 
-            # We emidiatly move on to the next word once left or right was pressed
-            if $scope.CurrentWord().reaction_time < 2000
+            # We immediately move on to the next word once left or right was pressed
+            if $scope.CurrentWord().reaction_time < 3000
               $scope.NextWord()
             else
-              logger.push 'Key pressed after 2000ms! (' + $scope.CurrentWord().reaction_time + 'ms)'
+              logger.push 'Key pressed after 3000ms! (' + $scope.CurrentWord().reaction_time + 'ms)'
           else
             logger.push 'Pressed key ' + e.keyCode + ' instead of left or right!'
         else
