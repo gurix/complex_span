@@ -16,7 +16,8 @@
     $scope.last_click = new Date()
     $scope.show_retrieval_matrix_instruction_red = false
     $scope.show_retrieval_matrix_instruction_blue = false
-
+    $scope.show_decision_warning = false
+    
     $scope.ShowFixationPoint = () ->
       $scope.show_fixation_point
 
@@ -55,6 +56,9 @@
 
     $scope.ShowBlueCircle = () ->
        $scope.show_blue_circle
+    
+    $scope.ShowDecisionWarning = () ->
+       $scope.show_decision_warning && $scope.session.trial_counter < 2
 
     # (Re)Starts a trial by displaying the first word
     $scope.StartTrial = () ->
@@ -119,7 +123,7 @@
             $scope.CurrentWord().reaction_time = reaction_time
 
             # We immediately move on to the next word once left or right was pressed
-            if $scope.CurrentWord().reaction_time < 3000
+            if $scope.CurrentWord().reaction_time < 3000 
               $scope.NextWord()
             else
               logger.push 'Key pressed after 3000ms! (' + $scope.CurrentWord().reaction_time + 'ms)'
@@ -132,20 +136,34 @@
       # Ensure the current word is hidden until next will show up
       # Caution: Needs a timer here otherwise it will not hide the word properly!
       $timeout (-> $scope.show_word = false), 0
+      wait_for_next_word = 0
+      
+      $scope.CurrentWord().decision_missing = (typeof $scope.CurrentWord().reaction_time == 'undefined')
+      if $scope.CurrentWord().decision_missing 
+        logger.push "Decision for #{$scope.CurrentWord().position} in trial #{$scope.session.trial_counter} missing" if $scope.CurrentWord().decision_missing
+        $scope.show_decision_warning = true
+        wait_for_next_word = 2000
+      
+      console.log $scope.CurrentWord().decision_missing + " " + $scope.CurrentWord().reacion_time
+      
+      $timeout (->   
+        
+        $scope.show_decision_warning = false
+        
+        if $scope.session.word_counter < 9
+          logger.push 'Wait for ' + $scope.CurrentWord().delay + 'ms'
+          $timeout (->
+            # Increase the word counter to get a new current word
+            $scope.session.word_counter++
+            # Redisplay the new word depending on the timeout set for the word
+            $scope.DisplayWord()
+          ), $scope.CurrentWord().delay
 
-      if $scope.session.word_counter < 9
-        logger.push 'Wait for ' + $scope.CurrentWord().delay + 'ms'
-        $timeout (->
-          # Increase the word counter to get a new current word
-          $scope.session.word_counter++
-          # Redisplay the new word depending on the timeout set for the word
-          $scope.DisplayWord()
-        ), $scope.CurrentWord().delay
-
-      else
-        # Display the decision matrix
-        $scope.DisplayMatrix()
-
+        else
+          # Display the decision matrix
+          $scope.DisplayMatrix()
+      ), wait_for_next_word
+      
     # Displays with all words to retrieve after each trial
     $scope.DisplayMatrix = () ->
 

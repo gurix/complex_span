@@ -66,12 +66,14 @@
                     information they want to forget, and whether this is accomplished better when more time is available for forgetting. To that end we tested,
                     in the last trial, your memory for the blue words, which you were supposed to forget. We varied the free time following
                     each of the blue words – either only 200 ms or 1500 ms after each blue word. We expect that participants who
-                    had longer free time following the blue words are able to remember fewer of them. </p>
+                    had longer free time following the blue words are able to remember fewer of them.</p>
                     <p>Please do not share this information with anyone! It is crucial the explanation is kept confidential until we have collected all data.</p>
                  <p>Here is your code to confirm your participation: Cspan-DRM-1</p>
                  <p>You can exit the fullscreen mode now by pressing "ESC" and close the browser window/tab after entering or copying the code.</p>'
 
   ERROR:
+    NO_DECISION: 'Attention: No judgement of the size difference was given. You have to judge for whether the object the word refers to is smaller (=<strong>
+                             left</strong> arrow key) or larger (=<strong>right</strong> arrow key) than a soccer ball.'
     NUMERICAL_BETWEEN_10_AND_100: 'Please provide a numerically age between 10 to 100'
     NO_FULLSCREEN_SUPPORT: 'Your Browser does not support fullscreen, please use a modern browser to participate.<br/>
                             Read more <a class="alert-link" href="http://browsehappy.com/">here</a>.'
