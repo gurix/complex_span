@@ -58,7 +58,7 @@
        $scope.show_blue_circle
     
     $scope.ShowDecisionWarning = () ->
-       $scope.show_decision_warning && $scope.session.trial_counter < 2
+       $scope.show_decision_warning
 
     # (Re)Starts a trial by displaying the first word
     $scope.StartTrial = () ->
@@ -139,7 +139,7 @@
       wait_for_next_word = 0
       
       $scope.CurrentWord().decision_missing = (typeof $scope.CurrentWord().reaction_time == 'undefined')
-      if $scope.CurrentWord().decision_missing 
+      if $scope.CurrentWord().decision_missing && $scope.session.trial_counter < 2
         logger.push "Decision for #{$scope.CurrentWord().position} in trial #{$scope.session.trial_counter} missing" if $scope.CurrentWord().decision_missing
         $scope.show_decision_warning = true
         wait_for_next_word = 2000
