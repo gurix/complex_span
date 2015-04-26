@@ -1,7 +1,9 @@
 ruby:
-  headers = %w(session_id trial word_position retrieval_position color delay text word_id size_difference retrieval_matrix_shown_at)
+  headers = %w(session_id trial word_position retrieval_position color delay text word_id size_difference retrieval_matrix_shown_at
+               trial_repeated)
 
 = CSV.generate_line headers
 - @retrievals.each do |retrieval|
   = raw CSV.generate_line([ retrieval.trials.sessions.id, retrieval.trial, retrieval.word_position, retrieval.retrieval_position, retrieval.color,
-                            retrieval.delay, retrieval.text, retrieval.word_id, retrieval.size_difference, exact_time(retrieval.trials.retrieval_matrix_shown_at) ])
+                            retrieval.delay, retrieval.text, retrieval.word_id, retrieval.size_difference, 
+                            exact_time(retrieval.trials.retrieval_matrix_shown_at), retrieval.trials.repeated])

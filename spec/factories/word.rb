@@ -11,5 +11,7 @@ FactoryGirl.define do
     stop_time { |word| word.start_time + rand(60).seconds }
     reaction_time { |word| word.stop_time - word.start_time }
     pressed_key { [39, 37].sample }
+    decision_missing { false }
+    judgment_correct { true }
   end
 end

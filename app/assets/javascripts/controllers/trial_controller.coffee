@@ -17,6 +17,7 @@
     $scope.show_retrieval_matrix_instruction_red = false
     $scope.show_retrieval_matrix_instruction_blue = false
     $scope.show_decision_warning = false
+    $scope.show_to_many_wrong_decisions_warning = false
     
     $scope.ShowFixationPoint = () ->
       $scope.show_fixation_point
@@ -59,10 +60,17 @@
     
     $scope.ShowDecisionWarning = () ->
        $scope.show_decision_warning
+       
+    $scope.ShowToManyWrongDecisionsWarning = () ->
+      $scope.show_to_many_wrong_decisions_warning
 
     # (Re)Starts a trial by displaying the first word
     $scope.StartTrial = () ->
       $scope.session.started = true
+      $scope.CurrentTrial().correct_judgments = 0
+      $scope.CurrentTrial().retrieval_clicks = []
+      $scope.repeat_trial = false
+      
       # Ensure the cursor is hidden in this view
       $('body').addClass('no-cursor')
 
@@ -121,7 +129,15 @@
             # Set the time on the current word when we move on
             $scope.CurrentWord().stop_time = keydown_time
             $scope.CurrentWord().reaction_time = reaction_time
-
+            
+            # Determine whether the word was judged correctly
+            if $scope.CurrentWord().size_difference > 0
+              $scope.CurrentWord().judgment_correct = $scope.CurrentWord().pressed_key == 39
+            else
+              $scope.CurrentWord().judgment_correct = $scope.CurrentWord().pressed_key == 37
+            
+            $scope.CurrentTrial().correct_judgments++ if $scope.CurrentWord().judgment_correct
+            
             # We immediately move on to the next word once left or right was pressed
             if $scope.CurrentWord().reaction_time < 3000 
               $scope.NextWord()
@@ -206,26 +222,40 @@
         $timeout (-> $(retrieval_id).removeClass 'clicked'), 300
 
         if $scope.clicked_retrieval_counter >= $scope.number_of_selectable_words_per_retrieval
-          # Hide the cursor immediately
-          $('body').addClass('no-cursor')
-
-          # Hide Matrix
-          $timeout (->
-            $scope.show_retrieval_matrix = false
-
-            if $scope.session.trial_counter < 13
-              $scope.session.trial_counter++
-
-              if $scope.session.trial_counter == $scope.number_of_trials_to_practice
-                # Redisplay instruction before the real test starts
-                $timeout (-> $scope.DisplayInstruction_1_2()), 1300
-              else
-                $timeout (-> $scope.StartTrial()), 2000
-            else
-              $timeout (-> location.href = '#/finishing'), 1000
-          ), 1000
+          $scope.NextTrial()
       else
         logger.push 'Clicked within ' + time_between_clicks + 'ms to fast'
+
+    $scope.NextTrial = () ->
+      # Hide the cursor immediately
+      $('body').addClass('no-cursor')
+      # Hide Matrix imediately
+      $scope.show_retrieval_matrix = false
+    
+      wait_for_next_trial = 1000
+      not_enough_correct = $scope.CurrentTrial().correct_judgments < 7 
+      within_serious_testing = $scope.session.trial_counter > 1 && $scope.session.trial_counter < 13
+      
+      # While testing repeat trials having not correct judgments
+      if not_enough_correct && within_serious_testing
+        logger.push "#{$scope.CurrentTrial().correct_judgments} correct judgments, repeating trial #{$scope.session.trial_counter}"
+        $scope.CurrentTrial().repeated = true
+        $scope.show_to_many_wrong_decisions_warning = true
+        $timeout (-> 
+          $scope.show_to_many_wrong_decisions_warning = false
+          $timeout (-> $scope.StartTrial()), 2000
+        ), 2000
+      else
+        if $scope.session.trial_counter < 13
+          $scope.session.trial_counter++ 
+
+          if $scope.session.trial_counter == $scope.number_of_trials_to_practice
+            # Redisplay instruction before the real test starts
+            $timeout (-> $scope.DisplayInstruction_1_2()), 1300
+          else
+            $timeout (-> $scope.StartTrial()), 2000
+        else
+          $timeout (-> location.href = '#/finishing'), 1000
 
     $scope.DisplayInstruction_1_2 = () ->
       $timeout (-> $scope.show_instruction_1_2 = true), 0
