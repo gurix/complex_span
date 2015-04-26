@@ -49,23 +49,23 @@ describe 'Experiment', js: true do
     expect(page).to have_content 'When you are ready for the practice trials, please press the right arrow key.'
 
     find('body').native.send_keys :arrow_right
-    
+
     15.times do |artificial_trial_counter|
       # For each trial we randomly miss one wird
       missing_decision = (0..9).to_a.sample
-      
+
       # Get the trial counter from the running app
       trial_counter = page.execute_script('return SessionData().trial_counter')
-  
+
       # There is a shift because we force trial 2 to repeat with no decission > 70%
       if artificial_trial_counter < 3
-       expect(trial_counter).to eq artificial_trial_counter
+        expect(trial_counter).to eq artificial_trial_counter
       else
-        expect(trial_counter + 1).to eq (artificial_trial_counter)
+        expect(trial_counter + 1).to eq artificial_trial_counter
       end
-      
+
       trial = page.execute_script("return SessionData().trials[#{trial_counter}]")
-      
+
       expect(page).to have_selector('#fixating_point svg')
 
       presented_words = []
@@ -84,7 +84,7 @@ describe 'Experiment', js: true do
 
         expect(word['delay']).to eq 200 if word['color']  == 'red'
         expect(word['delay']).to eq trial['word_delay'] if word['color'] == 'blue'
-        
+
         if missing_decision == word_counter
           decision_warning = 'Attention: No judgement of the size difference was given.'
           # Check whether a warning was displayed if we do not take a decision for word 5 in the first trial within 3 seconds
@@ -99,16 +99,16 @@ describe 'Experiment', js: true do
           sleep(0.3) # Wait at least 300ms to be sure not to be to fast
           # Send the correct key for all trials except 2, there we change everything
           if artificial_trial_counter != 2
-            find('body').native.send_keys word["size_difference"].to_i > 0 ? :arrow_right : :arrow_left
+            find('body').native.send_keys word['size_difference'].to_i > 0 ? :arrow_right : :arrow_left
           else
-            find('body').native.send_keys word["size_difference"].to_i < 0 ? :arrow_right : :arrow_left
+            find('body').native.send_keys word['size_difference'].to_i < 0 ? :arrow_right : :arrow_left
           end
         end
-        
+
         # We have to wait until the next word appears, otherwise this E2E-Test will be to fast
         sleep(0.3 + (word['delay'].to_f / 1000))
       end
-      
+
       if trial_counter == 13
         expect(page).to have_content 'This time please recall the blue words, not the red words, in their order of presentation.'
         expect(page).to have_content 'Continue by clicking on the blue circle.'
@@ -144,9 +144,9 @@ describe 'Experiment', js: true do
       expect(page.execute_script("return SessionData().trials[#{trial_counter}].retrieval_matrix_shown_at").to_time).to be <= Time.now
 
       expect(page).to have_content 'Too many wrong size judgments passage is repeated.'  if artificial_trial_counter == 2
-      
+
       repeated = page.execute_script("return SessionData().trials[#{trial_counter}].repeated")
-      expect(repeated).to eq (trial_counter == 2 ? true : false)
+      expect(repeated).to eq trial_counter == 2 ? true : false
     end
 
     choose 'Yes, my data should be used'
