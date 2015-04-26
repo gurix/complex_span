@@ -4,6 +4,9 @@
 #word.text-center ng-show='ShowDecisionWarning()'
   .intruction.red_word translate='ERROR.NO_DECISION'
 
+#word.text-center ng-show='ShowToManyWrongDecisionsWarning()'
+  .intruction.red_word translate='ERROR.TOO_MANY_WRONG_DECISIONS'
+
 #fixating_point.text-center ng-show='ShowFixationPoint()'
   svg version="1.1" width='100' heigth='100' xmlns="http://www.w3.org/2000/svg"
     path d='M0,50 L100,50 M50,0 L50,100' stroke='black' stroke-width='4'/

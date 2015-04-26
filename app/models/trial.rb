@@ -4,6 +4,8 @@ class Trial
   field :word_delay, type: Integer
   field :retrieval_matrix_shown_at, type: DateTime
   field :started_at, type: DateTime
+  field :correct_judgments, type: Integer
+  field :repeated, type: Boolean
 
   embedded_in :sessions
 

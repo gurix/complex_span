@@ -14,6 +14,7 @@ class Word
   field :reaction_time, type: Integer
   field :pressed_key, type: Integer
   field :decision_missing, type: Boolean
+  field :judgment_correct, type: Boolean, default: false
 
   embedded_in :trials
 
