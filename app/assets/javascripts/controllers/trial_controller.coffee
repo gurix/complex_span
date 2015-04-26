@@ -144,8 +144,6 @@
         $scope.show_decision_warning = true
         wait_for_next_word = 2000
       
-      console.log $scope.CurrentWord().decision_missing + " " + $scope.CurrentWord().reacion_time
-      
       $timeout (->   
         
         $scope.show_decision_warning = false
