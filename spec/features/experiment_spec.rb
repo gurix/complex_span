@@ -49,18 +49,30 @@ describe 'Experiment', js: true do
     expect(page).to have_content 'When you are ready for the practice trials, please press the right arrow key.'
 
     find('body').native.send_keys :arrow_right
-
-    14.times do | trial_counter |
+    
+    14.times do |artificial_trial_counter|
+      # For each trial we randomly miss one wird
+      missing_decision = (0..9).to_a.sample
+      
+      # Get the trial counter from the running app
+      trial_counter = page.execute_script('return SessionData().trial_counter')
+      
+      expect(trial_counter).to eq artificial_trial_counter
+      
+      # There is a shift because we force trial 2 to repeat with no decission > 70%
+      # if artificial_trial_counter < 3
+      #   expect(trial_counter).to eq artificial_trial_counter
+      # else
+      #   expect(trial_counter + 1).to eq (artificial_trial_counter)
+      # end
+      
       trial = page.execute_script("return SessionData().trials[#{trial_counter}]")
-
-      expect(page.execute_script('return SessionData().trial_counter')).to eq trial_counter
+      
       expect(page).to have_selector('#fixating_point svg')
 
       presented_words = []
 
-      10.times do | word_counter |
-        decision_missing = (trial_counter == 0 && word_counter == 4)
-
+      10.times do | word_counter | 
         expect(page.execute_script 'return SessionData().word_counter').to eq word_counter
 
         word = page.execute_script("return SessionData().trials[#{trial_counter}].words[#{word_counter}]")
@@ -74,19 +86,24 @@ describe 'Experiment', js: true do
 
         expect(word['delay']).to eq 200 if word['color']  == 'red'
         expect(word['delay']).to eq trial['word_delay'] if word['color'] == 'blue'
-
-        if decision_missing
+        
+        if missing_decision == word_counter
+          decision_warning = 'Attention: No judgement of the size difference was given.'
           # Check whether a warning was displayed if we do not take a decision for word 5 in the first trial within 3 seconds
           sleep 3
-          expect(page).to have_content 'Attention: No judgement of the size difference was given.'
-          sleep 3
+          if trial_counter < 2
+            expect(page).to have_content decision_warning
+            sleep 3
+          else
+            expect(page).not_to have_content decision_warning
+          end
         else
           sleep(0.3) # Wait at least 300ms to be sure not to be to fast
           find('body').native.send_keys word['color']  == 'blue' ? :arrow_right : :arrow_left
-
-          # We have to wait until the next word appears, otherwise this E2E-Test will be to fast
-          sleep(0.3 + (word['delay'].to_f / 1000))
         end
+        
+        # We have to wait until the next word appears, otherwise this E2E-Test will be to fast
+        sleep(0.3 + (word['delay'].to_f / 1000))
       end
 
       if trial_counter == 13
