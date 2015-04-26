@@ -72,6 +72,7 @@
                     <p>Sie können den Vollbildmodus nun verlassen, drücken Sie dazu auf "ESC". Sobald Sie den Code eingegeben oder kopiert haben, können Sie das Browser Fenster/Tab schliessen.</p>'
 
   ERROR:
+    TOO_MANY_WRONG_DECISIONS: 'Zu viele falsche Größenurteile, Durchgang wird wiederholt.'
     NO_DECISION: 'Achtung: Kein Grössenutreil abgegeben. Bitte geben Sie an ob das Objekt kleiner (= linke Pfeiltaste) oder größer (= rechte Pfeiltaste) als ein Fussball ist!'
     NUMERICAL_BETWEEN_10_AND_100: 'Bitte geben Sie eine Zahl zwischen 10 und 100 ein'
     NO_FULLSCREEN_SUPPORT: 'Ihr Browser unterstützt keinen Vollbild-Modus, bitte verwenden Sie einen moderneren Browser um teilzunehmen.
