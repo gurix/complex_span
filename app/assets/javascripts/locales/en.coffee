@@ -37,8 +37,8 @@
            <p>Also, remember all the <strong>red words</strong> in their <strong>order of presentation</strong>.'
 
   INSTRUCTION_1_2:
-    TEXT: 'When you are ready for the serious trials, please press the right arrow key. If you want to re-read the instructions,
-           press the left arrow key. '
+    TEXT: '<p>When you are ready for the serious trials, please press the right arrow key. If you want to re-read the instructions, press the left arrow key.</p>
+    <p>Please note: In case of too many incorrect size judgments, a trial will be repeated.</p>'
 
   RETRIEVE:
     INSTRUCTION_RED: 'Please select the 5 red words, in their order of presentation, with the mouse'
@@ -73,8 +73,7 @@
 
   ERROR:
     TOO_MANY_WRONG_DECISIONS: 'Too many incorrect size judgments, trial will be repeated.'
-    NO_DECISION: 'Attention: No size judgment given. Please decide for each object whether it is smaller (=left arrow 
-                  key) or larger (=right arrow key) than a soccer ball.'
+    NO_DECISION: 'Attention: Please make a size judgment!'
     NUMERICAL_BETWEEN_10_AND_100: 'Please provide a numerically age between 10 to 100'
     NO_FULLSCREEN_SUPPORT: 'Your Browser does not support fullscreen, please use a modern browser to participate.<br/>
                             Read more <a class="alert-link" href="http://browsehappy.com/">here</a>.'

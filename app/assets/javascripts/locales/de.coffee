@@ -38,8 +38,8 @@
            <p>Merken Sie sich ausserdem die <strong>5 roten Wörter in der richtigen Reihenfolge</strong>.'
 
   INSTRUCTION_1_2 :
-    TEXT: 'Wenn Sie bereit sind für die ernsthaften Aufgaben, drücken Sie die rechte Pfeiltaste. Wenn Sie die Instruktion noch einmal sehen möchten,
-           drücken Sie die linke Pfeiltaste.'
+    TEXT: '<p>Wenn Sie bereit sind für die ernsthaften Aufgaben, drücken Sie die rechte Pfeiltaste. Wenn Sie die Instruktion noch einmal sehen möchten, drücken Sie die linke Pfeiltaste.</p>
+           <p>Achtung: Sollten bei einer Aufgabe zu wenig richtige Grössenurteile abgegeben werden, wird der Durchgang wiederholt.</p>'
 
   RETRIEVE:
     INSTRUCTION_RED: 'Wählen Sie die 5 roten Wörter, in der richtigen Reihenfolge, mit der Maus aus.'
@@ -73,7 +73,7 @@
 
   ERROR:
     TOO_MANY_WRONG_DECISIONS: 'Zu viele falsche Grössenurteile, Durchgang wird wiederholt.'
-    NO_DECISION: 'Achtung: Kein Grössenurteil abgegeben. Bitte entscheiden Sie jeweils ob das Objekt kleiner (= linke Pfeiltaste) oder größer (= rechte Pfeiltaste) als ein Fussball ist!'
+    NO_DECISION: 'Achtung: Bitte Grössenurteil abgegeben!'
     NUMERICAL_BETWEEN_10_AND_100: 'Bitte geben Sie eine Zahl zwischen 10 und 100 ein'
     NO_FULLSCREEN_SUPPORT: 'Ihr Browser unterstützt keinen Vollbild-Modus, bitte verwenden Sie einen moderneren Browser um teilzunehmen.
                             <br/>Lesen Sie mehr <a class="alert-link" href="http://browsehappy.com/">hier</a>.'
