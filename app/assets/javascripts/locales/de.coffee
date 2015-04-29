@@ -38,7 +38,7 @@
            <p>Merken Sie sich ausserdem die <strong>5 roten Wörter in der richtigen Reihenfolge</strong>.'
 
   INSTRUCTION_1_2 :
-    TEXT: 'Wenn Sie bereit sind für die ensthaften Aufgaben, drücken Sie die rechte Pfeiltaste. Wenn Sie die Instruktion noch einmal sehen möchten,
+    TEXT: 'Wenn Sie bereit sind für die ernsthaften Aufgaben, drücken Sie die rechte Pfeiltaste. Wenn Sie die Instruktion noch einmal sehen möchten,
            drücken Sie die linke Pfeiltaste.'
 
   RETRIEVE:
@@ -50,7 +50,7 @@
     SINCERITY: '<p>Zum Schluss bitten wir Sie, uns ehrlich zu sagen, ob Sie den Versuch ernsthaft durchgeführt haben. Egal wie Sie antworten, Sie bekommen
                    unabhängig davon die zugesicherte Bezahlung. Diese Frage dient nur dazu, zu entscheiden, ob Ihre Daten in die Auswertung eingehen.<p>
                 <p>Haben Sie den Versuch ernsthaft durchgeführt?</p>'
-    SINCERITY_SERIOUS: 'ja, meine Daten können verwendet werden eführt'
+    SINCERITY_SERIOUS: 'ja, meine Daten können verwendet werden'
     SINCERITY_TEST: 'nein, meine Daten nicht verwenden'
     SUBMIT: 'Daten absenden ...'
     HOW_OLD_ARE_YOU: 'Wie alt sind sie?'
@@ -72,8 +72,8 @@
                     <p>Sie können den Vollbildmodus nun verlassen, drücken Sie dazu auf "ESC". Sobald Sie den Code eingegeben oder kopiert haben, können Sie das Browser Fenster/Tab schliessen.</p>'
 
   ERROR:
-    TOO_MANY_WRONG_DECISIONS: 'Zu viele falsche Größenurteile, Durchgang wird wiederholt.'
-    NO_DECISION: 'Achtung: Kein Grössenutreil abgegeben. Bitte geben Sie an ob das Objekt kleiner (= linke Pfeiltaste) oder größer (= rechte Pfeiltaste) als ein Fussball ist!'
+    TOO_MANY_WRONG_DECISIONS: 'Zu viele falsche Grössenurteile, Durchgang wird wiederholt.'
+    NO_DECISION: 'Achtung: Kein Grössenurteil abgegeben. Bitte entscheiden Sie jeweils ob das Objekt kleiner (= linke Pfeiltaste) oder größer (= rechte Pfeiltaste) als ein Fussball ist!'
     NUMERICAL_BETWEEN_10_AND_100: 'Bitte geben Sie eine Zahl zwischen 10 und 100 ein'
     NO_FULLSCREEN_SUPPORT: 'Ihr Browser unterstützt keinen Vollbild-Modus, bitte verwenden Sie einen moderneren Browser um teilzunehmen.
                             <br/>Lesen Sie mehr <a class="alert-link" href="http://browsehappy.com/">hier</a>.'

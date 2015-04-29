@@ -72,8 +72,8 @@
                  <p>You can exit the fullscreen mode now by pressing "ESC" and close the browser window/tab after entering or copying the code.</p>'
 
   ERROR:
-    TOO_MANY_WRONG_DECISIONS: 'Too many wrong size judgments passage is repeated.'
-    NO_DECISION: 'Attention: No judgement of the size difference was given. You have to judge for whether the object the word refers to is smaller (=left arrow 
+    TOO_MANY_WRONG_DECISIONS: 'Too many incorrect size judgments, trial will be repeated.'
+    NO_DECISION: 'Attention: No size judgment given. Please decide for each object whether it is smaller (=left arrow 
                   key) or larger (=right arrow key) than a soccer ball.'
     NUMERICAL_BETWEEN_10_AND_100: 'Please provide a numerically age between 10 to 100'
     NO_FULLSCREEN_SUPPORT: 'Your Browser does not support fullscreen, please use a modern browser to participate.<br/>
