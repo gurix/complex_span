@@ -101,8 +101,8 @@
       # Remember the time when the current word is displayed
       $scope.CurrentWord().start_time = new Date()
 
-      # Display the word for 3000ms, otherwise it will move to the next word
-      next_word = $timeout (-> $scope.NextWord()), 3000
+      # Display the word for 2500ms, otherwise it will move to the next word
+      next_word = $timeout (-> $scope.NextWord()), 2500
 
       # Detect keydown event
       # Ensure we unbind the keydown event
@@ -139,10 +139,10 @@
             $scope.CurrentTrial().correct_judgments++ if $scope.CurrentWord().judgment_correct
             
             # We immediately move on to the next word once left or right was pressed
-            if $scope.CurrentWord().reaction_time < 3000 
+            if $scope.CurrentWord().reaction_time < 2500 
               $scope.NextWord()
             else
-              logger.push 'Key pressed after 3000ms! (' + $scope.CurrentWord().reaction_time + 'ms)'
+              logger.push 'Key pressed after 2500ms! (' + $scope.CurrentWord().reaction_time + 'ms)'
           else
             logger.push 'Pressed key ' + e.keyCode + ' instead of left or right!'
         else

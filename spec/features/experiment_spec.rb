@@ -88,7 +88,7 @@ describe 'Experiment', js: true do
         if missing_decision == word_counter
           decision_warning = 'Attention: Please make a size judgment!'
           # Check whether a warning was displayed if we do not take a decision for word 5 in the first trial within 3 seconds
-          sleep 3
+          sleep 2.5
           if trial_counter < 2
             expect(page).to have_content decision_warning
             sleep 3
