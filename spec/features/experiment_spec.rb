@@ -86,7 +86,7 @@ describe 'Experiment', js: true do
         expect(word['delay']).to eq trial['word_delay'] if word['color'] == 'blue'
 
         if missing_decision == word_counter
-          decision_warning = 'Attention: No judgement of the size difference was given.'
+          decision_warning = 'Attention: Please make a size judgment!'
           # Check whether a warning was displayed if we do not take a decision for word 5 in the first trial within 3 seconds
           sleep 3
           if trial_counter < 2
@@ -143,7 +143,7 @@ describe 'Experiment', js: true do
       expect(page.execute_script("return SessionData().trials[#{trial_counter}].started_at").to_time).to be <= Time.now
       expect(page.execute_script("return SessionData().trials[#{trial_counter}].retrieval_matrix_shown_at").to_time).to be <= Time.now
 
-      expect(page).to have_content 'Too many wrong size judgments passage is repeated.'  if artificial_trial_counter == 2
+      expect(page).to have_content 'Too many incorrect size judgments, trial will be repeated.'  if artificial_trial_counter == 2
 
       repeated = page.execute_script("return SessionData().trials[#{trial_counter}].repeated")
       expect(repeated).to eq trial_counter == 2 ? true : false
