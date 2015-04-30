@@ -233,7 +233,7 @@
       $scope.show_retrieval_matrix = false
     
       wait_for_next_trial = 1000
-      not_enough_correct = $scope.CurrentTrial().correct_judgments < 7 
+      not_enough_correct = $scope.CurrentTrial().correct_judgments < 5 
       within_serious_testing = $scope.session.trial_counter > 1 && $scope.session.trial_counter < 13
       
       # While testing repeat trials having not correct judgments
