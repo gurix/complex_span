@@ -1,7 +1,8 @@
 source 'https://rubygems.org'
 ruby "2.1.2"
 
-gem 'unicorn' # using unicorn, see https://devcenter.heroku.com/articles/rails-unicorn
+gem 'puma' # using puma, see https://devcenter.heroku.com/articles/deploying-rails-applications-with-the-puma-web-server
+gem 'foreman', group: :development
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.7'
