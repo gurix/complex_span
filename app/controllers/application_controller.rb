@@ -27,7 +27,7 @@ class ApplicationController < ActionController::Base
 
   def configure_csv_response(options_hash)
     options_hash.reverse_merge!(filename: 'noname.csv')
-    response.headers['Content-Disposition'] = "attachment; filename='#{options_hash[:filename]}'"
+    response.headers['Content-Disposition'] = "attachment; filename=#{options_hash[:filename]}"
     response.headers['Content-Type'] ||= 'text/csv'
   end
 end
