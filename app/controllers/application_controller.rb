@@ -19,4 +19,15 @@ class ApplicationController < ActionController::Base
       password == ENV['EXPORT_PASSWORD']
     end
   end
+
+  def exact_time(date_time)
+    # Formating according ISO 8601
+    date_time.strftime('%Y-%m-%dT%H:%M:%S.%L%Z') if date_time
+  end
+
+  def configure_csv_response(options_hash)
+    options_hash.reverse_merge!(filename: 'noname.csv')
+    response.headers['Content-Disposition'] = "attachment; filename='#{options_hash[:filename]}'"
+    response.headers['Content-Type'] ||= 'text/csv'
+  end
 end
