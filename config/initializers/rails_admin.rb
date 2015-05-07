@@ -18,11 +18,11 @@ RailsAdmin.config do |config|
     'Logs' => '/logs.csv'
   }
 
-  config.authorize_with do
-    return true unless Rails.env.production?
-
-    authenticate_or_request_with_http_basic do |_username, password|
-      password == ENV['EXPORT_PASSWORD']
+  if Rails.env.production?
+    config.authorize_with do
+      authenticate_or_request_with_http_basic do |_username, password|
+        password == ENV['EXPORT_PASSWORD']
+      end
     end
   end
 end
