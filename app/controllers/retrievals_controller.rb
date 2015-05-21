@@ -1,25 +1,23 @@
 class RetrievalsController < ApplicationController
-  respond_to :html
+  include ActionController::Live
+
+  respond_to :csv
 
   def index
-    respond_to do |format|
-      format.csv do
-        configure_csv_response(filename: 'retrievals.csv')
+    configure_csv_response(filename: 'retrievals.csv')
 
-        response.stream.write CSV.generate_line(csv_header)
+    response.stream.write CSV.generate_line(csv_header)
 
-        Session.each do | session |
-          session.trials.each do | trial |
-            trial.retrievals.each do | retrieval |
-              response.stream.write CSV.generate_line([session.id, retrieval.trial, retrieval.word_position, retrieval.retrieval_position,
-                                                       retrieval.color, retrieval.delay, retrieval.text, retrieval.word_id, retrieval.size_difference,
-                                                       exact_time(trial.retrieval_matrix_shown_at), trial.repeated])
-            end
-          end
+    Session.each do |session|
+      session.trials.each do |trial|
+        trial.retrievals.each do |retrieval|
+          response.stream.write CSV.generate_line([session.id, retrieval.trial, retrieval.word_position, retrieval.retrieval_position,
+                                                   retrieval.color, retrieval.delay, retrieval.text, retrieval.word_id, retrieval.size_difference,
+                                                   exact_time(trial.retrieval_matrix_shown_at), trial.repeated])
         end
-        response.stream.close
       end
     end
+    response.stream.close
   end
 
   def csv_header

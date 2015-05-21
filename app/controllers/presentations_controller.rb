@@ -1,26 +1,23 @@
 class PresentationsController < ApplicationController
-  respond_to :html
+  include ActionController::Live
+  respond_to :csv
 
   def index
-    respond_to do |format|
-      format.csv do
-        configure_csv_response(filename: 'presentations.csv')
+    configure_csv_response(filename: 'presentations.csv')
 
-        response.stream.write CSV.generate_line(csv_header)
+    response.stream.write CSV.generate_line(csv_header)
 
-        Session.each do | session |
-          session.trials.each do | trial |
-            trial.words.each do | presentation |
-              response.stream.write CSV.generate_line([session.id, presentation.trial, presentation.word_position, presentation.color, presentation.delay,
-                                                       exact_time(presentation.start_time), exact_time(presentation.stop_time), presentation.reaction_time,
-                                                       presentation.pressed_key, presentation.text, presentation.word_id, presentation.size_difference,
-                                                       presentation.decision_missing,  presentation.judgment_correct, trial.repeated])
-            end
-          end
+    Session.each do |session|
+      session.trials.each do |trial|
+        trial.words.each do |presentation|
+          response.stream.write CSV.generate_line([session.id, presentation.trial, presentation.word_position, presentation.color, presentation.delay,
+                                                   exact_time(presentation.start_time), exact_time(presentation.stop_time), presentation.reaction_time,
+                                                   presentation.pressed_key, presentation.text, presentation.word_id, presentation.size_difference,
+                                                   presentation.decision_missing,  presentation.judgment_correct, trial.repeated])
         end
-        response.stream.close
       end
     end
+    response.stream.close
   end
 
   def csv_header

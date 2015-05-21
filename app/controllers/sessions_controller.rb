@@ -49,6 +49,6 @@ class SessionsController < ApplicationController
     system_information_headers = %w(screen_width screen_height navigator_user_agent navigator_platform window_innerHeight window_innerWidth window_screenX
                                     window_screenY window_pageXOffset window_pageYOffset)
     headers = %w(id created_at updated_at age sincerity gender education ip_address language number_of_logs number_of_trials)
-    headers + system_information_headers.map { | system_information_header| "sys_#{system_information_header}" }
+    headers + system_information_headers.map { |system_information_header| "sys_#{system_information_header}" }
   end
 end
