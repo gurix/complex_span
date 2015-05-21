@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby "2.1.2"
+ruby "2.2.0"
 
 gem 'puma' # using puma, see https://devcenter.heroku.com/articles/deploying-rails-applications-with-the-puma-web-server
 gem 'foreman', group: :development
