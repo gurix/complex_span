@@ -4,6 +4,8 @@ ruby "2.2.0"
 gem 'puma' # using puma, see https://devcenter.heroku.com/articles/deploying-rails-applications-with-the-puma-web-server
 gem 'foreman', group: :development
 
+gem "rack-timeout"
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.7'
 # Use SCSS for stylesheets

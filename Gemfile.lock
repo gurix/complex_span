@@ -131,6 +131,7 @@ GEM
       rack (~> 1.1)
     rack-test (0.6.3)
       rack (>= 1.0)
+    rack-timeout (0.2.4)
     rails (4.1.7)
       actionmailer (= 4.1.7)
       actionpack (= 4.1.7)
@@ -269,6 +270,7 @@ DEPENDENCIES
   pry-nav
   puma
   quiet_assets
+  rack-timeout
   rails (= 4.1.7)
   rails-i18n
   rails_12factor
