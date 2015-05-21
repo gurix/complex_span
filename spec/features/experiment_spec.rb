@@ -70,7 +70,7 @@ describe 'Experiment', js: true do
 
       presented_words = []
 
-      10.times do | word_counter |
+      10.times do |word_counter|
         expect(page.execute_script 'return SessionData().word_counter').to eq word_counter
 
         word = page.execute_script("return SessionData().trials[#{trial_counter}].words[#{word_counter}]")
@@ -82,7 +82,7 @@ describe 'Experiment', js: true do
         expect(page.find '#word').to have_content word['text']
         Capybara.exact = false
 
-        expect(word['delay']).to eq 200 if word['color']  == 'red'
+        expect(word['delay']).to eq 200 if word['color'] == 'red'
         expect(word['delay']).to eq trial['word_delay'] if word['color'] == 'blue'
 
         if missing_decision == word_counter
@@ -118,7 +118,7 @@ describe 'Experiment', js: true do
         expect(page).to have_content 'Please select the 5 red words, in their order of presentation, with the mouse'
       end
 
-      presented_words.sample(5).each_with_index do | word, index |
+      presented_words.sample(5).each_with_index do |word, index|
         sleep(0.3) # Wait at least 300ms to be sure not to be to fast
         page.execute_script("$(\"#retrieval_matrix div.ng-binding\").filter(function(index) { return $(this).text() === \"#{word}\"; }).click()")
 
