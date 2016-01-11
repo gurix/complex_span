@@ -32,7 +32,7 @@ gem 'spring',        group: :development
 gem 'slim-rails'
 
 # Mongoid is an Object-Document-Mapper (ODM) for MongoDB
-gem 'mongoid', '~> 4.0.0.rc2'
+gem 'mongoid', '~> 5.0.1'
 
 # A fixtures replacement with a straightforward definition syntax
 gem 'factory_girl'
@@ -59,7 +59,7 @@ gem 'quiet_assets' , group: [:development, :test]
 gem 'simplecov', group: :test
 
 # RSpec matches for Mongoid models, including association and validation matchers
-gem 'mongoid-rspec', '~> 2.0.0.rc1', group: [:development, :test]
+gem 'mongoid-rspec', group: [:development, :test]
 
 # Adds step, next, finish and continue commands and breakpoints to Pry using byebug.
 gem 'pry-byebug', group: [:development, :test]
