@@ -79,6 +79,10 @@ gem 'rails_12factor', group: :production
 
 gem 'rails_admin'
 
+# Easy installation and use of chromedriver, the Chromium project's selenium webdriver adapter.
+gem 'chromedriver-helper'
+
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
