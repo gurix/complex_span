@@ -126,7 +126,8 @@
         retrievals = []
 
         # Shuffle the color for each trial
-        word_colors = ['red', 'red', 'red', 'red', 'red', 'blue', 'blue', 'blue', 'blue', 'blue'].shuffle()
+        # word_colors = ['red', 'red', 'red', 'red', 'red', 'blue', 'blue', 'blue', 'blue', 'blue'].shuffle()
+        word_colors = ['red', 'blue', 'red', 'blue', 'red', 'blue', 'red', 'blue', 'red', 'blue']
 
         # Get word delay condition for each trial
         word_delay = word_delays[number_of_trials - 1]

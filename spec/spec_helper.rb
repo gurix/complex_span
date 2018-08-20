@@ -1,7 +1,6 @@
 require 'simplecov'
 SimpleCov.start 'rails'
 
-require 'database_cleaner'
 require 'mongoid-rspec'
 require 'capybara/rspec'
 require 'factory_girl'
@@ -21,18 +20,15 @@ RSpec.configure do |config|
 
   config.order = :random
 
-  DatabaseCleaner.strategy = :truncation
-
   config.before(:suite) do
     FactoryGirl.reload
-    DatabaseCleaner.clean
+    Mongoid.purge!
   end
 
   config.before(:each) do
     I18n.locale = :en
-    DatabaseCleaner.start
     ActionMailer::Base.deliveries.clear
-    DatabaseCleaner.clean
+    Mongoid.purge!
   end
 
   Capybara.default_wait_time = 20
