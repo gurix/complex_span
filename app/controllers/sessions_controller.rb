@@ -32,8 +32,9 @@ class SessionsController < ApplicationController
         response.stream.write CSV.generate_line(csv_header)
 
         @sessions.each do |session|
-          response.stream.write CSV.generate_line([session.id, session.created_at, session.updated_at, session.age, session.sincerity, session.gender,
-                                                   session.education, session.ip_address, session.language, session.logs.count, session.trials.count] +
+          response.stream.write CSV.generate_line([session.id, session.created_at, session.updated_at, session.age,
+                                                   session.sincerity, session.gender, session.education, session.ip_address,
+                                                   session.language, session.logs.count, session.trials.count, session.mturkid] +
                                                    session.system_information.values)
         end
         response.stream.close
@@ -46,9 +47,10 @@ class SessionsController < ApplicationController
   end
 
   def csv_header
-    system_information_headers = %w(screen_width screen_height navigator_user_agent navigator_platform window_innerHeight window_innerWidth window_screenX
-                                    window_screenY window_pageXOffset window_pageYOffset)
-    headers = %w(id created_at updated_at age sincerity gender education ip_address language number_of_logs number_of_trials)
+    system_information_headers = %w(screen_width screen_height navigator_user_agent navigator_platform window_innerHeight
+                                    window_innerWidth window_screenX window_screenY window_pageXOffset window_pageYOffset)
+    headers = %w(id created_at updated_at age sincerity gender education ip_address language number_of_logs number_of_trials
+                 mturkid)
     headers + system_information_headers.map { |system_information_header| "sys_#{system_information_header}" }
   end
 end

@@ -20,6 +20,7 @@ FactoryGirl.define do
     end
     language 'en'
     ip_address '127.0.0.1'
+    mturkid 'smoke_weed_every_day'
 
     after :build do |session, _evaluator|
       session.trials << build_list(:trial, 14)

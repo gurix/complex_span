@@ -165,6 +165,8 @@ describe 'Experiment', js: true do
 
     select 'high school degree', from: 'session_education'
 
+    fill_in 'Please enter your Mturk ID', with: '420'
+
     click_button 'Submit data ...'
 
     sleep 4
@@ -178,6 +180,7 @@ describe 'Experiment', js: true do
     expect(session.sincerity).to eq 'serious'
     expect(session.gender).to eq 'f'
     expect(session.education).to eq 'high_school'
+    expect(session.mturkid).to eq '420'
 
     expect(page).to have_content 'Thank you again for participating in our experiment.'
 

@@ -62,14 +62,14 @@
     QUALIFICATION_HIGH_SCHOOL: 'high school degree'
     QUALIFICATION_UNIVERSITY: 'University degree'
     QUALIFICATION_DOCTORAL: 'Doctoral degree'
+    MTURKID: 'Please enter your Mturk ID'
     DEBRIEFING: '<p>Thank you again for participating in our experiment. The goal of this experiment was to investigate whether people can intentionally forget
                     information they want to forget, and whether this is accomplished better when more time is available for forgetting. To that end we tested,
                     in the last trial, your memory for the blue words, which you were supposed to forget. We varied the free time following
                     each of the blue words – either only 200 ms or 1500 ms after each blue word. We expect that participants who
                     had longer free time following the blue words are able to remember fewer of them.</p>
                     <p>Please do not share this information with anyone! It is crucial the explanation is kept confidential until we have collected all data.</p>
-                 <p>Here is your code to confirm your participation: 26wm3-YXxTc</p>
-                 <p>You can exit the fullscreen mode now by pressing "ESC" and close the browser window/tab after entering or copying the code.</p>'
+                 <p>You can exit the fullscreen mode now by pressing "ESC" and close the browser window/tab.</p>'
 
   ERROR:
     TOO_MANY_WRONG_DECISIONS: 'Too many incorrect size judgments, trial will be repeated.'

@@ -9,6 +9,7 @@ class Session
   field :system_information, type: Hash
   field :ip_address,         type: String
   field :language,           type: String
+  field :mturkid,            type: String
 
   embeds_many :logs
   embeds_many :trials

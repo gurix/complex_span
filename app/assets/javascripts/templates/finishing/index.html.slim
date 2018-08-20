@@ -46,4 +46,8 @@ form name="newSessionForm" novalidate="novalidate" ng-submit="newSessionForm.$va
         option value="doctoral" translate="FINISHING.QUALIFICATION_DOCTORAL"
 
     .form-group
+      label for="session_mturkid" translate="FINISHING.MTURKID"
+      input#session_mturkid.form-control name="mturkid" ng-model="session.mturkid" required="" type="text" /
+
+    .form-group
       button.btn.btn-primary ng-disabled="!newSessionForm.$valid" translate="FINISHING.SUBMIT" ng-click='ClickSendData()'

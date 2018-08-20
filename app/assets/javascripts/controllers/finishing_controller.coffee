@@ -43,6 +43,7 @@
         age: $scope.session.age
         gender: $scope.session.gender
         education: $scope.session.education
+        mturkid: $scope.session.mturkid
         system_information: system_informations
         language: $scope.session.language
 

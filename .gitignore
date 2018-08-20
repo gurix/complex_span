@@ -18,3 +18,4 @@
 .resultset.json
 .anvil
 .ruby-version
+dump_data.sh

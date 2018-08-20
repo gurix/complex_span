@@ -63,13 +63,13 @@
     QUALIFICATION_HIGH_SCHOOL: 'Gymnasium / Maturität '
     QUALIFICATION_UNIVERSITY: 'Fachhochschule/Universität '
     QUALIFICATION_DOCTORAL: 'Doktorat'
+    MTURKID: 'Bitte geben Sie Ihre Mturk ID hier ein'
     DEBRIEFING: '<p>Vielen Dank für die Teilnahme an dem Experiment. Ziel des Experiments war, herauszufinden, ob Menschen Information, die sie nicht im
                     Gedächtnis behalten können, gezielt vergessen können, und ob das besser gelingt, wenn sie dazu mehr Zeit zur Verfügung haben. Daher haben
                     wir im letzten Durchgang nach den blauen Wörtern gefragt, die Sie ja eigentlich vergessen sollten. Die Zeit nach den blauen Wörtern wurde
                     experimentell variiert – entweder nur 200 ms nach jedem blauen Wort, oder 1500 ms nach jedem blauem Wort. Wir erwarten, dass bei 1500 ms nach jedem blauen Wort, die blauen Wörter schlechter erinnert werden können, als bei 200 ms nach jedem blauen Wort.</p>
                     <p>Bitte geben Sie diese Information an niemanden weiter! Es ist wichtig, dass die Erklärung bis zum Abschluss der Datenerhebung absolut vertraulich behandelt wird.</p>
-                    <p>Hier ist Ihr Code zur Bestätigung Ihrer Teilnahme: 26wm3-YXxTc</p>
-                    <p>Sie können den Vollbildmodus nun verlassen, drücken Sie dazu auf "ESC". Sobald Sie den Code eingegeben oder kopiert haben, können Sie das Browser Fenster/Tab schliessen.</p>'
+                    <p>Sie können den Vollbildmodus nun verlassen, drücken Sie dazu auf "ESC". Danach können Sie das Browser Fenster/Tab schliessen.</p>'
 
   ERROR:
     TOO_MANY_WRONG_DECISIONS: 'Zu viele falsche Grössenurteile, Durchgang wird wiederholt.'
