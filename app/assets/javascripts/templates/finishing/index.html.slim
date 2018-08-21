@@ -47,7 +47,7 @@ form name="newSessionForm" novalidate="novalidate" ng-submit="newSessionForm.$va
 
     .form-group
       label for="session_mturkid" translate="FINISHING.MTURKID"
-      input#session_mturkid.form-control name="mturkid" ng-model="session.mturkid" required="" type="text" /
+      input#session_mturkid.form-control name="mturkid" ng-model="session.mturkid" required="required" type="text" /
 
     .form-group
       button.btn.btn-primary ng-disabled="!newSessionForm.$valid" translate="FINISHING.SUBMIT" ng-click='ClickSendData()'
