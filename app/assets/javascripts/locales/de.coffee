@@ -69,6 +69,7 @@
                     wir im letzten Durchgang nach den blauen Wörtern gefragt, die Sie ja eigentlich vergessen sollten. Die Zeit nach den blauen Wörtern wurde
                     experimentell variiert – entweder nur 200 ms nach jedem blauen Wort, oder 1500 ms nach jedem blauem Wort. Wir erwarten, dass bei 1500 ms nach jedem blauen Wort, die blauen Wörter schlechter erinnert werden können, als bei 200 ms nach jedem blauen Wort.</p>
                     <p>Bitte geben Sie diese Information an niemanden weiter! Es ist wichtig, dass die Erklärung bis zum Abschluss der Datenerhebung absolut vertraulich behandelt wird.</p>
+                    <p>Ihr Code zur Bestätigung Ihrer Teilnahme lautet: 18wm3-YXxTc</p>
                     <p>Sie können den Vollbildmodus nun verlassen, drücken Sie dazu auf "ESC". Danach können Sie das Browser Fenster/Tab schliessen.</p>'
 
   ERROR:
