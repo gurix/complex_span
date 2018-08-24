@@ -69,7 +69,7 @@
                     each of the blue words – either only 200 ms or 1500 ms after each blue word. We expect that participants who
                     had longer free time following the blue words are able to remember fewer of them.</p>
                     <p>Please do not share this information with anyone! It is crucial the explanation is kept confidential until we have collected all data.</p>
-                    <p>Your confirmation code is: 18wm3-HbXzz</p>
+                    <p>Your confirmation code is: 18wm3-CzTUr</p>
                  <p>You can exit the fullscreen mode now by pressing "ESC" and close the browser window/tab.</p>'
 
   ERROR:
